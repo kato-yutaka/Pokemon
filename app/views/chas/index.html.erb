@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Chas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Kubun</th>
+      <th>Pokedex</th>
+      <th>Name</th>
+      <th>Ex</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @chas.each do |cha| %>
+      <tr>
+        <td><%= cha.kubun %></td>
+        <td><%= cha.pokedex_id %></td>
+        <td><%= cha.name %></td>
+        <td><%= cha.ex %></td>
+        <td><%= link_to 'Show', cha %></td>
+        <td><%= link_to 'Edit', edit_cha_path(cha) %></td>
+        <td><%= link_to 'Destroy', cha, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cha', new_cha_path %>
