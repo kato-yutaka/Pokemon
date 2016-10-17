@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017042636) do
+ActiveRecord::Schema.define(version: 20161017044325) do
 
   create_table "chas", force: :cascade do |t|
     t.string   "kubun"
@@ -20,6 +20,23 @@ ActiveRecord::Schema.define(version: 20161017042636) do
     t.text     "ex"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "parties", force: :cascade do |t|
+    t.integer  "pokebuild_id"
+    t.string   "pokedex_id"
+    t.integer  "per_id"
+    t.integer  "cha_id"
+    t.integer  "wepon_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "raistags", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "pokerais_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end

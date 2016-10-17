@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pokebuild_id: 1
+  pokedex_id: MyString
+  per_id: 1
+  cha_id: 1
+  wepon_id: 1
+
+two:
+  pokebuild_id: 1
+  pokedex_id: MyString
+  per_id: 1
+  cha_id: 1
+  wepon_id: 1

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :parties
   resources :raistags
   resources :chas
   # The priority is based upon order of creation: first created -> highest priority.

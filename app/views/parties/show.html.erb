@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pokebuild:</strong>
+  <%= @party.pokebuild_id %>
+</p>
+
+<p>
+  <strong>Pokedex:</strong>
+  <%= @party.pokedex_id %>
+</p>
+
+<p>
+  <strong>Per:</strong>
+  <%= @party.per_id %>
+</p>
+
+<p>
+  <strong>Cha:</strong>
+  <%= @party.cha_id %>
+</p>
+
+<p>
+  <strong>Wepon:</strong>
+  <%= @party.wepon_id %>
+</p>
+
+<%= link_to 'Edit', edit_party_path(@party) %> |
+<%= link_to 'Back', parties_path %>
