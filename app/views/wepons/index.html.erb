@@ -18,7 +18,7 @@
         <td><%= wepon.eff %></td>
         <td><%= link_to '詳細', wepon %></td>
         <td><%= link_to '編集', edit_wepon_path(wepon) %></td>
-        <td><%= link_to '削除', wepon, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+        <td><%= link_to '削除', wepon, method: :delete, data: { confirm: '削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>

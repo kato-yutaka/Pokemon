@@ -38,7 +38,7 @@
         <td><%= pokedex.pic_data %></td>
         <td><%= link_to '詳細', pokedex %></td>
         <td><%= link_to '編集', edit_pokedex_path(pokedex) %></td>
-        <td><%= link_to '削除', pokedex, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+        <td><%= link_to '削除', pokedex, method: :delete, data: { confirm: '削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>

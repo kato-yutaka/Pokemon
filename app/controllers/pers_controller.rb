@@ -1,4 +1,4 @@
-class PersController < ApplicationController
+﻿class PersController < ApplicationController
   before_action :set_per, only: [:show, :edit, :update, :destroy]
 
   # GET /pers
@@ -28,7 +28,7 @@ class PersController < ApplicationController
 
     respond_to do |format|
       if @per.save
-        format.html { redirect_to @per, notice: 'Per was successfully created.' }
+        format.html { redirect_to @per, notice: '作成しました' }
         format.json { render :show, status: :created, location: @per }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PersController < ApplicationController
   def update
     respond_to do |format|
       if @per.update(per_params)
-        format.html { redirect_to @per, notice: 'Per was successfully updated.' }
+        format.html { redirect_to @per, notice: '編集しました' }
         format.json { render :show, status: :ok, location: @per }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PersController < ApplicationController
   def destroy
     @per.destroy
     respond_to do |format|
-      format.html { redirect_to pers_url, notice: 'Per was successfully destroyed.' }
+      format.html { redirect_to pers_url, notice: '削除しました' }
       format.json { head :no_content }
     end
   end

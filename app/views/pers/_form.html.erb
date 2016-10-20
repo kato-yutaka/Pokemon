@@ -1,4 +1,4 @@
-<%= form_for(@per) do |f| %>
+﻿<%= form_for(@per) do |f| %>
   <% if @per.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@per.errors.count, "error") %> prohibited this per from being saved:</h2>
@@ -12,18 +12,18 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :性格名 %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :up %><br>
+    <%= f.label :上がる能力値 %><br>
     <%= f.text_field :up %>
   </div>
   <div class="field">
-    <%= f.label :down %><br>
+    <%= f.label :下がる能力値 %><br>
     <%= f.text_field :down %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "登録" %>
   </div>
 <% end %>
