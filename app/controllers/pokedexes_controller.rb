@@ -1,4 +1,4 @@
-class PokedexesController < ApplicationController
+﻿class PokedexesController < ApplicationController
   before_action :set_pokedex, only: [:show, :edit, :update, :destroy]
 
   # GET /pokedexes
@@ -28,7 +28,7 @@ class PokedexesController < ApplicationController
 
     respond_to do |format|
       if @pokedex.save
-        format.html { redirect_to @pokedex, notice: 'Pokedex was successfully created.' }
+        format.html { redirect_to @pokedex, notice: '作成しました' }
         format.json { render :show, status: :created, location: @pokedex }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PokedexesController < ApplicationController
   def update
     respond_to do |format|
       if @pokedex.update(pokedex_params)
-        format.html { redirect_to @pokedex, notice: 'Pokedex was successfully updated.' }
+        format.html { redirect_to @pokedex, notice: '編集しました' }
         format.json { render :show, status: :ok, location: @pokedex }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PokedexesController < ApplicationController
   def destroy
     @pokedex.destroy
     respond_to do |format|
-      format.html { redirect_to pokedexes_url, notice: 'Pokedex was successfully destroyed.' }
+      format.html { redirect_to pokedexes_url, notice: '削除しました' }
       format.json { head :no_content }
     end
   end

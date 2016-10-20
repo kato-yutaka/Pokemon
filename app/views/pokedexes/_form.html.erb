@@ -1,4 +1,4 @@
-<%= form_for(@pokedex) do |f| %>
+﻿<%= form_for(@pokedex) do |f| %>
   <% if @pokedex.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@pokedex.errors.count, "error") %> prohibited this pokedex from being saved:</h2>
@@ -12,54 +12,54 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :名前 %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :hp %><br>
+    <%= f.label :HP %><br>
     <%= f.number_field :hp %>
   </div>
   <div class="field">
-    <%= f.label :atk %><br>
+    <%= f.label :攻撃力 %><br>
     <%= f.number_field :atk %>
   </div>
   <div class="field">
-    <%= f.label :def %><br>
+    <%= f.label :防御力 %><br>
     <%= f.number_field :def %>
   </div>
   <div class="field">
-    <%= f.label :satk %><br>
+    <%= f.label :特攻 %><br>
     <%= f.number_field :satk %>
   </div>
   <div class="field">
-    <%= f.label :sdef %><br>
+    <%= f.label :特防 %><br>
     <%= f.number_field :sdef %>
   </div>
   <div class="field">
-    <%= f.label :spd %><br>
+    <%= f.label :すばやさ %><br>
     <%= f.number_field :spd %>
   </div>
   <div class="field">
-    <%= f.label :eco %><br>
+    <%= f.label :生態 %><br>
     <%= f.text_area :eco %>
   </div>
   <div class="field">
-    <%= f.label :egg_id %><br>
+    <%= f.label :卵グループ %><br>
     <%= f.number_field :egg_id %>
   </div>
   <div class="field">
-    <%= f.label :type_id %><br>
+    <%= f.label :タイプ %><br>
     <%= f.number_field :type_id %>
   </div>
   <div class="field">
-    <%= f.label :pic %><br>
+    <%= f.label :画像 %><br>
     <%= f.text_field :pic %>
   </div>
   <div class="field">
-    <%= f.label :pic_data %><br>
+    <%= f.label :画像データ %><br>
     <%= f.text_field :pic_data %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "登録" %>
   </div>
 <% end %>
