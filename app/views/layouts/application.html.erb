@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
   <title>Pokehub</title>
@@ -7,6 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+
+<Ul>
+ <li><%= link_to "特性"    ,chas_path%></li>
+ <li><%= link_to "パーティーポケモン"  ,parties_path%></li>
+ <li><%= link_to "育成論タグ",raistags_path%></li>
+ <li><%= link_to "構築論タグ"    ,buildtags_path%></li>
+ <li><%= link_to "コメント"  ,coms_path%></li>
+ <li><%= link_to "卵グループ",eggs_path%></li>
+ <li><%= link_to "性格",pers_path%></li>
+ <li><%= link_to "ポケモン図鑑"    ,pokedexes_path%></li>
+ <li><%= link_to "技"  ,skills_path%></li>
+ <li><%= link_to "タイプ",types_path%></li>
+ <li><%= link_to "持ち物"    ,wepons_path%></li>
+
+</Ul>
+
 
 <%= yield %>
 
