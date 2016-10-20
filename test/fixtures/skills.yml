@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pokerais_id: 1
+  party_id: 1
+  name: MyString
+  power: 1
+  eff: MyString
+
+two:
+  pokerais_id: 1
+  party_id: 1
+  name: MyString
+  power: 1
+  eff: MyString

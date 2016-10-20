@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Coms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+      <th>Com</th>
+      <th>Pokerais</th>
+      <th>Pokebuild</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @coms.each do |com| %>
+      <tr>
+        <td><%= com.name %></td>
+        <td><%= com.date %></td>
+        <td><%= com.com %></td>
+        <td><%= com.pokerais_id %></td>
+        <td><%= com.pokebuild_id %></td>
+        <td><%= link_to 'Show', com %></td>
+        <td><%= link_to 'Edit', edit_com_path(com) %></td>
+        <td><%= link_to 'Destroy', com, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Com', new_com_path %>

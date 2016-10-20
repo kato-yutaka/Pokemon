@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @buildtag.name %>
+</p>
+
+<p>
+  <strong>Pokebuild:</strong>
+  <%= @buildtag.pokebuild_id %>
+</p>
+
+<%= link_to 'Edit', edit_buildtag_path(@buildtag) %> |
+<%= link_to 'Back', buildtags_path %>

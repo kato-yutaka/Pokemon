@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @com.name %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @com.date %>
+</p>
+
+<p>
+  <strong>Com:</strong>
+  <%= @com.com %>
+</p>
+
+<p>
+  <strong>Pokerais:</strong>
+  <%= @com.pokerais_id %>
+</p>
+
+<p>
+  <strong>Pokebuild:</strong>
+  <%= @com.pokebuild_id %>
+</p>
+
+<%= link_to 'Edit', edit_com_path(@com) %> |
+<%= link_to 'Back', coms_path %>

@@ -1,0 +1,1 @@
+json.array! @buildtags, partial: 'buildtags/buildtag', as: :buildtag

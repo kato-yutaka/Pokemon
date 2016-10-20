@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @pokedex.name %>
+</p>
+
+<p>
+  <strong>Hp:</strong>
+  <%= @pokedex.hp %>
+</p>
+
+<p>
+  <strong>Atk:</strong>
+  <%= @pokedex.atk %>
+</p>
+
+<p>
+  <strong>Def:</strong>
+  <%= @pokedex.def %>
+</p>
+
+<p>
+  <strong>Satk:</strong>
+  <%= @pokedex.satk %>
+</p>
+
+<p>
+  <strong>Sdef:</strong>
+  <%= @pokedex.sdef %>
+</p>
+
+<p>
+  <strong>Spd:</strong>
+  <%= @pokedex.spd %>
+</p>
+
+<p>
+  <strong>Eco:</strong>
+  <%= @pokedex.eco %>
+</p>
+
+<p>
+  <strong>Egg:</strong>
+  <%= @pokedex.egg_id %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @pokedex.type_id %>
+</p>
+
+<p>
+  <strong>Pic:</strong>
+  <%= @pokedex.pic %>
+</p>
+
+<p>
+  <strong>Pic data:</strong>
+  <%= @pokedex.pic_data %>
+</p>
+
+<%= link_to 'Edit', edit_pokedex_path(@pokedex) %> |
+<%= link_to 'Back', pokedexes_path %>

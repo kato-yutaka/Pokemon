@@ -1,0 +1,25 @@
+<%= form_for(@wepon) do |f| %>
+  <% if @wepon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@wepon.errors.count, "error") %> prohibited this wepon from being saved:</h2>
+
+      <ul>
+      <% @wepon.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :eff %><br>
+    <%= f.text_area :eff %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

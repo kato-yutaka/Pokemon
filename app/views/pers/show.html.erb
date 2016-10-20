@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @per.name %>
+</p>
+
+<p>
+  <strong>Up:</strong>
+  <%= @per.up %>
+</p>
+
+<p>
+  <strong>Down:</strong>
+  <%= @per.down %>
+</p>
+
+<%= link_to 'Edit', edit_per_path(@per) %> |
+<%= link_to 'Back', pers_path %>

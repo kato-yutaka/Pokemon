@@ -1,0 +1,1 @@
+json.partial! "buildtags/buildtag", buildtag: @buildtag

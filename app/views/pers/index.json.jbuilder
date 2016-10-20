@@ -1,0 +1,1 @@
+json.array! @pers, partial: 'pers/per', as: :per

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wepon.name %>
+</p>
+
+<p>
+  <strong>Eff:</strong>
+  <%= @wepon.eff %>
+</p>
+
+<%= link_to 'Edit', edit_wepon_path(@wepon) %> |
+<%= link_to 'Back', wepons_path %>

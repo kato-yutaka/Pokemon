@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wepons</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Eff</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wepons.each do |wepon| %>
+      <tr>
+        <td><%= wepon.name %></td>
+        <td><%= wepon.eff %></td>
+        <td><%= link_to 'Show', wepon %></td>
+        <td><%= link_to 'Edit', edit_wepon_path(wepon) %></td>
+        <td><%= link_to 'Destroy', wepon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wepon', new_wepon_path %>

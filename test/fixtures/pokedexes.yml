@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  hp: 1
+  atk: 1
+  def: 1
+  satk: 1
+  sdef: 1
+  spd: 1
+  eco: MyText
+  egg_id: 1
+  type_id: 1
+  pic: MyString
+  pic_data: 
+
+two:
+  name: MyString
+  hp: 1
+  atk: 1
+  def: 1
+  satk: 1
+  sdef: 1
+  spd: 1
+  eco: MyText
+  egg_id: 1
+  type_id: 1
+  pic: MyString
+  pic_data: 

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pokerais:</strong>
+  <%= @skill.pokerais_id %>
+</p>
+
+<p>
+  <strong>Party:</strong>
+  <%= @skill.party_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @skill.name %>
+</p>
+
+<p>
+  <strong>Power:</strong>
+  <%= @skill.power %>
+</p>
+
+<p>
+  <strong>Eff:</strong>
+  <%= @skill.eff %>
+</p>
+
+<%= link_to 'Edit', edit_skill_path(@skill) %> |
+<%= link_to 'Back', skills_path %>

@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  resources :pokedexes
+  resources :wepons
+  resources :pers
+  resources :types
+  resources :eggs
+  resources :coms
+  resources :buildtags
+  resources :skills
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

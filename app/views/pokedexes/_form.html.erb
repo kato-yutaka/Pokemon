@@ -1,0 +1,65 @@
+<%= form_for(@pokedex) do |f| %>
+  <% if @pokedex.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pokedex.errors.count, "error") %> prohibited this pokedex from being saved:</h2>
+
+      <ul>
+      <% @pokedex.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :hp %><br>
+    <%= f.number_field :hp %>
+  </div>
+  <div class="field">
+    <%= f.label :atk %><br>
+    <%= f.number_field :atk %>
+  </div>
+  <div class="field">
+    <%= f.label :def %><br>
+    <%= f.number_field :def %>
+  </div>
+  <div class="field">
+    <%= f.label :satk %><br>
+    <%= f.number_field :satk %>
+  </div>
+  <div class="field">
+    <%= f.label :sdef %><br>
+    <%= f.number_field :sdef %>
+  </div>
+  <div class="field">
+    <%= f.label :spd %><br>
+    <%= f.number_field :spd %>
+  </div>
+  <div class="field">
+    <%= f.label :eco %><br>
+    <%= f.text_area :eco %>
+  </div>
+  <div class="field">
+    <%= f.label :egg_id %><br>
+    <%= f.number_field :egg_id %>
+  </div>
+  <div class="field">
+    <%= f.label :type_id %><br>
+    <%= f.number_field :type_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pic %><br>
+    <%= f.text_field :pic %>
+  </div>
+  <div class="field">
+    <%= f.label :pic_data %><br>
+    <%= f.text_field :pic_data %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

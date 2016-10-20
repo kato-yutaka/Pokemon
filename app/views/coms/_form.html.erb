@@ -1,0 +1,37 @@
+<%= form_for(@com) do |f| %>
+  <% if @com.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@com.errors.count, "error") %> prohibited this com from being saved:</h2>
+
+      <ul>
+      <% @com.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :com %><br>
+    <%= f.text_area :com %>
+  </div>
+  <div class="field">
+    <%= f.label :pokerais_id %><br>
+    <%= f.number_field :pokerais_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pokebuild_id %><br>
+    <%= f.number_field :pokebuild_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
