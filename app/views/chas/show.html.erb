@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Kubun:</strong>
+  <%= @cha.kubun %>
+</p>
+
+<p>
+  <strong>Pokedex:</strong>
+  <%= @cha.pokedex_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cha.name %>
+</p>
+
+<p>
+  <strong>Ex:</strong>
+  <%= @cha.ex %>
+</p>
+
+<%= link_to 'Edit', edit_cha_path(@cha) %> |
+<%= link_to 'Back', chas_path %>

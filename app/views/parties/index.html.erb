@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Parties</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pokebuild</th>
+      <th>Pokedex</th>
+      <th>Per</th>
+      <th>Cha</th>
+      <th>Wepon</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @parties.each do |party| %>
+      <tr>
+        <td><%= party.pokebuild_id %></td>
+        <td><%= party.pokedex_id %></td>
+        <td><%= party.per_id %></td>
+        <td><%= party.cha_id %></td>
+        <td><%= party.wepon_id %></td>
+        <td><%= link_to 'Show', party %></td>
+        <td><%= link_to 'Edit', edit_party_path(party) %></td>
+        <td><%= link_to 'Destroy', party, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Party', new_party_path %>
