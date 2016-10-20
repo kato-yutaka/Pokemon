@@ -1,15 +1,15 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
-<h1>Listing Skills</h1>
+<h1>技</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Pokerais</th>
-      <th>Party</th>
-      <th>Name</th>
-      <th>Power</th>
-      <th>Eff</th>
+      <th>育成論ID</th>
+      <th>パーティポケモンID</th>
+      <th>技名</th>
+      <th>威力</th>
+      <th>効果</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,9 +22,9 @@
         <td><%= skill.name %></td>
         <td><%= skill.power %></td>
         <td><%= skill.eff %></td>
-        <td><%= link_to 'Show', skill %></td>
-        <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
-        <td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', skill %></td>
+        <td><%= link_to '編集', edit_skill_path(skill) %></td>
+        <td><%= link_to '削除', skill, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Skill', new_skill_path %>
+<%= link_to '新規作成', new_skill_path %>
