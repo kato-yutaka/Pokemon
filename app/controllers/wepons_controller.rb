@@ -1,4 +1,4 @@
-class WeponsController < ApplicationController
+﻿class WeponsController < ApplicationController
   before_action :set_wepon, only: [:show, :edit, :update, :destroy]
 
   # GET /wepons
@@ -28,7 +28,7 @@ class WeponsController < ApplicationController
 
     respond_to do |format|
       if @wepon.save
-        format.html { redirect_to @wepon, notice: 'Wepon was successfully created.' }
+        format.html { redirect_to @wepon, notice: '追加されました' }
         format.json { render :show, status: :created, location: @wepon }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class WeponsController < ApplicationController
   def update
     respond_to do |format|
       if @wepon.update(wepon_params)
-        format.html { redirect_to @wepon, notice: 'Wepon was successfully updated.' }
+        format.html { redirect_to @wepon, notice: '変更されました' }
         format.json { render :show, status: :ok, location: @wepon }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class WeponsController < ApplicationController
   def destroy
     @wepon.destroy
     respond_to do |format|
-      format.html { redirect_to wepons_url, notice: 'Wepon was successfully destroyed.' }
+      format.html { redirect_to wepons_url, notice: '削除されました' }
       format.json { head :no_content }
     end
   end
