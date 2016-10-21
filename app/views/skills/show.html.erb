@@ -1,29 +1,29 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Pokerais:</strong>
+  <strong>育成論ID:</strong>
   <%= @skill.pokerais_id %>
 </p>
 
 <p>
-  <strong>Party:</strong>
+  <strong>パーティポケモンID:</strong>
   <%= @skill.party_id %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>技名:</strong>
   <%= @skill.name %>
 </p>
 
 <p>
-  <strong>Power:</strong>
+  <strong>威力:</strong>
   <%= @skill.power %>
 </p>
 
 <p>
-  <strong>Eff:</strong>
+  <strong>効果:</strong>
   <%= @skill.eff %>
 </p>
 
-<%= link_to 'Edit', edit_skill_path(@skill) %> |
-<%= link_to 'Back', skills_path %>
+<%= link_to '編集', edit_skill_path(@skill) %> |
+<%= link_to '戻る', skills_path %>

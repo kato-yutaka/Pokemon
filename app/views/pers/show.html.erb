@@ -1,19 +1,19 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>性格名:</strong>
   <%= @per.name %>
 </p>
 
 <p>
-  <strong>Up:</strong>
+  <strong>上がる能力値:</strong>
   <%= @per.up %>
 </p>
 
 <p>
-  <strong>Down:</strong>
+  <strong>下がる能力値:</strong>
   <%= @per.down %>
 </p>
 
-<%= link_to 'Edit', edit_per_path(@per) %> |
-<%= link_to 'Back', pers_path %>
+<%= link_to '編集', edit_per_path(@per) %> |
+<%= link_to '戻る', pers_path %>

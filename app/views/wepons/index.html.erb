@@ -1,6 +1,6 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
-<h1>Listing Wepons</h1>
+<h1>持ち物</h1>
 
 <table>
   <thead>
@@ -18,9 +18,9 @@
         <td><%= wepon.name %></td>
         <td><%= wepon.eff %></td>
         <td><%= wepon.get %></td>
-        <td><%= link_to 'Show', wepon %></td>
-        <td><%= link_to 'Edit', edit_wepon_path(wepon) %></td>
-        <td><%= link_to 'Destroy', wepon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', wepon %></td>
+        <td><%= link_to '編集', edit_wepon_path(wepon) %></td>
+        <td><%= link_to '削除', wepon, method: :delete, data: { confirm: '削除しますか?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Wepon', new_wepon_path %>
+<%= link_to '新規作成', new_wepon_path %>

@@ -1,4 +1,4 @@
-class RaistagsController < ApplicationController
+﻿class RaistagsController < ApplicationController
   before_action :set_raistag, only: [:show, :edit, :update, :destroy]
 
   # GET /raistags
@@ -28,7 +28,7 @@ class RaistagsController < ApplicationController
 
     respond_to do |format|
       if @raistag.save
-        format.html { redirect_to @raistag, notice: 'Raistag was successfully created.' }
+        format.html { redirect_to @raistag, notice: '作成しました' }
         format.json { render :show, status: :created, location: @raistag }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class RaistagsController < ApplicationController
   def update
     respond_to do |format|
       if @raistag.update(raistag_params)
-        format.html { redirect_to @raistag, notice: 'Raistag was successfully updated.' }
+        format.html { redirect_to @raistag, notice: '変更しました' }
         format.json { render :show, status: :ok, location: @raistag }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class RaistagsController < ApplicationController
   def destroy
     @raistag.destroy
     respond_to do |format|
-      format.html { redirect_to raistags_url, notice: 'Raistag was successfully destroyed.' }
+      format.html { redirect_to raistags_url, notice: '削除しました' }
       format.json { head :no_content }
     end
   end
