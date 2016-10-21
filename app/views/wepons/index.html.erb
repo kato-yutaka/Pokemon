@@ -5,8 +5,9 @@
 <table>
   <thead>
     <tr>
-      <th>Name</th>
+      <th width="150">Name</th>
       <th>Eff</th>
+      <th>Get</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,6 +17,7 @@
       <tr>
         <td><%= wepon.name %></td>
         <td><%= wepon.eff %></td>
+        <td><%= wepon.get %></td>
         <td><%= link_to 'Show', wepon %></td>
         <td><%= link_to 'Edit', edit_wepon_path(wepon) %></td>
         <td><%= link_to 'Destroy', wepon, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>構築論タグ名:</strong>
   <%= @buildtag.name %>
 </p>
 
 <p>
-  <strong>Pokebuild:</strong>
+  <strong>構築論ID:</strong>
   <%= @buildtag.pokebuild_id %>
 </p>
 
-<%= link_to 'Edit', edit_buildtag_path(@buildtag) %> |
-<%= link_to 'Back', buildtags_path %>
+<%= link_to 'タグの編集', edit_buildtag_path(@buildtag) %> |
+<%= link_to 'ホームに戻る', buildtags_path %>

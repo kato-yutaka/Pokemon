@@ -1,4 +1,4 @@
-class BuildtagsController < ApplicationController
+﻿class BuildtagsController < ApplicationController
   before_action :set_buildtag, only: [:show, :edit, :update, :destroy]
 
   # GET /buildtags
@@ -28,7 +28,7 @@ class BuildtagsController < ApplicationController
 
     respond_to do |format|
       if @buildtag.save
-        format.html { redirect_to @buildtag, notice: 'Buildtag was successfully created.' }
+        format.html { redirect_to @buildtag, notice: '作成しました。' }
         format.json { render :show, status: :created, location: @buildtag }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class BuildtagsController < ApplicationController
   def update
     respond_to do |format|
       if @buildtag.update(buildtag_params)
-        format.html { redirect_to @buildtag, notice: 'Buildtag was successfully updated.' }
+        format.html { redirect_to @buildtag, notice: '編集しました' }
         format.json { render :show, status: :ok, location: @buildtag }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class BuildtagsController < ApplicationController
   def destroy
     @buildtag.destroy
     respond_to do |format|
-      format.html { redirect_to buildtags_url, notice: 'Buildtag was successfully destroyed.' }
+      format.html { redirect_to buildtags_url, notice: '削除しました。' }
       format.json { head :no_content }
     end
   end

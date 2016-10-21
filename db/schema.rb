@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017044523) do
+ActiveRecord::Schema.define(version: 20161020034640) do
 
   create_table "buildtags", force: :cascade do |t|
     t.string   "name"
     t.integer  "pokebuild_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "chas", force: :cascade do |t|
+    t.string   "kubun"
+    t.integer  "pokedex_id"
+    t.string   "name"
+    t.text     "ex"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "coms", force: :cascade do |t|
@@ -34,6 +43,16 @@ ActiveRecord::Schema.define(version: 20161017044523) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "parties", force: :cascade do |t|
+    t.integer  "pokebuild_id"
+    t.integer  "pokedex_id"
+    t.integer  "per_id"
+    t.integer  "cha_id"
+    t.integer  "wepon_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "pers", force: :cascade do |t|
@@ -61,6 +80,13 @@ ActiveRecord::Schema.define(version: 20161017044523) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "raistags", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "pokerais_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "skills", force: :cascade do |t|
     t.integer  "pokerais_id"
     t.integer  "party_id"
@@ -82,32 +108,7 @@ ActiveRecord::Schema.define(version: 20161017044523) do
     t.text     "eff"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "chas", force: :cascade do |t|
-    t.string   "kubun"
-    t.integer  "pokedex_id"
-    t.string   "name"
-    t.text     "ex"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "parties", force: :cascade do |t|
-    t.integer  "pokebuild_id"
-    t.string   "pokedex_id"
-    t.integer  "per_id"
-    t.integer  "cha_id"
-    t.integer  "wepon_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
-
-  create_table "raistags", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "pokerais_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.text     "get"
   end
 
 end

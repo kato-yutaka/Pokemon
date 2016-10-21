@@ -1,4 +1,4 @@
-class EggsController < ApplicationController
+﻿class EggsController < ApplicationController
   before_action :set_egg, only: [:show, :edit, :update, :destroy]
 
   # GET /eggs
@@ -28,7 +28,7 @@ class EggsController < ApplicationController
 
     respond_to do |format|
       if @egg.save
-        format.html { redirect_to @egg, notice: 'Egg was successfully created.' }
+        format.html { redirect_to @egg, notice: '作成しました。' }
         format.json { render :show, status: :created, location: @egg }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class EggsController < ApplicationController
   def update
     respond_to do |format|
       if @egg.update(egg_params)
-        format.html { redirect_to @egg, notice: 'Egg was successfully updated.' }
+        format.html { redirect_to @egg, notice: '編集しました。' }
         format.json { render :show, status: :ok, location: @egg }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class EggsController < ApplicationController
   def destroy
     @egg.destroy
     respond_to do |format|
-      format.html { redirect_to eggs_url, notice: 'Egg was successfully destroyed.' }
+      format.html { redirect_to eggs_url, notice: '削除しました。' }
       format.json { head :no_content }
     end
   end

@@ -1,12 +1,12 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
-<h1>Listing Buildtags</h1>
+<h1>構築論タグ</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Pokebuild</th>
+      <th>構築論タグ名</th>
+      <th>構築論ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= buildtag.name %></td>
         <td><%= buildtag.pokebuild_id %></td>
-        <td><%= link_to 'Show', buildtag %></td>
-        <td><%= link_to 'Edit', edit_buildtag_path(buildtag) %></td>
-        <td><%= link_to 'Destroy', buildtag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '説明', buildtag %></td>
+        <td><%= link_to '編集', edit_buildtag_path(buildtag) %></td>
+        <td><%= link_to '削除', buildtag, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Buildtag', new_buildtag_path %>
+<%= link_to '新規作成', new_buildtag_path %>
