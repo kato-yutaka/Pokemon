@@ -1,0 +1,53 @@
+﻿<%= form_for(@pokerai) do |f| %>
+  <% if @pokerai.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pokerai.errors.count, "error") %> prohibited this pokerai from being saved:</h2>
+
+      <ul>
+      <% @pokerai.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :投稿者名 %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :タイトル %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :図鑑No %><br>
+    <%= f.number_field :pokedex_id %>
+  </div>
+  <div class="field">
+    <%= f.label :性格 %><br>
+    <%= f.number_field :per_id %>
+  </div>
+  <div class="field">
+    <%= f.label :特性 %><br>
+    <%= f.number_field :cha_id %>
+  </div>
+  <div class="field">
+    <%= f.label :持ち物 %><br>
+    <%= f.number_field :wepon_id %>
+  </div>
+  <div class="field">
+    <%= f.label :タグ %><br>
+    <%= f.number_field :raistag_id %>
+  </div>
+  <div class="field">
+    <%= f.label :説明 %><br>
+    <%= f.text_area :ex %>
+  </div>
+  <div class="field">
+    <%= f.label :コメント %><br>
+    <%= f.number_field :com_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit :完了%>
+  </div>
+<% end %>

@@ -1,0 +1,61 @@
+﻿<%= form_for(@skillname) do |f| %>
+  <% if @skillname.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@skillname.errors.count, "error") %> prohibited this skillname from being saved:</h2>
+
+      <ul>
+      <% @skillname.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :技名 %><br>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :タイプ %><br>
+    <%= f.text_field :type %>
+  </div>
+
+  <div class="field">
+    <%= f.label :分類 %><br>
+    <%= f.text_field :category %>
+  </div>
+
+  <div class="field">
+    <%= f.label :威力 %><br>
+    <%= f.number_field :power %>
+  </div>
+
+  <div class="field">
+    <%= f.label :命中 %><br>
+    <%= f.number_field :hit %>
+  </div>
+
+  <div class="field">
+    <%= f.label :PP %><br>
+    <%= f.number_field :pp %>
+  </div>
+
+  <div class="field">
+    <%= f.label :直接 %><br>
+    <%= f.text_field :direct %>
+  </div>
+
+  <div class="field">
+    <%= f.label :対象 %><br>
+    <%= f.text_field :target %>
+  </div>
+
+  <div class="field">
+    <%= f.label :効果 %><br>
+    <%= f.text_area :eff %>
+  </div>
+  <div class="actions">
+    <%= f.submit "登録"%>
+  </div>
+<% end %>

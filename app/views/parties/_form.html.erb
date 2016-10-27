@@ -1,4 +1,4 @@
-<%= form_for(@party) do |f| %>
+﻿<%= form_for(@party) do |f| %>
   <% if @party.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@party.errors.count, "error") %> prohibited this party from being saved:</h2>
@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :pokebuild_id %><br>
+    <%= f.label :構築論ID %><br>
     <%= f.number_field :pokebuild_id %>
   </div>
   <div class="field">
-    <%= f.label :pokedex_id %><br>
-    <%= f.text_field :pokedex_id %>
+    <%= f.label :図鑑No %><br>
+    <%= f.number_field :pokedex_id %>
   </div>
   <div class="field">
-    <%= f.label :per_id %><br>
+    <%= f.label :性格 %><br>
     <%= f.number_field :per_id %>
   </div>
   <div class="field">
-    <%= f.label :cha_id %><br>
+    <%= f.label :特性 %><br>
     <%= f.number_field :cha_id %>
   </div>
   <div class="field">
-    <%= f.label :wepon_id %><br>
+    <%= f.label :持ち物 %><br>
     <%= f.number_field :wepon_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :完了%>
   </div>
 <% end %>

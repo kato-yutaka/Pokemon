@@ -1,0 +1,2 @@
+module PokeraisHelper
+end

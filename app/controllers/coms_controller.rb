@@ -1,4 +1,4 @@
-class ComsController < ApplicationController
+﻿class ComsController < ApplicationController
   before_action :set_com, only: [:show, :edit, :update, :destroy]
 
   # GET /coms
@@ -28,7 +28,7 @@ class ComsController < ApplicationController
 
     respond_to do |format|
       if @com.save
-        format.html { redirect_to @com, notice: 'Com was successfully created.' }
+        format.html { redirect_to @com, notice: '作成しました' }
         format.json { render :show, status: :created, location: @com }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ComsController < ApplicationController
   def update
     respond_to do |format|
       if @com.update(com_params)
-        format.html { redirect_to @com, notice: 'Com was successfully updated.' }
+        format.html { redirect_to @com, notice: '編集しました' }
         format.json { render :show, status: :ok, location: @com }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ComsController < ApplicationController
   def destroy
     @com.destroy
     respond_to do |format|
-      format.html { redirect_to coms_url, notice: 'Com was successfully destroyed.' }
+      format.html { redirect_to coms_url, notice: '削除しました。' }
       format.json { head :no_content }
     end
   end

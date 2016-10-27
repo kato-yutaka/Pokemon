@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   # resources :pokedexes
     
+=======
+  resources :pokerais
+  resources :skillnames
+  resources :pokedexes
+>>>>>>> c24bd0d06f6fd4953cc3b54e7d0ee999f42e15c9
   resources :wepons
   resources :pers
   resources :types

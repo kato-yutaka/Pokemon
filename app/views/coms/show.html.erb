@@ -1,29 +1,29 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>投稿者名:</strong>
   <%= @com.name %>
 </p>
 
 <p>
-  <strong>Date:</strong>
+  <strong>投稿した日:</strong>
   <%= @com.date %>
 </p>
 
 <p>
-  <strong>Com:</strong>
+  <strong>コメント:</strong>
   <%= @com.com %>
 </p>
 
 <p>
-  <strong>Pokerais:</strong>
+  <strong>育成論ID:</strong>
   <%= @com.pokerais_id %>
 </p>
 
 <p>
-  <strong>Pokebuild:</strong>
+  <strong>構築論ID:</strong>
   <%= @com.pokebuild_id %>
 </p>
 
-<%= link_to 'Edit', edit_com_path(@com) %> |
-<%= link_to 'Back', coms_path %>
+<%= link_to '編集', edit_com_path(@com) %> |
+<%= link_to 'ホームに戻る', coms_path %>

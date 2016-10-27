@@ -1,4 +1,4 @@
-<%= form_for(@egg) do |f| %>
+﻿<%= form_for(@egg) do |f| %>
   <% if @egg.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@egg.errors.count, "error") %> prohibited this egg from being saved:</h2>
@@ -12,10 +12,10 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :卵グループ名 %><br>
     <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :完了 %>
   </div>
 <% end %>

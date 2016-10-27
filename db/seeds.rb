@@ -8,6 +8,6 @@
 
 require 'pokemon_zukan'
   PokemonZukan.find_all(1..719).each do |pokedex|
- tribeValue[1] == a
-  Pokedex.create(name: pokedex.name , a: pokedex.hp)
+
+  Pokedex.create(name: pokedex.name , tribeValue[1]: pokedex.hp)
 end

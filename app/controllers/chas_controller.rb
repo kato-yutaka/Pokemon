@@ -1,4 +1,4 @@
-class ChasController < ApplicationController
+﻿class ChasController < ApplicationController
   before_action :set_cha, only: [:show, :edit, :update, :destroy]
 
   # GET /chas
@@ -28,7 +28,7 @@ class ChasController < ApplicationController
 
     respond_to do |format|
       if @cha.save
-        format.html { redirect_to @cha, notice: 'Cha was successfully created.' }
+        format.html { redirect_to @cha, notice: '作成しました。' }
         format.json { render :show, status: :created, location: @cha }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ChasController < ApplicationController
   def update
     respond_to do |format|
       if @cha.update(cha_params)
-        format.html { redirect_to @cha, notice: 'Cha was successfully updated.' }
+        format.html { redirect_to @cha, notice: '編集しました。' }
         format.json { render :show, status: :ok, location: @cha }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ChasController < ApplicationController
   def destroy
     @cha.destroy
     respond_to do |format|
-      format.html { redirect_to chas_url, notice: 'Cha was successfully destroyed.' }
+      format.html { redirect_to chas_url, notice: '削除しました。' }
       format.json { head :no_content }
     end
   end

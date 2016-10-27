@@ -1,4 +1,4 @@
-<%= form_for(@com) do |f| %>
+﻿<%= form_for(@com) do |f| %>
   <% if @com.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@com.errors.count, "error") %> prohibited this com from being saved:</h2>
@@ -12,26 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :投稿者名 %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :date %><br>
+    <%= f.label :投稿した時間 %><br>
     <%= f.date_select :date %>
   </div>
   <div class="field">
-    <%= f.label :com %><br>
+    <%= f.label :コメント %><br>
     <%= f.text_area :com %>
   </div>
   <div class="field">
-    <%= f.label :pokerais_id %><br>
+    <%= f.label :育成論ID %><br>
     <%= f.number_field :pokerais_id %>
   </div>
   <div class="field">
-    <%= f.label :pokebuild_id %><br>
+    <%= f.label :構築論ID %><br>
     <%= f.number_field :pokebuild_id %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :完了 %>
   </div>
 <% end %>

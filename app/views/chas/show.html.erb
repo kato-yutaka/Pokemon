@@ -1,24 +1,24 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Kubun:</strong>
+  <strong>特性区分:</strong>
   <%= @cha.kubun %>
 </p>
 
 <p>
-  <strong>Pokedex:</strong>
+  <strong>図鑑ID:</strong>
   <%= @cha.pokedex_id %>
 </p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>特性名:</strong>
   <%= @cha.name %>
 </p>
 
 <p>
-  <strong>Ex:</strong>
+  <strong>説明:</strong>
   <%= @cha.ex %>
 </p>
 
-<%= link_to 'Edit', edit_cha_path(@cha) %> |
-<%= link_to 'Back', chas_path %>
+<%= link_to '編集', edit_cha_path(@cha) %> |
+<%= link_to 'ホームに戻る', chas_path %>

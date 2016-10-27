@@ -1,14 +1,14 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
-<h1>Listing Chas</h1>
+<h1>特性</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Kubun</th>
-      <th>Pokedex</th>
-      <th>Name</th>
-      <th>Ex</th>
+      <th>特性区分</th>
+      <th>図鑑ID</th>
+      <th>特性名</th>
+      <th>説明</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,9 +20,9 @@
         <td><%= cha.pokedex_id %></td>
         <td><%= cha.name %></td>
         <td><%= cha.ex %></td>
-        <td><%= link_to 'Show', cha %></td>
-        <td><%= link_to 'Edit', edit_cha_path(cha) %></td>
-        <td><%= link_to 'Destroy', cha, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '説明', cha %></td>
+        <td><%= link_to '編集', edit_cha_path(cha) %></td>
+        <td><%= link_to '削除', cha, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Cha', new_cha_path %>
+<%= link_to '新規作成', new_cha_path %>

@@ -1,4 +1,4 @@
-<%= form_for(@cha) do |f| %>
+﻿<%= form_for(@cha) do |f| %>
   <% if @cha.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cha.errors.count, "error") %> prohibited this cha from being saved:</h2>
@@ -12,22 +12,22 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :kubun %><br>
+    <%= f.label :特性区分 %><br>
     <%= f.text_field :kubun %>
   </div>
   <div class="field">
-    <%= f.label :pokedex_id %><br>
+    <%= f.label :図鑑ID %><br>
     <%= f.number_field :pokedex_id %>
   </div>
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :特性名 %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :ex %><br>
+    <%= f.label :説明 %><br>
     <%= f.text_area :ex %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :完了 %>
   </div>
 <% end %>

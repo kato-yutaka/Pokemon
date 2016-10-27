@@ -1,15 +1,15 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
-<h1>Listing Parties</h1>
+<h1>パーティポケモン</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Pokebuild</th>
-      <th>Pokedex</th>
-      <th>Per</th>
-      <th>Cha</th>
-      <th>Wepon</th>
+      <th>構築論ID</th>
+      <th>図鑑No</th>
+      <th>性格</th>
+      <th>特性</th>
+      <th>持ち物</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,9 +22,9 @@
         <td><%= party.per_id %></td>
         <td><%= party.cha_id %></td>
         <td><%= party.wepon_id %></td>
-        <td><%= link_to 'Show', party %></td>
-        <td><%= link_to 'Edit', edit_party_path(party) %></td>
-        <td><%= link_to 'Destroy', party, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '説明', party %></td>
+        <td><%= link_to '編集', edit_party_path(party) %></td>
+        <td><%= link_to '削除', party, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -32,4 +32,4 @@
 
 <br>
 
-<%= link_to 'New Party', new_party_path %>
+<%= link_to '新規作成', new_party_path %>
