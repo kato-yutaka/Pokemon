@@ -11,19 +11,11 @@
 </p>
 
 <p>
-  <strong>技名:</strong>
-  <%= @skill.name %>
+  <strong>技ID:</strong>
+  <%= @skill.skillname_id %>
 </p>
 
-<p>
-  <strong>威力:</strong>
-  <%= @skill.power %>
-</p>
 
-<p>
-  <strong>効果:</strong>
-  <%= @skill.eff %>
-</p>
 
 <%= link_to '編集', edit_skill_path(@skill) %> |
 <%= link_to '戻る', skills_path %>

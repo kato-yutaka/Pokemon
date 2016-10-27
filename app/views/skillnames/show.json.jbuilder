@@ -1,0 +1,1 @@
+json.partial! "skillnames/skillname", skillname: @skillname

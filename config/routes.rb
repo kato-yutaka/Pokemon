@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pokerais
+  resources :skillnames
   resources :pokedexes
   resources :wepons
   resources :pers

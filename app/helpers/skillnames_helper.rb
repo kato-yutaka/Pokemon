@@ -1,0 +1,2 @@
+module SkillnamesHelper
+end

@@ -1,0 +1,50 @@
+﻿<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>技名:</strong>
+  <%= @skillname.name %>
+</p>
+
+<p>
+  <strong>タイプ:</strong>
+  <%= @skillname.type %>
+</p>
+
+<p>
+  <strong>分類:</strong>
+  <%= @skillname.category %>
+</p>
+
+<p>
+  <strong>威力:</strong>
+  <%= @skillname.power %>
+</p>
+
+<p>
+  <strong>命中:</strong>
+  <%= @skillname.hit %>
+</p>
+
+<p>
+  <strong>PP:</strong>
+  <%= @skillname.pp %>
+</p>
+
+<p>
+  <strong>直接:</strong>
+  <%= @skillname.direct %>
+</p>
+
+<p>
+  <strong>対象:</strong>
+  <%= @skillname.target %>
+</p>
+
+
+<p>
+  <strong>効果:</strong>
+  <%= @skillname.eff %>
+</p>
+
+<%= link_to '編集', edit_skillname_path(@skillname) %> |
+<%= link_to 'ホームに戻る', skillnames_path %>

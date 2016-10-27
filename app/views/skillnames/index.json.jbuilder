@@ -1,0 +1,1 @@
+json.array! @skillnames, partial: 'skillnames/skillname', as: :skillname

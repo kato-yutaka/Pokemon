@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  title: MyString
+  pokedex_id: 1
+  per_id: 1
+  cha_id: 1
+  wepon_id: 1
+  raistag_id: 1
+  ex: MyText
+  com_id: 1
+
+two:
+  name: MyString
+  title: MyString
+  pokedex_id: 1
+  per_id: 1
+  cha_id: 1
+  wepon_id: 1
+  raistag_id: 1
+  ex: MyText
+  com_id: 1

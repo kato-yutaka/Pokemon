@@ -69,6 +69,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def skill_params
-      params.require(:skill).permit(:pokerais_id, :party_id, :name, :power, :eff)
+      params.require(:skill).permit(:pokerais_id, :party_id, :skillname_id)
     end
 end

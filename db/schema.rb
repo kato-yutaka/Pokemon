@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020034640) do
+ActiveRecord::Schema.define(version: 20161027020514) do
 
   create_table "buildtags", force: :cascade do |t|
     t.string   "name"
@@ -80,6 +80,20 @@ ActiveRecord::Schema.define(version: 20161020034640) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "pokerais", force: :cascade do |t|
+    t.string   "name"
+    t.string   "title"
+    t.integer  "pokedex_id"
+    t.integer  "per_id"
+    t.integer  "cha_id"
+    t.integer  "wepon_id"
+    t.integer  "raistag_id"
+    t.text     "ex"
+    t.integer  "com_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "raistags", force: :cascade do |t|
     t.string   "name"
     t.integer  "pokerais_id"
@@ -87,14 +101,26 @@ ActiveRecord::Schema.define(version: 20161020034640) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "skillnames", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "power"
+    t.text     "eff"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "type"
+    t.string   "category"
+    t.integer  "hit"
+    t.integer  "pp"
+    t.string   "direct"
+    t.string   "target"
+  end
+
   create_table "skills", force: :cascade do |t|
     t.integer  "pokerais_id"
     t.integer  "party_id"
-    t.string   "name"
-    t.integer  "power"
-    t.string   "eff"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "skillname_id"
   end
 
   create_table "types", force: :cascade do |t|

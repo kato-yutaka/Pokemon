@@ -6,6 +6,6 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 require "csv"
-CSV.foreach('db/per.csv') do |row|
-  Per.create(:name => row[0],:up => row[1],:down => row[2])
+CSV.foreach('db/skillname.csv') do |row|
+  Skillname.create(:name => row[0],:type => row[1],:category => row[2],:power => row[3],:hit => row[4],:pp => row[5],:direct => row[6],:target => row[7],:eff => row[8],)
 end

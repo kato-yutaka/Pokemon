@@ -1,0 +1,49 @@
+﻿<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>投稿者名:</strong>
+  <%= @pokerai.name %>
+</p>
+
+<p>
+  <strong>タイトル:</strong>
+  <%= @pokerai.title %>
+</p>
+
+<p>
+  <strong>図鑑No:</strong>
+  <%= @pokerai.pokedex_id %>
+</p>
+
+<p>
+  <strong>性格:</strong>
+  <%= @pokerai.per_id %>
+</p>
+
+<p>
+  <strong>特性:</strong>
+  <%= @pokerai.cha_id %>
+</p>
+
+<p>
+  <strong>持ち物:</strong>
+  <%= @pokerai.wepon_id %>
+</p>
+
+<p>
+  <strong>タグ:</strong>
+  <%= @pokerai.raistag_id %>
+</p>
+
+<p>
+  <strong>説明:</strong>
+  <%= @pokerai.ex %>
+</p>
+
+<p>
+  <strong>コメント:</strong>
+  <%= @pokerai.com_id %>
+</p>
+
+<%= link_to '編集', edit_pokerai_path(@pokerai) %> |
+<%= link_to 'ホームに戻る', pokerais_path %>
