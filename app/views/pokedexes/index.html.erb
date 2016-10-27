@@ -35,7 +35,11 @@
         <td><%= pokedex.egg_id %></td>
         <td><%= pokedex.type_id %></td>
         <td><%= pokedex.pic %></td>
-        <td><%= pokedex.pic_data %></td>
+
+        <td>
+　　　　   <%= image_tag show_image_pokedex_path(pokedex) %>
+        </td>
+
         <td><%= link_to '詳細', pokedex %></td>
         <td><%= link_to '編集', edit_pokedex_path(pokedex) %></td>
         <td><%= link_to '削除', pokedex, method: :delete, data: { confirm: '削除しますか?' } %></td>

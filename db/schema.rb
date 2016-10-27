@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161017044523) do
+ActiveRecord::Schema.define(version: 20161024033301) do
 
   create_table "buildtags", force: :cascade do |t|
     t.string   "name"
@@ -41,6 +41,13 @@ ActiveRecord::Schema.define(version: 20161017044523) do
 
   create_table "eggs", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string   "filename"
+    t.binary   "file"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -78,6 +85,7 @@ ActiveRecord::Schema.define(version: 20161017044523) do
     t.binary   "pic_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "image"
   end
 
   create_table "raistags", force: :cascade do |t|

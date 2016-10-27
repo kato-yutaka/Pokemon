@@ -26,6 +26,12 @@
   def create
     @pokedex = Pokedex.new(pokedex_params)
 
+    upload_file = pokedex_params[:file]
+    if upload_file != nil 
+      @pokedex.pic = upload_file.original_filename
+      @pokedex.pic_data = upload_file.read
+    end 
+
     respond_to do |format|
       if @pokedex.save
         format.html { redirect_to @pokedex, notice: '作成しました' }
@@ -40,6 +46,11 @@
   # PATCH/PUT /pokedexes/1
   # PATCH/PUT /pokedexes/1.json
   def update
+    upload_file = params["poke"]["pic_data"]
+    if upload_file != nil
+      @pokedex.pic = upload_file
+      @pokedex.pic_data = upload_file.read
+    end 
     respond_to do |format|
       if @pokedex.update(pokedex_params)
         format.html { redirect_to @pokedex, notice: '編集しました' }
@@ -61,6 +72,11 @@
     end
   end
 
+  def show_image
+    @image = Pokedex.find(params[:id])
+    send_data @image.pic_data, :type => 'image/jpeg', :disposition => 'inline'
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pokedex
@@ -69,6 +85,12 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokedex_params
-      params.require(:pokedex).permit(:name, :hp, :atk, :def, :satk, :sdef, :spd, :eco, :egg_id, :type_id, :pic, :pic_data)
+    # params.require(:pokedex).permit(:name, :hp, :atk, :def, :satk, :sdef, :spd, :eco, :egg_id, :type_id)
+      return_params = params.require(:pokedex).permit(:name, :hp, :satk, :sdef, :satk, :sdef, :spd, :eco, :egg_id, :type_id)
+      if return_params[:pic_data] != nil
+         return_params[:pic] = return_params[:pic_data].original_filename
+         return_params[:pic_data] =  return_params[:pic_data].read
+   end
+     return return_params
     end
 end

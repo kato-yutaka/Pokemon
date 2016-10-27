@@ -1,5 +1,6 @@
 ﻿<p id="notice"><%= notice %></p>
 
+
 <p>
   <strong>名前:</strong>
   <%= @pokedex.name %>
@@ -42,22 +43,22 @@
 
 <p>
   <strong>卵グループ:</strong>
-  <%= @pokedex.egg_id %>
+  <%= @pokedex.egg.id %>
 </p>
 
 <p>
   <strong>タイプ:</strong>
-  <%= @pokedex.type_id %>
+  <%= @pokedex.type.id %>
 </p>
 
 <p>
-  <strong>画像</strong>
+  <strong>画像:</strong>
   <%= @pokedex.pic %>
 </p>
 
 <p>
   <strong>画像データ:</strong>
-  <%= @pokedex.pic_data %>
+  <%= image_tag show_image_pokedex_path(@pokedex) %>
 </p>
 
 <%= link_to '編集', edit_pokedex_path(@pokedex) %> |

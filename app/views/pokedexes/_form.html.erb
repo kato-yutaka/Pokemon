@@ -45,20 +45,20 @@
   </div>
   <div class="field">
     <%= f.label :卵グループ %><br>
-    <%= f.number_field :egg_id %>
+    <%= f.collection_select :egg_id,Egg.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :タイプ %><br>
-    <%= f.number_field :type_id %>
+    <%= f.collection_select :type_id,Type.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :画像 %><br>
-    <%= f.text_field :pic %>
+  <%= f.file_field :pic_data, accept: "image/jpeg" %>
   </div>
-  <div class="field">
-    <%= f.label :画像データ %><br>
-    <%= f.text_field :pic_data %>
-  </div>
+
+
+
+
   <div class="actions">
     <%= f.submit "登録" %>
   </div>
