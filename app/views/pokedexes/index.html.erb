@@ -1,6 +1,16 @@
 ﻿<p id="notice"><%= notice %></p>
 
+<%= link_to '新規作成', new_pokedex_path %>
+
 <h1>ポケモン図鑑</h1>
+
+
+
+<%= autocomplete_field_tag :name,
+    '',
+    autocomplete_pokedex_name_pokedexes_path,
+    :class => '',
+    :placeholder => '' %>
 
 <table>
   <thead>
@@ -50,4 +60,4 @@
 
 <br>
 
-<%= link_to '新規作成', new_pokedex_path %>
+

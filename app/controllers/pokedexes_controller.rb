@@ -1,4 +1,5 @@
 ﻿class PokedexesController < ApplicationController
+  autocomplete :pokedex, :name, :full => true
   before_action :set_pokedex, only: [:show, :edit, :update, :destroy]
 
   # GET /pokedexes
@@ -46,11 +47,6 @@
   # PATCH/PUT /pokedexes/1
   # PATCH/PUT /pokedexes/1.json
   def update
-    upload_file = params["poke"]["pic_data"]
-    if upload_file != nil
-      @pokedex.pic = upload_file
-      @pokedex.pic_data = upload_file.read
-    end 
     respond_to do |format|
       if @pokedex.update(pokedex_params)
         format.html { redirect_to @pokedex, notice: '編集しました' }
