@@ -1,0 +1,21 @@
+<%= form_for(@cha1) do |f| %>
+  <% if @cha1.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@cha1.errors.count, "error") %> prohibited this cha1 from being saved:</h2>
+
+      <ul>
+      <% @cha1.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :cha_id %><br>
+    <%= f.collection_select :cha_id,Cha.all,:id,:name %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

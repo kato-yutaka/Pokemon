@@ -13,7 +13,7 @@
 
   <div class="field">
     <%= f.label :投稿者名 %><br>
-    <%= f.text_field :name %>
+    <%= f.collection_select :id,User.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :タイトル %><br>
@@ -21,11 +21,11 @@
   </div>
   <div class="field">
     <%= f.label :図鑑No %><br>
-    <%= f.number_field :pokedex_id %>
+    <%= f.collection_select :pokedex_id,Pokedex.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :性格 %><br>
-    <%= f.number_field :per_id %>
+    <%= f.collection_select :per_id,Per.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :特性 %><br>
@@ -33,7 +33,7 @@
   </div>
   <div class="field">
     <%= f.label :持ち物 %><br>
-    <%= f.number_field :wepon_id %>
+    <%= f.collection_select :wepon_id,Wepon.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :タグ %><br>

@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Cha1s</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cha</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cha1s.each do |cha1| %>
+      <tr>
+        <td><%= cha1.cha_id %></td>
+        <td><%= link_to 'Show', cha1 %></td>
+        <td><%= link_to 'Edit', edit_cha1_path(cha1) %></td>
+        <td><%= link_to 'Destroy', cha1, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cha1', new_cha1_path %>
