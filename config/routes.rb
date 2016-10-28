@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   # resources :pokedexes
     
   resources :pokerais
   resources :skillnames
   #resources :pokedexes
+
+  resources :users
+  resources :cha3s
+  resources :cha2s
+  resources :cha1s
+  # resources :pokedexes
+  resources :pokerais
+  resources :skillnames
+  #resources :pokedexes
+
   resources :wepons
   resources :pers
   resources :types

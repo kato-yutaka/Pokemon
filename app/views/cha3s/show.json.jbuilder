@@ -1,0 +1,1 @@
+json.partial! "cha3s/cha3", cha3: @cha3

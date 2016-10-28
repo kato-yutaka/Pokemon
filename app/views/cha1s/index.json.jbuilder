@@ -1,0 +1,1 @@
+json.array! @cha1s, partial: 'cha1s/cha1', as: :cha1
