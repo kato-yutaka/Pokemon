@@ -4,13 +4,13 @@
 
 <h1>ポケモン図鑑</h1>
 
+<%= page_entries_info @pokedexes %>
 
-
-<%= autocomplete_field_tag :name,
-    '',
-    autocomplete_pokedex_name_pokedexes_path,
-    :class => '',
-    :placeholder => '' %>
+<%= form_tag({:action=>"search"}) do %>
+  <%= autocomplete_field_tag "search[name]",'',autocomplete_pokedex_name_pokedexes_path,:class => '',:placeholder => ''  %>
+  <%= submit_tag "検索" %>
+  <%= link_to "リセット", pokedexes_path %>
+<% end %>
 
 <table>
   <thead>
@@ -66,4 +66,6 @@
 
 <br>
 
+
+<%= will_paginate @pokedexes %>
 

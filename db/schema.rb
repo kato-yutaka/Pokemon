@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
 ActiveRecord::Schema.define(version: 20161028001305) do
-
 
   create_table "buildtags", force: :cascade do |t|
     t.string   "name"
@@ -42,6 +39,8 @@ ActiveRecord::Schema.define(version: 20161028001305) do
   end
 
   create_table "chas", force: :cascade do |t|
+    t.string   "kubun"
+    t.integer  "pokedex_id"
     t.string   "name"
     t.text     "ex"
     t.datetime "created_at", null: false
@@ -124,20 +123,6 @@ ActiveRecord::Schema.define(version: 20161028001305) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pokerais", force: :cascade do |t|
-    t.string   "name"
-    t.string   "title"
-    t.integer  "pokedex_id"
-    t.integer  "per_id"
-    t.integer  "cha_id"
-    t.integer  "wepon_id"
-    t.integer  "raistag_id"
-    t.text     "ex"
-    t.integer  "com_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "raistags", force: :cascade do |t|
     t.string   "name"
     t.integer  "pokerais_id"
@@ -162,12 +147,9 @@ ActiveRecord::Schema.define(version: 20161028001305) do
   create_table "skills", force: :cascade do |t|
     t.integer  "pokerais_id"
     t.integer  "party_id"
-<<<<<<< HEAD
     t.string   "name"
     t.integer  "power"
     t.string   "eff"
-=======
->>>>>>> 5f1c32c47cff8b6a6a480894e01988cf5cb8f0d2
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "skillname_id"

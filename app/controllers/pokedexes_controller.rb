@@ -5,7 +5,7 @@
   # GET /pokedexes
   # GET /pokedexes.json
   def index
-    @pokedexes = Pokedex.all
+    @pokedexes = Pokedex.paginate(page: params[:page])
   end
 
   # GET /pokedexes/1
@@ -68,9 +68,14 @@
     end
   end
 
+  def search 
+   @pokedexes = Pokedex.where(name: params["search"]["name"]).paginate(:page => params[:page]).order('id DESC')
+   render :index
+  end
+
   def show_image
     @image = Pokedex.find(params[:id])
-    send_data @image.pic_data, :type => 'image/jpeg', :disposition => 'inline'
+     send_data @image.pic_data, :type => 'image/jpeg', :disposition => 'inline'
   end
 
   private
@@ -82,7 +87,7 @@
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokedex_params
     # params.require(:pokedex).permit(:name, :hp, :atk, :def, :satk, :sdef, :spd, :eco, :egg_id, :type_id)
-      return_params = params.require(:pokedex).permit(:name, :hp, :satk, :sdef, :satk, :sdef, :spd, :eco, :egg_id, :type_id)
+      return_params = params.require(:pokedex).permit(:name, :hp, :satk, :sdef, :satk, :sdef, :spd, :eco, :egg_id, :type_id , :pic_data)
       if return_params[:pic_data] != nil
          return_params[:pic] = return_params[:pic_data].original_filename
          return_params[:pic_data] =  return_params[:pic_data].read

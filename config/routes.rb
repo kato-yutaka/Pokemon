@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+
   # resources :pokedexes
     
   resources :pokerais
@@ -29,7 +29,9 @@ Rails.application.routes.draw do
   resources :pokedexes do
     get :autocomplete_pokedex_name, :on => :collection
     get 'show_image', on: :member
+    post 'search', on: :collection
   end
+
 
 
 
