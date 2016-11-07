@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161028001305) do
+ActiveRecord::Schema.define(version: 20161107015438) do
 
   create_table "buildtags", force: :cascade do |t|
     t.string   "name"
@@ -39,6 +39,8 @@ ActiveRecord::Schema.define(version: 20161028001305) do
   end
 
   create_table "chas", force: :cascade do |t|
+    t.string   "kubun"
+    t.integer  "pokedex_id"
     t.string   "name"
     t.text     "ex"
     t.datetime "created_at", null: false
@@ -49,7 +51,7 @@ ActiveRecord::Schema.define(version: 20161028001305) do
     t.string   "name"
     t.date     "date"
     t.text     "com"
-    t.integer  "pokerais_id"
+    t.integer  "pokerai_id"
     t.integer  "pokebuild_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -108,7 +110,7 @@ ActiveRecord::Schema.define(version: 20161028001305) do
   end
 
   create_table "pokerais", force: :cascade do |t|
-    t.string   "name"
+    t.integer  "user_id"
     t.string   "title"
     t.integer  "pokedex_id"
     t.integer  "per_id"
@@ -116,7 +118,13 @@ ActiveRecord::Schema.define(version: 20161028001305) do
     t.integer  "wepon_id"
     t.integer  "raistag_id"
     t.text     "ex"
-    t.integer  "com_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "raischecktags", force: :cascade do |t|
+    t.integer  "pokerai_id"
+    t.integer  "raistag_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -143,8 +151,11 @@ ActiveRecord::Schema.define(version: 20161028001305) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.integer  "pokerais_id"
+    t.integer  "pokerai_id"
     t.integer  "party_id"
+    t.string   "name"
+    t.integer  "power"
+    t.string   "eff"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "skillname_id"

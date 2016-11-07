@@ -1,0 +1,2 @@
+module RaischecktagsHelper
+end

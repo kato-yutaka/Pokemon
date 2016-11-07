@@ -6,7 +6,6 @@
   <thead>
     <tr>
       <th>育成論タグ名</th>
-      <th>育成論ID</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,7 +14,6 @@
     <% @raistags.each do |raistag| %>
       <tr>
         <td><%= raistag.name %></td>
-        <td><%= raistag.pokerais_id %></td>
         <td><%= link_to '詳細', raistag %></td>
         <td><%= link_to '編集', edit_raistag_path(raistag) %></td>
         <td><%= link_to '削除', raistag, method: :delete, data: { confirm: '削除しますか?' } %></td>

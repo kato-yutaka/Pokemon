@@ -1,0 +1,27 @@
+<%= form_for(@raischecktag) do |f| %>
+  <% if @raischecktag.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@raischecktag.errors.count, "error") %> prohibited this raischecktag from being saved:</h2>
+
+      <ul>
+      <% @raischecktag.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pokerai_id %><br>
+    <%= f.collection_select :pokerai_id,Pokerai.all,:id,:title %>
+
+  </div>
+  <div class="field">
+    <%= f.label :raistag_id %><br>
+    <%= f.collection_select :raistag_id,Raistag.all,:id,:name %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

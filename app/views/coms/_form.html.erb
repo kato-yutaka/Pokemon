@@ -24,8 +24,8 @@
     <%= f.text_area :com %>
   </div>
   <div class="field">
-    <%= f.label :育成論ID %><br>
-    <%= f.number_field :pokerais_id %>
+    <%= f.label :育成論名 %><br>
+    <%= f.collection_select :pokerai_id,Pokerai.all,:id,:title %>
   </div>
   <div class="field">
     <%= f.label :構築論ID %><br>

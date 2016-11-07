@@ -1,0 +1,1 @@
+json.partial! "raischecktags/raischecktag", raischecktag: @raischecktag

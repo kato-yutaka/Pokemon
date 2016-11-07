@@ -13,14 +13,14 @@
 
   <div class="field">
     <%= f.label :投稿者名 %><br>
-    <%= f.collection_select :id,User.all,:id,:name %>
+    <%= f.collection_select :user_id,User.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :タイトル %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :図鑑No %><br>
+    <%= f.label :ポケモン %><br>
     <%= f.collection_select :pokedex_id,Pokedex.all,:id,:name %>
   </div>
   <div class="field">
@@ -29,23 +29,15 @@
   </div>
   <div class="field">
     <%= f.label :特性 %><br>
-    <%= f.number_field :cha_id %>
+    <%= f.collection_select :cha_id,Cha.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :持ち物 %><br>
     <%= f.collection_select :wepon_id,Wepon.all,:id,:name %>
   </div>
   <div class="field">
-    <%= f.label :タグ %><br>
-    <%= f.number_field :raistag_id %>
-  </div>
-  <div class="field">
     <%= f.label :説明 %><br>
     <%= f.text_area :ex %>
-  </div>
-  <div class="field">
-    <%= f.label :コメント %><br>
-    <%= f.number_field :com_id %>
   </div>
   <div class="actions">
     <%= f.submit :完了%>

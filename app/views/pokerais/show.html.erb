@@ -11,28 +11,23 @@
 </p>
 
 <p>
-  <strong>図鑑No:</strong>
-  <%= @pokerai.pokedex_id %>
+  <strong>ポケモン:</strong>
+  <%= @pokerai.pokedex.name %>
 </p>
 
 <p>
   <strong>性格:</strong>
-  <%= @pokerai.per_id %>
+  <%= @pokerai.per.name %>
 </p>
 
 <p>
   <strong>特性:</strong>
-  <%= @pokerai.cha_id %>
+  <%= @pokerai.cha.name %>
 </p>
 
 <p>
   <strong>持ち物:</strong>
-  <%= @pokerai.wepon_id %>
-</p>
-
-<p>
-  <strong>タグ:</strong>
-  <%= @pokerai.raistag_id %>
+  <%= @pokerai.wepon.name %>
 </p>
 
 <p>
@@ -40,10 +35,27 @@
   <%= @pokerai.ex %>
 </p>
 
-<p>
-  <strong>コメント:</strong>
-  <%= @pokerai.com_id %>
-</p>
+<h2>技</h2>
+<ul>
+<% @pokerai.skillnames.each do |skillname| %>
+<li><%= skillname.name %></li>
+<% end %>
+</ul>
+
+
+<h2>タグ</h2>
+<ul>
+<% @pokerai.raistags.each do |raistag| %>
+<li><%= raistag.name %></li>
+<% end %>
+</ul>
+
+<h2>コメント</h2>
+<ul>
+<% @pokerai.coms.each do |com| %>
+<li><%= com.com %></li>
+<% end %>
+</ul>
 
 <%= link_to '編集', edit_pokerai_path(@pokerai) %> |
 <%= link_to 'ホームに戻る', pokerais_path %>

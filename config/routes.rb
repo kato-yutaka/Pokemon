@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :raischecktags
+  resources :raischecktags
+  resources :raischecktags
+  resources :rais_checktags
   resources :users
   resources :cha3s
   resources :cha2s

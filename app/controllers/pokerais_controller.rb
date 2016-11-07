@@ -69,6 +69,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokerai_params
-      params.require(:pokerai).permit(:name, :title, :pokedex_id, :per_id, :cha_id, :wepon_id, :raistag_id, :ex, :com_id)
+      params.require(:pokerai).permit(:user_id, :title, :pokedex_id, :per_id, :cha_id, :wepon_id, :ex)
     end
 end

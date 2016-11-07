@@ -12,16 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :育成論ID %><br>
-    <%= f.number_field :pokerais_id %>
+    <%= f.label :育成論名 %><br>
+    <%= f.collection_select :pokerai_id,Pokerai.all,:id,:title %>
+
   </div>
   <div class="field">
     <%= f.label :パーティポケモンID %><br>
     <%= f.number_field :party_id %>
   </div>
   <div class="field">
-    <%= f.label :技ID %><br>
-    <%= f.number_field :skillname_id %>
+    <%= f.label :技名 %><br>
+    <%= f.collection_select :skillname_id,Skillname.all,:id,:name %>
   </div>
   <div class="actions">
     <%= f.submit "登録" %>

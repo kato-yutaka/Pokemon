@@ -1,0 +1,1 @@
+json.array! @raischecktags, partial: 'raischecktags/raischecktag', as: :raischecktag
