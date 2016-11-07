@@ -1,6 +1,16 @@
 ﻿<p id="notice"><%= notice %></p>
 
+<%= link_to '新規作成', new_pokedex_path %>
+
 <h1>ポケモン図鑑</h1>
+
+<%= page_entries_info @pokedexes %>
+
+<%= form_tag({:action=>"search"}) do %>
+  <%= autocomplete_field_tag "search[name]",'',autocomplete_pokedex_name_pokedexes_path,:class => '',:placeholder => ''  %>
+  <%= submit_tag "検索" %>
+  <%= link_to "リセット", pokedexes_path %>
+<% end %>
 
 <table>
   <thead>
@@ -56,4 +66,6 @@
 
 <br>
 
-<%= link_to '新規作成', new_pokedex_path %>
+
+<%= will_paginate @pokedexes %>
+

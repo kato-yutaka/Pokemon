@@ -41,7 +41,7 @@
   </div>
   <div class="field">
     <%= f.label :特性１ %><br>
-    <%= f.number_field :cha1 %>
+    <%= f.collection_select :cha1,Cha.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :特性２ %><br>

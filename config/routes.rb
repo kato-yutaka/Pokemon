@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :raischecktags
   resources :raischecktags
   resources :rais_checktags
+  # resources :pokedexes    
+  resources :pokerais
+  resources :skillnames
+  #resources :pokedexes
   resources :users
   resources :cha3s
   resources :cha2s
@@ -10,7 +14,8 @@ Rails.application.routes.draw do
   # resources :pokedexes
   resources :pokerais
   resources :skillnames
-  resources :pokedexes
+  #resources :pokedexes
+
   resources :wepons
   resources :pers
   resources :types
@@ -23,8 +28,15 @@ Rails.application.routes.draw do
   resources :chas
 
   resources :pokedexes do
-    get 'show_image' , on: :member
-end
+    get :autocomplete_pokedex_name, :on => :collection
+    get 'show_image', on: :member
+    post 'search', on: :collection
+  end
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

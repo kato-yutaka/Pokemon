@@ -1,10 +1,11 @@
 ﻿class PokedexesController < ApplicationController
+  autocomplete :pokedex, :name, :full => true
   before_action :set_pokedex, only: [:show, :edit, :update, :destroy]
 
   # GET /pokedexes
   # GET /pokedexes.json
   def index
-    @pokedexes = Pokedex.all
+    @pokedexes = Pokedex.paginate(page: params[:page])
   end
 
   # GET /pokedexes/1
@@ -46,11 +47,6 @@
   # PATCH/PUT /pokedexes/1
   # PATCH/PUT /pokedexes/1.json
   def update
-    upload_file = params["poke"]["pic_data"]
-    if upload_file != nil
-      @pokedex.pic = upload_file
-      @pokedex.pic_data = upload_file.read
-    end 
     respond_to do |format|
       if @pokedex.update(pokedex_params)
         format.html { redirect_to @pokedex, notice: '編集しました' }
@@ -72,9 +68,14 @@
     end
   end
 
+  def search 
+   @pokedexes = Pokedex.where(name: params["search"]["name"]).paginate(:page => params[:page]).order('id DESC')
+   render :index
+  end
+
   def show_image
     @image = Pokedex.find(params[:id])
-    send_data @image.pic_data, :type => 'image/jpeg', :disposition => 'inline'
+     send_data @image.pic_data, :type => 'image/jpeg', :disposition => 'inline'
   end
 
   private
@@ -86,7 +87,7 @@
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokedex_params
     # params.require(:pokedex).permit(:name, :hp, :atk, :def, :satk, :sdef, :spd, :eco, :egg_id, :type_id)
-      return_params = params.require(:pokedex).permit(:name, :hp, :satk, :sdef, :satk, :sdef, :spd, :eco, :egg_id, :type_id)
+      return_params = params.require(:pokedex).permit(:name, :hp, :satk, :sdef, :satk, :sdef, :spd, :eco, :egg_id, :type_id , :pic_data)
       if return_params[:pic_data] != nil
          return_params[:pic] = return_params[:pic_data].original_filename
          return_params[:pic_data] =  return_params[:pic_data].read

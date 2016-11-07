@@ -48,3 +48,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'pokemon_zukan'
 gem 'rails4-autocomplete'
 gem 'carrierwave'
+gem 'jquery-ui-rails'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
