@@ -58,12 +58,12 @@
 
 <p>
   <strong>卵グループ:</strong>
-  <%= @pokedex.egg %>
+  <%= @pokedex.egg.name %>
 </p>
 
 <p>
   <strong>タイプ:</strong>
-  <%= @pokedex.type %>
+  <%= @pokedex.type.name %>
 </p>
 
 <p>
@@ -75,6 +75,9 @@
   <strong>画像データ:</strong>
   <%= image_tag show_image_pokedex_path(@pokedex) %>
 </p>
+
+<%= link_to 'このポケモンの構築論' , buildtags_path %>
+<%= link_to 'このポケモンの育成論' , pokerais_path %>
 
 <%= link_to '編集', edit_pokedex_path(@pokedex) %> |
 <%= link_to '戻る', pokedexes_path %>

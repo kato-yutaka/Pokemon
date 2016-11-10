@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161031054548) do
+ActiveRecord::Schema.define(version: 20161107032541) do
+
 
   create_table "buildtags", force: :cascade do |t|
     t.string   "name"
@@ -51,7 +52,7 @@ ActiveRecord::Schema.define(version: 20161031054548) do
     t.string   "name"
     t.date     "date"
     t.text     "com"
-    t.integer  "pokerai_id"
+    t.integer  "pokerais_id"
     t.integer  "pokebuild_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -97,8 +98,8 @@ ActiveRecord::Schema.define(version: 20161031054548) do
     t.integer  "sdef"
     t.integer  "spd"
     t.text     "eco"
-    t.integer  "egg_id"
-    t.integer  "type_id"
+    t.string   "egg_id"
+    t.string   "type_id"
     t.string   "pic"
     t.binary   "pic_data"
     t.datetime "created_at", null: false
@@ -150,7 +151,7 @@ ActiveRecord::Schema.define(version: 20161031054548) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.integer  "pokerai_id"
+    t.integer  "pokerais_id"
     t.integer  "party_id"
     t.string   "name"
     t.integer  "power"
