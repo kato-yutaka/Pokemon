@@ -45,11 +45,11 @@
   </div>
   <div class="field">
     <%= f.label :特性２ %><br>
-    <%= f.number_field :cha2 %>
+    <%= f.collection_select :cha2,Cha.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :夢特性 %><br>
-    <%= f.number_field :cha3 %>
+    <%= f.collection_select :cha3,Cha.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :生態 %><br>

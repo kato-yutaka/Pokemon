@@ -87,7 +87,7 @@
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokedex_params
     # params.require(:pokedex).permit(:name, :hp, :atk, :def, :satk, :sdef, :spd, :eco, :egg_id, :type_id)
-      return_params = params.require(:pokedex).permit(:name, :hp, :satk, :sdef, :satk, :sdef, :spd, :eco, :egg_id, :type_id , :pic_data)
+      return_params = params.require(:pokedex).permit(:name, :hp, :satk, :sdef, :satk, :sdef, :spd, :cha1, :cha2 , :cha3 , :eco, :egg_id, :type_id , :pic_data)
       if return_params[:pic_data] != nil
          return_params[:pic] = return_params[:pic_data].original_filename
          return_params[:pic_data] =  return_params[:pic_data].read
