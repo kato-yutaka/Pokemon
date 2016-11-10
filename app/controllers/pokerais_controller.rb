@@ -15,6 +15,7 @@
   # GET /pokerais/new
   def new
     @pokerai = Pokerai.new
+		4.times { @pokerai.skills.build }
   end
 
   # GET /pokerais/1/edit
@@ -69,6 +70,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokerai_params
-      params.require(:pokerai).permit(:user_id, :title, :pokedex_id, :per_id, :cha_id, :wepon_id, :ex)
+      params.require(:pokerai).permit(:user_id, :title, :pokedex_id, :per_id, :cha_id, :wepon_id, :ex,skills_attributes: [:id, :pokerai_id, :party_id, :name, :power, :eff, :skillname_id])
     end
 end

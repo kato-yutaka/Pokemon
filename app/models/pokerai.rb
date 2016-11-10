@@ -9,4 +9,5 @@ class Pokerai < ActiveRecord::Base
   has_many :raistags,through: :raischecktags
   has_many :skills
 	has_many :skillnames,through: :skills
+  accepts_nested_attributes_for :skills
 end

@@ -36,6 +36,13 @@
     <%= f.collection_select :wepon_id,Wepon.all,:id,:name %>
   </div>
   <div class="field">
+    <%= f.label :skills, "技" %><br />
+    <%= f.fields_for :skills do |skills_form| %>
+      <%= skills_form.label :skillname_id, "技" %>
+      <%= skills_form.collection_select :skillname_id,Skillname.all,:id,:name %></br>
+  <% end %>
+  </div>
+  <div class="field">
     <%= f.label :説明 %><br>
     <%= f.text_area :ex %>
   </div>
