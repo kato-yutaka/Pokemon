@@ -10,6 +10,7 @@
   # GET /coms/1
   # GET /coms/1.json
   def show
+    @com = Com.new
   end
 
   # GET /coms/new
@@ -28,7 +29,7 @@
 
     respond_to do |format|
       if @com.save
-        format.html { redirect_to @com, notice: '作成しました' }
+        format.html { redirect_to @com.pokerai, notice: '作成しました' }
         format.json { render :show, status: :created, location: @com }
       else
         format.html { render :new }

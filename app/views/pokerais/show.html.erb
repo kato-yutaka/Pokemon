@@ -1,13 +1,19 @@
-﻿<p id="notice"><%= notice %></p>
+﻿<%
+unless @com
+  @com = Com.new
+  @com.pokerai_id = @pokerai.id
+end
+%>
+<div align = "center">
+<p id="notice"><%= notice %></p>
 
+<h1>
+  <strong>タイトル:</strong>
+  <%= @pokerai.title %>
+</h1>
 <p>
   <strong>投稿者名:</strong>
   <%= @pokerai.user.name %>
-</p>
-
-<p>
-  <strong>タイトル:</strong>
-  <%= @pokerai.title %>
 </p>
 
 <p>
@@ -38,7 +44,7 @@
 <h2>技</h2>
 <ul>
 <% @pokerai.skillnames.each do |skillname| %>
-<li><%= skillname.name %></li>
+<li{white-space:nowrap;}>|<%= skillname.name%>|</li>
 <% end %>
 </ul>
 
@@ -46,7 +52,7 @@
 <h2>タグ</h2>
 <ul>
 <% @pokerai.raistags.each do |raistag| %>
-<li><%= raistag.name %></li>
+<li><%= raistag.name%></li>
 <% end %>
 </ul>
 
@@ -57,5 +63,18 @@
 <% end %>
 </ul>
 
+<%= form_for(@com) do |f| %>
+	<div class="field">
+  <%= f.label :com, "新しくコメントをする" %><br />
+  	<%= f.label :com%>
+  	<%= f.text_area :com %>
+    <%= f.hidden_field :pokerai_id %>
+	</div>
+  <div class="actions">
+    <%= f.submit :完了%>
+  </div>
+<% end %>
+
 <%= link_to '編集', edit_pokerai_path(@pokerai) %> |
 <%= link_to 'ホームに戻る', pokerais_path %>
+</div>
