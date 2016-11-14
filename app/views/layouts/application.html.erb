@@ -9,6 +9,10 @@
 </head>
 
 <body>
+<div align="right">
+      <%= "ログインユーザー:#{session[:usrname]}" %>  |
+      <%= link_to "ログアウト", login_index_path %>
+    </div>
 
 
 <Ul>
@@ -26,7 +30,6 @@
  <li><%= link_to "性格",pers_path%></li>
  <li><%= link_to "ユーザー"  ,users_path%></li>
  <li><%= link_to "コメント"  ,coms_path%></li>
-
  <li><%= link_to "タグ付け",raischecktags_path%></li>
  <li><%= link_to "特性1",cha1s_path%></li>
  <li><%= link_to "特性2",cha2s_path%></li>

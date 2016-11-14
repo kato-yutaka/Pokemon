@@ -1,5 +1,8 @@
-class UsersController < ApplicationController
+﻿class UsersController < ApplicationController
+ 
+  skip_before_action :check_logined
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  
 
   # GET /users
   # GET /users.json
@@ -26,9 +29,15 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    upload_file = user_params[:file]
+    if upload_file != nil 
+      @user.pic = upload_file.original_filename
+      @user.pic_data = upload_file.read
+    end 
+
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to @user, notice: '作成しました' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -42,7 +51,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to @user, notice: '更新しました' }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -56,9 +65,14 @@ class UsersController < ApplicationController
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, notice: '削除しました' }
       format.json { head :no_content }
     end
+  end
+
+  def show_image
+    @image = User.find(params[:id])
+     send_data @image.pic_data, :type => 'image/jpeg', :disposition => 'inline'
   end
 
   private
@@ -69,6 +83,12 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name)
+      #params.require(:user).permit(:name)
+      return_params = params.require(:user).permit(:name , :email , :password, :info ,:profile, :ad,  :pic , :pic_data)
+      if return_params[:pic_data] != nil
+         return_params[:pic] = return_params[:pic_data].original_filename
+         return_params[:pic_data] = return_params[:pic_data].read
+      end
+      return return_params
     end
 end

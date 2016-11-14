@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'login/index'
+
+  post 'login/auth'
+
   resources :raischecktags
   resources :raischecktags
   resources :raischecktags
@@ -7,7 +11,7 @@ Rails.application.routes.draw do
   resources :pokerais
   resources :skillnames
   #resources :pokedexes
-  resources :users
+  #resources :users
   resources :cha3s
   resources :cha2s
   resources :cha1s
@@ -33,7 +37,9 @@ Rails.application.routes.draw do
     post 'search', on: :collection
   end
 
-
+  resources :users do
+    get 'show_image', on: :member
+  end
 
 
 

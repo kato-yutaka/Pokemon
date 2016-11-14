@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
-ActiveRecord::Schema.define(version: 20161107032541) do
-
+ActiveRecord::Schema.define(version: 20161110025620) do
 
   create_table "buildtags", force: :cascade do |t|
     t.string   "name"
@@ -174,6 +171,14 @@ ActiveRecord::Schema.define(version: 20161107032541) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "email"
+    t.string   "image"
+    t.string   "password"
+    t.binary   "pic_data"
+    t.string   "pic"
+    t.string   "info"
+    t.text     "profile"
+    t.boolean  "ad"
   end
 
   create_table "wepons", force: :cascade do |t|
