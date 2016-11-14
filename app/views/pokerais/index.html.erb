@@ -1,7 +1,18 @@
-﻿<p id="notice"><%= notice %></p>
+﻿<div align = "center">
+<p id="notice"><%= notice %></p>
 
+<%
+unless @user
+  @user = User.new
+end
+%>
 
 <h1>育成論</h1>
+<%= form_tag(:action=>"search") do %>
+ <%= text_field_tag "search[title]" %>
+ <%= submit_tag "検索" %>
+ <%= link_to "リセット", pokerais_path %>
+<% end %>
 
 <table>
   <thead>
@@ -9,10 +20,6 @@
       <th>投稿者名</th>
       <th>タイトル</th>
       <th>ポケモン</th>
-      <th>性格</th>
-      <th>特性</th>
-      <th>持ち物</th>
-      <th>説明</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -20,13 +27,9 @@
   <tbody>
     <% @pokerais.each do |pokerai| %>
       <tr>
-        <td><%= pokerai.user.name %></td>
-        <td><%= pokerai.title %></td>
+				<td><%=link_to pokerai.user.name,user_path(pokerai.user_id)%></td>
+        <td><%= link_to pokerai.title , pokerai %></td>
         <td><%= pokerai.pokedex.name %></td>
-        <td><%= pokerai.per.name %></td>
-        <td><%= pokerai.cha.name %></td>
-        <td><%= pokerai.wepon.name %></td>
-        <td><%= pokerai.ex %></td>
         <td><%= link_to '説明', pokerai %></td>
         <td><%= link_to '編集', edit_pokerai_path(pokerai) %></td>
         <td><%= link_to '削除', pokerai, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>

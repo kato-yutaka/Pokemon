@@ -1,16 +1,19 @@
-﻿<%
+﻿<div align = "center">
+
+<p id="notice"><%= notice %></p>
+
+<%
 unless @com
-  @com = Com.new
-  @com.pokerai_id = @pokerai.id
+ @com = Com.new
+ @com.pokerai_id = @pokerai.id
 end
 %>
-<div align = "center">
-<p id="notice"><%= notice %></p>
 
 <h1>
   <strong>タイトル:</strong>
   <%= @pokerai.title %>
 </h1>
+
 <p>
   <strong>投稿者名:</strong>
   <%= @pokerai.user.name %>
@@ -19,6 +22,26 @@ end
 <p>
   <strong>ポケモン:</strong>
   <%= @pokerai.pokedex.name %>
+</p>
+
+<p>
+  <strong>HP:</strong>
+  <%= @pokerai.hp %>
+
+  <strong>攻撃:</strong>
+  <%= @pokerai.atk %>
+
+  <strong>防御:</strong>
+  <%= @pokerai.def %>
+
+  <strong>特功:</strong>
+  <%= @pokerai.satk %>
+
+  <strong>特防:</strong>
+  <%= @pokerai.sdef %>
+
+  <strong>素早さ:</strong>
+  <%= @pokerai.spd %>
 </p>
 
 <p>

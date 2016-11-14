@@ -1,9 +1,17 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
+
+<h2>投稿している育成論</h2>
+<ul>
+<% @user.pokerais.each do |pokerai| %>
+<li><%=link_to pokerai.title,pokerai%></li>
+<% end %>
+</ul>
+
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

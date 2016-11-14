@@ -9,7 +9,9 @@
 </head>
 
 <body>
-
+<div align = "center">
+<h1>ポケモン育成論</h1>
+</div>
 <div class = "left">
 <Ul>
  <li><%= link_to "ポケモン図鑑",pokedexes_path%></li>
@@ -28,17 +30,13 @@
  <li><%= link_to "性格",pers_path%></li>
  <li><%= link_to "特性"    ,chas_path%></li>
  <li><%= link_to "ユーザー"  ,users_path%></li>
- <li><%= link_to "コメント"  ,coms_path%></li>
  <li><%= link_to "タグ付け",raischecktags_path%></li>
- <li><%= link_to "特性1",cha1s_path%></li>
- <li><%= link_to "特性2",cha2s_path%></li>
- <li><%= link_to "特性3",cha3s_path%></li>
 
 
 </Ul>
 </div>
-
+<div align = "center">
 <%= yield %>
-
+</div>
 </body>
 </html>

@@ -1,0 +1,188 @@
+                             Prefix Verb   URI Pattern                                    Controller#Action
+                      raischecktags GET    /raischecktags(.:format)                       raischecktags#index
+                                    POST   /raischecktags(.:format)                       raischecktags#create
+                   new_raischecktag GET    /raischecktags/new(.:format)                   raischecktags#new
+                  edit_raischecktag GET    /raischecktags/:id/edit(.:format)              raischecktags#edit
+                       raischecktag GET    /raischecktags/:id(.:format)                   raischecktags#show
+                                    PATCH  /raischecktags/:id(.:format)                   raischecktags#update
+                                    PUT    /raischecktags/:id(.:format)                   raischecktags#update
+                                    DELETE /raischecktags/:id(.:format)                   raischecktags#destroy
+                                    GET    /raischecktags(.:format)                       raischecktags#index
+                                    POST   /raischecktags(.:format)                       raischecktags#create
+                                    GET    /raischecktags/new(.:format)                   raischecktags#new
+                                    GET    /raischecktags/:id/edit(.:format)              raischecktags#edit
+                                    GET    /raischecktags/:id(.:format)                   raischecktags#show
+                                    PATCH  /raischecktags/:id(.:format)                   raischecktags#update
+                                    PUT    /raischecktags/:id(.:format)                   raischecktags#update
+                                    DELETE /raischecktags/:id(.:format)                   raischecktags#destroy
+                                    GET    /raischecktags(.:format)                       raischecktags#index
+                                    POST   /raischecktags(.:format)                       raischecktags#create
+                                    GET    /raischecktags/new(.:format)                   raischecktags#new
+                                    GET    /raischecktags/:id/edit(.:format)              raischecktags#edit
+                                    GET    /raischecktags/:id(.:format)                   raischecktags#show
+                                    PATCH  /raischecktags/:id(.:format)                   raischecktags#update
+                                    PUT    /raischecktags/:id(.:format)                   raischecktags#update
+                                    DELETE /raischecktags/:id(.:format)                   raischecktags#destroy
+                     rais_checktags GET    /rais_checktags(.:format)                      rais_checktags#index
+                                    POST   /rais_checktags(.:format)                      rais_checktags#create
+                  new_rais_checktag GET    /rais_checktags/new(.:format)                  rais_checktags#new
+                 edit_rais_checktag GET    /rais_checktags/:id/edit(.:format)             rais_checktags#edit
+                      rais_checktag GET    /rais_checktags/:id(.:format)                  rais_checktags#show
+                                    PATCH  /rais_checktags/:id(.:format)                  rais_checktags#update
+                                    PUT    /rais_checktags/:id(.:format)                  rais_checktags#update
+                                    DELETE /rais_checktags/:id(.:format)                  rais_checktags#destroy
+                           pokerais GET    /pokerais(.:format)                            pokerais#index
+                                    POST   /pokerais(.:format)                            pokerais#create
+                        new_pokerai GET    /pokerais/new(.:format)                        pokerais#new
+                       edit_pokerai GET    /pokerais/:id/edit(.:format)                   pokerais#edit
+                            pokerai GET    /pokerais/:id(.:format)                        pokerais#show
+                                    PATCH  /pokerais/:id(.:format)                        pokerais#update
+                                    PUT    /pokerais/:id(.:format)                        pokerais#update
+                                    DELETE /pokerais/:id(.:format)                        pokerais#destroy
+                         skillnames GET    /skillnames(.:format)                          skillnames#index
+                                    POST   /skillnames(.:format)                          skillnames#create
+                      new_skillname GET    /skillnames/new(.:format)                      skillnames#new
+                     edit_skillname GET    /skillnames/:id/edit(.:format)                 skillnames#edit
+                          skillname GET    /skillnames/:id(.:format)                      skillnames#show
+                                    PATCH  /skillnames/:id(.:format)                      skillnames#update
+                                    PUT    /skillnames/:id(.:format)                      skillnames#update
+                                    DELETE /skillnames/:id(.:format)                      skillnames#destroy
+                              users GET    /users(.:format)                               users#index
+                                    POST   /users(.:format)                               users#create
+                           new_user GET    /users/new(.:format)                           users#new
+                          edit_user GET    /users/:id/edit(.:format)                      users#edit
+                               user GET    /users/:id(.:format)                           users#show
+                                    PATCH  /users/:id(.:format)                           users#update
+                                    PUT    /users/:id(.:format)                           users#update
+                                    DELETE /users/:id(.:format)                           users#destroy
+                              cha3s GET    /cha3s(.:format)                               cha3s#index
+                                    POST   /cha3s(.:format)                               cha3s#create
+                           new_cha3 GET    /cha3s/new(.:format)                           cha3s#new
+                          edit_cha3 GET    /cha3s/:id/edit(.:format)                      cha3s#edit
+                               cha3 GET    /cha3s/:id(.:format)                           cha3s#show
+                                    PATCH  /cha3s/:id(.:format)                           cha3s#update
+                                    PUT    /cha3s/:id(.:format)                           cha3s#update
+                                    DELETE /cha3s/:id(.:format)                           cha3s#destroy
+                              cha2s GET    /cha2s(.:format)                               cha2s#index
+                                    POST   /cha2s(.:format)                               cha2s#create
+                           new_cha2 GET    /cha2s/new(.:format)                           cha2s#new
+                          edit_cha2 GET    /cha2s/:id/edit(.:format)                      cha2s#edit
+                               cha2 GET    /cha2s/:id(.:format)                           cha2s#show
+                                    PATCH  /cha2s/:id(.:format)                           cha2s#update
+                                    PUT    /cha2s/:id(.:format)                           cha2s#update
+                                    DELETE /cha2s/:id(.:format)                           cha2s#destroy
+                              cha1s GET    /cha1s(.:format)                               cha1s#index
+                                    POST   /cha1s(.:format)                               cha1s#create
+                           new_cha1 GET    /cha1s/new(.:format)                           cha1s#new
+                          edit_cha1 GET    /cha1s/:id/edit(.:format)                      cha1s#edit
+                               cha1 GET    /cha1s/:id(.:format)                           cha1s#show
+                                    PATCH  /cha1s/:id(.:format)                           cha1s#update
+                                    PUT    /cha1s/:id(.:format)                           cha1s#update
+                                    DELETE /cha1s/:id(.:format)                           cha1s#destroy
+                                    GET    /pokerais(.:format)                            pokerais#index
+                                    POST   /pokerais(.:format)                            pokerais#create
+                                    GET    /pokerais/new(.:format)                        pokerais#new
+                                    GET    /pokerais/:id/edit(.:format)                   pokerais#edit
+                                    GET    /pokerais/:id(.:format)                        pokerais#show
+                                    PATCH  /pokerais/:id(.:format)                        pokerais#update
+                                    PUT    /pokerais/:id(.:format)                        pokerais#update
+                                    DELETE /pokerais/:id(.:format)                        pokerais#destroy
+                                    GET    /skillnames(.:format)                          skillnames#index
+                                    POST   /skillnames(.:format)                          skillnames#create
+                                    GET    /skillnames/new(.:format)                      skillnames#new
+                                    GET    /skillnames/:id/edit(.:format)                 skillnames#edit
+                                    GET    /skillnames/:id(.:format)                      skillnames#show
+                                    PATCH  /skillnames/:id(.:format)                      skillnames#update
+                                    PUT    /skillnames/:id(.:format)                      skillnames#update
+                                    DELETE /skillnames/:id(.:format)                      skillnames#destroy
+                             wepons GET    /wepons(.:format)                              wepons#index
+                                    POST   /wepons(.:format)                              wepons#create
+                          new_wepon GET    /wepons/new(.:format)                          wepons#new
+                         edit_wepon GET    /wepons/:id/edit(.:format)                     wepons#edit
+                              wepon GET    /wepons/:id(.:format)                          wepons#show
+                                    PATCH  /wepons/:id(.:format)                          wepons#update
+                                    PUT    /wepons/:id(.:format)                          wepons#update
+                                    DELETE /wepons/:id(.:format)                          wepons#destroy
+                               pers GET    /pers(.:format)                                pers#index
+                                    POST   /pers(.:format)                                pers#create
+                            new_per GET    /pers/new(.:format)                            pers#new
+                           edit_per GET    /pers/:id/edit(.:format)                       pers#edit
+                                per GET    /pers/:id(.:format)                            pers#show
+                                    PATCH  /pers/:id(.:format)                            pers#update
+                                    PUT    /pers/:id(.:format)                            pers#update
+                                    DELETE /pers/:id(.:format)                            pers#destroy
+                              types GET    /types(.:format)                               types#index
+                                    POST   /types(.:format)                               types#create
+                           new_type GET    /types/new(.:format)                           types#new
+                          edit_type GET    /types/:id/edit(.:format)                      types#edit
+                               type GET    /types/:id(.:format)                           types#show
+                                    PATCH  /types/:id(.:format)                           types#update
+                                    PUT    /types/:id(.:format)                           types#update
+                                    DELETE /types/:id(.:format)                           types#destroy
+                               eggs GET    /eggs(.:format)                                eggs#index
+                                    POST   /eggs(.:format)                                eggs#create
+                            new_egg GET    /eggs/new(.:format)                            eggs#new
+                           edit_egg GET    /eggs/:id/edit(.:format)                       eggs#edit
+                                egg GET    /eggs/:id(.:format)                            eggs#show
+                                    PATCH  /eggs/:id(.:format)                            eggs#update
+                                    PUT    /eggs/:id(.:format)                            eggs#update
+                                    DELETE /eggs/:id(.:format)                            eggs#destroy
+                               coms GET    /coms(.:format)                                coms#index
+                                    POST   /coms(.:format)                                coms#create
+                            new_com GET    /coms/new(.:format)                            coms#new
+                           edit_com GET    /coms/:id/edit(.:format)                       coms#edit
+                                com GET    /coms/:id(.:format)                            coms#show
+                                    PATCH  /coms/:id(.:format)                            coms#update
+                                    PUT    /coms/:id(.:format)                            coms#update
+                                    DELETE /coms/:id(.:format)                            coms#destroy
+                          buildtags GET    /buildtags(.:format)                           buildtags#index
+                                    POST   /buildtags(.:format)                           buildtags#create
+                       new_buildtag GET    /buildtags/new(.:format)                       buildtags#new
+                      edit_buildtag GET    /buildtags/:id/edit(.:format)                  buildtags#edit
+                           buildtag GET    /buildtags/:id(.:format)                       buildtags#show
+                                    PATCH  /buildtags/:id(.:format)                       buildtags#update
+                                    PUT    /buildtags/:id(.:format)                       buildtags#update
+                                    DELETE /buildtags/:id(.:format)                       buildtags#destroy
+                             skills GET    /skills(.:format)                              skills#index
+                                    POST   /skills(.:format)                              skills#create
+                          new_skill GET    /skills/new(.:format)                          skills#new
+                         edit_skill GET    /skills/:id/edit(.:format)                     skills#edit
+                              skill GET    /skills/:id(.:format)                          skills#show
+                                    PATCH  /skills/:id(.:format)                          skills#update
+                                    PUT    /skills/:id(.:format)                          skills#update
+                                    DELETE /skills/:id(.:format)                          skills#destroy
+                            parties GET    /parties(.:format)                             parties#index
+                                    POST   /parties(.:format)                             parties#create
+                          new_party GET    /parties/new(.:format)                         parties#new
+                         edit_party GET    /parties/:id/edit(.:format)                    parties#edit
+                              party GET    /parties/:id(.:format)                         parties#show
+                                    PATCH  /parties/:id(.:format)                         parties#update
+                                    PUT    /parties/:id(.:format)                         parties#update
+                                    DELETE /parties/:id(.:format)                         parties#destroy
+                           raistags GET    /raistags(.:format)                            raistags#index
+                                    POST   /raistags(.:format)                            raistags#create
+                        new_raistag GET    /raistags/new(.:format)                        raistags#new
+                       edit_raistag GET    /raistags/:id/edit(.:format)                   raistags#edit
+                            raistag GET    /raistags/:id(.:format)                        raistags#show
+                                    PATCH  /raistags/:id(.:format)                        raistags#update
+                                    PUT    /raistags/:id(.:format)                        raistags#update
+                                    DELETE /raistags/:id(.:format)                        raistags#destroy
+                               chas GET    /chas(.:format)                                chas#index
+                                    POST   /chas(.:format)                                chas#create
+                            new_cha GET    /chas/new(.:format)                            chas#new
+                           edit_cha GET    /chas/:id/edit(.:format)                       chas#edit
+                                cha GET    /chas/:id(.:format)                            chas#show
+                                    PATCH  /chas/:id(.:format)                            chas#update
+                                    PUT    /chas/:id(.:format)                            chas#update
+                                    DELETE /chas/:id(.:format)                            chas#destroy
+autocomplete_pokedex_name_pokedexes GET    /pokedexes/autocomplete_pokedex_name(.:format) pokedexes#autocomplete_pokedex_name
+                 show_image_pokedex GET    /pokedexes/:id/show_image(.:format)            pokedexes#show_image
+                   search_pokedexes POST   /pokedexes/search(.:format)                    pokedexes#search
+                          pokedexes GET    /pokedexes(.:format)                           pokedexes#index
+                                    POST   /pokedexes(.:format)                           pokedexes#create
+                        new_pokedex GET    /pokedexes/new(.:format)                       pokedexes#new
+                       edit_pokedex GET    /pokedexes/:id/edit(.:format)                  pokedexes#edit
+                            pokedex GET    /pokedexes/:id(.:format)                       pokedexes#show
+                                    PATCH  /pokedexes/:id(.:format)                       pokedexes#update
+                                    PUT    /pokedexes/:id(.:format)                       pokedexes#update
+                                    DELETE /pokedexes/:id(.:format)                       pokedexes#destroy
