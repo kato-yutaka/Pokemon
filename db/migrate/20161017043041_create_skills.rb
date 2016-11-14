@@ -1,7 +1,7 @@
 class CreateSkills < ActiveRecord::Migration
   def change
     create_table :skills do |t|
-      t.integer :pokerais_id
+      t.integer :pokerai_id
       t.integer :party_id
       t.string :name
       t.integer :power

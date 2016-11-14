@@ -1,12 +1,12 @@
 ﻿<p id="notice"><%= notice %></p>
 
-<h1>ユーザー一覧</h1>
-
+<h1>投稿者たち</h1>
 
 
 <table>
   <thead>
     <tr>
+
       <th>名前</th>
       <th>メールアドレス</th>
       <th>パスワード</th>
@@ -16,6 +16,7 @@
       <th>アイコン</th>
       <th>アイコン画像</th>
 
+      <th>投稿者名</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -23,6 +24,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+
         <td><%= user.name %></td>
          <td><%= user.email %></td>
         <td><%= user.password %></td>
@@ -38,6 +40,7 @@
         <td><%= link_to '詳細', user %></td>
         <td><%= link_to '更新', edit_user_path(user) %></td>
         <td><%= link_to '削除', user, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -45,4 +48,4 @@
 
 <br>
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to '新規作成', new_user_path %>

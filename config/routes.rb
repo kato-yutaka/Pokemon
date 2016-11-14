@@ -6,9 +6,8 @@ Rails.application.routes.draw do
   resources :raischecktags
   resources :raischecktags
   resources :raischecktags
-  resources :rais_checktags
   # resources :pokedexes    
-  resources :pokerais
+  #resources :pokerais
   resources :skillnames
   #resources :pokedexes
   #resources :users
@@ -16,7 +15,7 @@ Rails.application.routes.draw do
   resources :cha2s
   resources :cha1s
   # resources :pokedexes
-  resources :pokerais
+  #resources :pokerais
   resources :skillnames
   #resources :pokedexes
 
@@ -37,9 +36,17 @@ Rails.application.routes.draw do
     post 'search', on: :collection
   end
 
+
   resources :users do
     get 'show_image', on: :member
   end
+
+  resources :pokerais do
+    #get :autocomplete_pokerai_title, :on => :collection
+    post 'search', on: :collection
+  end
+
+
 
 
 

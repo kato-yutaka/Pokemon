@@ -10,4 +10,5 @@ class Pokerai < ActiveRecord::Base
   has_many :skills
 	has_many :skillnames,through: :skills
   accepts_nested_attributes_for :skills
+  accepts_nested_attributes_for :coms
 end

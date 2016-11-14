@@ -4,7 +4,7 @@ class CreateComs < ActiveRecord::Migration
       t.string :name
       t.date :date
       t.text :com
-      t.integer :pokerais_id
+      t.integer :pokerai_id
       t.integer :pokebuild_id
 
       t.timestamps null: false

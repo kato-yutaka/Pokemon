@@ -43,5 +43,5 @@ a = a + 1
 #Pokedex.create(name: "kato" ,  hp: 0 , atk: 0 ,  def: 0 , satk: 0, sdef: 0 , spd: 0, pic_data: File.read(p) )
 
 
-Pokedex.create(name: pokedex.name ,  hp: pokedex.tribeValue[0] , atk: pokedex.tribeValue[1] ,  def: pokedex.tribeValue[2] , satk: pokedex.tribeValue[3], sdef: pokedex.tribeValue[4] , spd: pokedex.tribeValue[5])
+#Pokedex.create(name: pokedex.name ,  hp: pokedex.tribeValue[0] , atk: pokedex.tribeValue[1] ,  def: pokedex.tribeValue[2] , satk: pokedex.tribeValue[3], sdef: pokedex.tribeValue[4] , spd: pokedex.tribeValue[5])
 end

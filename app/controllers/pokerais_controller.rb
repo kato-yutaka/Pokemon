@@ -7,6 +7,7 @@
     @pokerais = Pokerai.all
   end
 
+
   # GET /pokerais/1
   # GET /pokerais/1.json
   def show
@@ -16,6 +17,8 @@
   def new
     @pokerai = Pokerai.new
 		4.times { @pokerai.skills.build }
+		@pokerai.coms.build
+
   end
 
   # GET /pokerais/1/edit
@@ -62,6 +65,11 @@
     end
   end
 
+	def search
+		@pokerais = Pokerai.where(title: params["search"]["title"])
+		render :index
+	end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_pokerai
@@ -70,6 +78,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokerai_params
-      params.require(:pokerai).permit(:user_id, :title, :pokedex_id, :per_id, :cha_id, :wepon_id, :ex,skills_attributes: [:id, :pokerai_id, :party_id, :name, :power, :eff, :skillname_id])
+      params.require(:pokerai).permit(:user_id, :title, :pokedex_id, :hp, :atk, :def, :satk, :sdef, :spd, :per_id, :cha_id, :wepon_id, :ex,skills_attributes: [:id, :pokerai_id, :party_id, :name, :power, :eff, :skillname_id],coms_attributes: [:name, :date, :com, :pokerai_id, :pokebuild_id])
     end
 end

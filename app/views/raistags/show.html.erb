@@ -4,6 +4,12 @@
   <strong>育成論タグ名:</strong>
   <%= @raistag.name %>
 </p>
+<h2>育成論</h2>
+<ul>
+<% @raistag.pokerais.each do |pokerai| %>
+<li><%=link_to pokerai.title,pokerais_path%></li>
+<% end %>
+</ul>
 
 <%= link_to '編集', edit_raistag_path(@raistag) %> |
 <%= link_to '戻る', raistags_path %>

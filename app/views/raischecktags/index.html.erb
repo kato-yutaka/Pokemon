@@ -14,8 +14,8 @@
   <tbody>
     <% @raischecktags.each do |raischecktag| %>
       <tr>
-        <td><div style="border-style: solid ; border-width: 1px;"><%= raischecktag.pokerai.title %></div></td>
-        <td><div style="border-style: solid ; border-width: 1px;"><%= raischecktag.raistag.name%></div></td>
+        <td><%= raischecktag.pokerai.title %></td>
+        <td><%= raischecktag.raistag.name%></div></td>
         <td><%= link_to 'Show', raischecktag %></td>
         <td><%= link_to 'Edit', edit_raischecktag_path(raischecktag) %></td>
         <td><%= link_to 'Destroy', raischecktag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
