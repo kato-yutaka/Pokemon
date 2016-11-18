@@ -10,14 +10,15 @@
 
 <body>
 
-<div align="right">
-      <%= "ログインユーザー:#{session[:usrname]}" %>  |
-      <%= link_to "ログアウト", login_index_path %>
-    </div>
 
+<div align="left">
+      <%= "ログインユーザー:#{session[:usrname]}" %>  |
+      <%= link_to "利用者情報",  userinfos_path %>   |
+      <%= link_to "ログアウト",controller: :login, action: :index %>   
+</div>
 
 <div align = "center">
-<h1>ポケモン育成論</h1>
+<h1></h1>
 </div>
 <div class = "left">
 

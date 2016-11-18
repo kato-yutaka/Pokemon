@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
+  resources :userinfos
   get 'login/index'
-
+  
   post 'login/auth'
 
   resources :raischecktags

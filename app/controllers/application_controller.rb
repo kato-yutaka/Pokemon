@@ -4,9 +4,10 @@
   protect_from_forgery with: :exception
   before_action :check_logined
   private
+
   def check_logined
     #セッション情報:user(id値)が存在するか
-    if session[:usr] then
+   if  session[:usr] 
       #存在する場合はusersテーブルを検索し、ユーザー情報を取得
       #begin-rescueで例外処理
       begin
@@ -22,5 +23,14 @@
     end
    end
 
+def log_out
+    session.delete(:user.id)
+    @session[:usr] = nil
+    @session[:usrname] = nil
+    @session[:usremail] = nil
+    @session[:usrinfo] =nil
+    @session[:usrprofile] = nil
+    @session[:usrpicdata] = nil 
+  end
 
 end

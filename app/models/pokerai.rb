@@ -4,6 +4,7 @@ class Pokerai < ActiveRecord::Base
 	belongs_to :wepon
 	belongs_to :per
 	belongs_to :cha
+        belongs_to :userinfo
 	has_many :coms
 	has_many :raischecktags
   has_many :raistags,through: :raischecktags

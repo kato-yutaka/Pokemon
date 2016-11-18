@@ -15,8 +15,7 @@
       <th>管理者</th>
       <th>アイコン</th>
       <th>アイコン画像</th>
-
-      <th>投稿者名</th>
+      
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -32,10 +31,7 @@
         <td><%= user.profile %></td>
        <td><%= user.ad %></td>
         <td><%= user.pic %></td>
-   
-        <td>
-           <%= image_tag show_image_user_path(user) %>
-        </td>
+        <td><%= image_tag show_image_user_path(user) %></td>
 
         <td><%= link_to '詳細', user %></td>
         <td><%= link_to '更新', edit_user_path(user) %></td>

@@ -12,6 +12,10 @@
   reset_session
   session[:usr] = usr.id
   session[:usrname] = usr.name
+  session[:usremail] = usr.email
+  session[:usrinfo] =usr.info
+  session[:usrprofile] = usr.profile
+  session[:usrpicdata] = usr.pic
   redirect_to("http://localhost:3000/pokedexes")
  else
   flash.now[:referer] = params[:referer]

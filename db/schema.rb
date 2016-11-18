@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161110032026) do
+ActiveRecord::Schema.define(version: 20161114030416) do
 
   create_table "buildtags", force: :cascade do |t|
     t.string   "name"
@@ -169,6 +169,11 @@ ActiveRecord::Schema.define(version: 20161110032026) do
 
   create_table "types", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "userinfos", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
