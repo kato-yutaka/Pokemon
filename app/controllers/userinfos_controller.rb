@@ -1,6 +1,6 @@
 class UserinfosController < ApplicationController
   before_action :set_userinfo, only: [:show, :edit, :update, :destroy]
-
+skip_before_action :check_logined
   # GET /userinfos
   # GET /userinfos.json
   def index

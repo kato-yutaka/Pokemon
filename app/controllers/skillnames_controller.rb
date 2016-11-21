@@ -1,4 +1,5 @@
 ﻿class SkillnamesController < ApplicationController
+  skip_before_action :check_logined
   before_action :set_skillname, only: [:show, :edit, :update, :destroy]
   # GET /skillnames
   # GET /skillnames.json

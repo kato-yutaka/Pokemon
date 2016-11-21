@@ -31,5 +31,8 @@
 </table>
 
 <br>
+<% if "#{session[:usrname]}" == "" %>
 
+<% else %>
 <%= link_to '新規作成', new_party_path %>
+<% end %>

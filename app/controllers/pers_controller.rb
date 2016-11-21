@@ -1,4 +1,5 @@
 ﻿class PersController < ApplicationController
+  skip_before_action :check_logined
   before_action :set_per, only: [:show, :edit, :update, :destroy]
 
   # GET /pers

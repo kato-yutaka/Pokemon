@@ -24,7 +24,8 @@
   
    <div class="field">
     <%= f.label :パスワード %><br>
-    <%= f.text_field :password %>
+    <%= password_field :user,:password %>
+    <%= password_field :user,:password_confirmation %>
   </div>
   
     <div class="field">

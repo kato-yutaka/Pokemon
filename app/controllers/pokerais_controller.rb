@@ -1,4 +1,5 @@
 ﻿class PokeraisController < ApplicationController
+  skip_before_action :check_logined
   before_action :set_pokerai, only: [:show, :edit, :update, :destroy]
 
   # GET /pokerais

@@ -31,9 +31,11 @@
         <td><%= skillname.target %></td>
         <td><%= skillname.eff %></td>
         <td><%= link_to '説明', skillname %></td>
+     <% if "#{session[:usrad]}" ==  "true" %>
         <td><%= link_to '編集', edit_skillname_path(skillname) %></td>
         <td><%= link_to '削除', skillname, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>

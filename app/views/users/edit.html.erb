@@ -28,7 +28,8 @@
   
    <div class="field">
     <%= f.label :パスワード %><br>
-    <%= f.text_field :password %>
+    <%= password_field :user,:password %>
+    <%= password_field :user,:password_confirmation %>
   </div>
   
     <div class="field">
@@ -46,11 +47,15 @@
     <%= f.text_area :profile %>
   </div>
  
+
+<% if @user.ad == true then %>
   <div class="field">
     <%= f.label :管理者 %><br>
     <%= f.check_box :ad %>
   </div>
-  
+<% end %>
+ 
+
   <div class="actions">
     <%= f.submit %>
   </div>
@@ -60,3 +65,4 @@
 <%= link_to '詳細', @user %> |
 
 <%= link_to '戻る', users_path %>
+

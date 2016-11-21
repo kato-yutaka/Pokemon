@@ -25,5 +25,9 @@
 </table>
 
 <br>
+<% if "#{session[:usrname]}" == "" %>
+
+<% else %>
 
 <%= link_to 'New Raischecktag', new_raischecktag_path %>
+<% end %>

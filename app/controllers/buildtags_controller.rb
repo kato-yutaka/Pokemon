@@ -1,4 +1,5 @@
 ﻿class BuildtagsController < ApplicationController
+  skip_before_action :check_logined
   before_action :set_buildtag, only: [:show, :edit, :update, :destroy]
 
   # GET /buildtags

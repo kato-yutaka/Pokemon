@@ -1,4 +1,6 @@
-﻿<p id="notice"><%= notice %></p>
+﻿
+
+<p id="notice"><%= notice %></p>
 
 <h1>特性</h1>
 
@@ -17,9 +19,11 @@
         <td><%= cha.name %></td>
         <td><%= cha.ex %></td>
         <td><%= link_to '説明', cha %></td>
+<% if "#{session[:usrad]}" ==  "true" %>
         <td><%= link_to '編集', edit_cha_path(cha) %></td>
         <td><%= link_to '削除', cha, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
@@ -27,3 +31,4 @@
 <br>
 
 <%= link_to '新規作成', new_cha_path %>
+

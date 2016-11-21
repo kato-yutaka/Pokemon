@@ -1,4 +1,5 @@
 ﻿class SkillsController < ApplicationController
+  skip_before_action :check_logined
   before_action :set_skill, only: [:show, :edit, :update, :destroy]
 
   # GET /skills

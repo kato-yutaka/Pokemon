@@ -1,4 +1,5 @@
 ﻿class PokedexesController < ApplicationController
+  skip_before_action :check_logined
   autocomplete :pokedex, :name, :full => true
   before_action :set_pokedex, only: [:show, :edit, :update, :destroy]
 

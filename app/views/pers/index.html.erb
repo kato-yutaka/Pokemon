@@ -19,9 +19,11 @@
         <td><%= per.up %></td>
         <td><%= per.down %></td>
         <td><%= link_to '詳細', per %></td>
+       <% if "#{session[:usrad]}" ==  "true" %>
         <td><%= link_to '編集', edit_per_path(per) %></td>
         <td><%= link_to '削除', per, method: :delete, data: { confirm: '削除しますか?' } %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>

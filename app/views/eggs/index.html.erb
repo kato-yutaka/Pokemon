@@ -1,4 +1,6 @@
-﻿<p id="notice"><%= notice %></p>
+﻿
+
+<p id="notice"><%= notice %></p>
 
 <h1>卵グループ</h1>
 
@@ -15,9 +17,11 @@
       <tr>
         <td><%= egg.name %></td>
         <td><%= link_to '説明', egg %></td>
+        <% if "#{session[:usrad]}" ==  "true" %> 
         <td><%= link_to '編集', edit_egg_path(egg) %></td>
         <td><%= link_to '削除', egg, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>
@@ -25,3 +29,4 @@
 <br>
 
 <%= link_to '新規作成', new_egg_path %>
+

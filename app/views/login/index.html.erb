@@ -1,4 +1,8 @@
-﻿<h1>ログインページ</h1>
+﻿
+
+<div align = "center">
+
+<h1>ログインページ</h1>
 <p>メールアドレスとパスワードを入力してください</p>
 
 <p style="color : Red"><%= @error %></p>
@@ -9,10 +13,12 @@
  </div>
  <div class="field">
      <%= label_tag :password, 'パスワード ' %>:<br />
-     <%= text_field_tag :password, '' %>
+     <%= password_field_tag :password, '' %>
  </div>
  <%# ログイン後にリダイレクトすべきアクションを隠しフィールドにセット %>
  <%= hidden_field_tag :referer, flash[:referer] %>
  <%= submit_tag 'ログイン' %>
 <% end %>
 <%= link_to 'ユーザー登録' , new_user_path %>
+
+<%= link_to 'ログインしない方はこちら' , pokedexes_path %>

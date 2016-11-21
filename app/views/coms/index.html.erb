@@ -32,4 +32,8 @@
 
 <br>
 
-<%= link_to '新規作成', new_com_path %>
+<% if "#{session[:usrname]}" == "" %>
+
+<% else %>
+<%= link_to 'コメントをする', new_com_path %>
+<% end %>
