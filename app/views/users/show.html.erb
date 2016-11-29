@@ -10,9 +10,45 @@ end
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>名前:</strong>
   <%= @user.name %>
 </p>
+
+<p>
+ <strong>Email:</strong>
+ <%= @user.email %>
+</p>
+
+<p>
+ <strong>Pic:</strong>
+ <%= @user.pic %>
+</p>
+
+<p>
+  <strong>アイコン:</strong>
+  <%= image_tag show_image_user_path(@user) %>
+</p>
+
+<p>
+ <strong>Password:</strong>
+ <%= "******" %>
+</p>
+
+<p>
+ <strong>Info:</strong>
+ <%= @user.info %>
+</p>
+
+<p>
+ <strong>Profile:</strong>
+ <%= @user.profile %>
+</p>
+
+<p>
+ <strong>Ad:</strong>
+ <%= @user.ad %>
+</p>
+
 
 <h2>投稿している育成論</h2>
 <ul>
@@ -23,6 +59,5 @@ end
 <% end %>
 </ul>
 
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
+ |
 <%= link_to 'Back', users_path %>

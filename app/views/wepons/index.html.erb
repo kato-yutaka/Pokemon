@@ -19,9 +19,11 @@
         <td><%= wepon.eff %></td>
         <td><%= wepon.get %></td>
         <td><%= link_to '詳細', wepon %></td>
+    <% if "#{session[:usrad]}" ==  "true" %>
         <td><%= link_to '編集', edit_wepon_path(wepon) %></td>
         <td><%= link_to '削除', wepon, method: :delete, data: { confirm: '削除しますか?' } %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
 </table>

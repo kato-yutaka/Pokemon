@@ -1,0 +1,28 @@
+﻿<p id="notice"><%= notice %></p>
+
+<h1>利用者情報</h1>
+
+<table>
+<div style="padding: 10px;width:300px; margin-bottom: 10px; border: 1px dotted #333333;background-color: #ffff99;">
+<%= link_to "育成論を投稿する", buildtags_path %>
+</div> 
+
+<div style="padding: 10px;width:300px; margin-bottom: 10px; border: 1px dotted #333333;background-color: #ffff99;">
+<%= link_to "構築論を投稿する", new_party_path %>
+</div> 
+
+
+<div style="padding: 10px;width:300px; margin-bottom: 10px; border: 1px dotted #333333;background-color: #ffff99;">
+<%= link_to "情報変更", edit_user_path("#{session[:usr]}") %>
+</div> 
+
+<div align ="left">
+
+    <font size="5">  <%= "名前:#{session[:usrname]}" %>  <br> <br>
+      <%= "メールアドレス:#{session[:usremail]}" %> <br> <br>
+      <%= "情報公開:#{session[:usrinfo]}" %> <br> <br>
+      <%= "自己紹介:#{session[:usrprofile]}" %> <br> <br>
+      <%= "アイコン:#{session[:usrpicdata]}" %> 
+</div>
+
+</table>

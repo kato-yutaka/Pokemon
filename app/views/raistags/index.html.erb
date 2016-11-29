@@ -22,5 +22,9 @@
 </table>
 
 <br>
+<% if "#{session[:usrname]}" == "" %>
+
+<% else %>
 
 <%= link_to '新規作成', new_raistag_path %>
+<% end %>

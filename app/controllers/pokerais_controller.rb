@@ -1,5 +1,6 @@
 ﻿class PokeraisController < ApplicationController
-  before_action :set_pokerai, only: [:show, :edit, :update, :destroy, :destroy2]
+  skip_before_action :check_logined
+  before_action :set_pokerai, only: [:show, :edit, :update, :destroy]
 
   # GET /pokerais
   # GET /pokerais.json
@@ -66,13 +67,6 @@
     end
   end
 
-  def destroy2
-    @pokerai.destroy
-    respond_to do |format|
-      format.html { redirect_to pokerais_url, notice: '削除しました' }
-      format.json { head :no_content }
-    end
-  end
 
 
 	def search

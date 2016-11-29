@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114022122) do
+ActiveRecord::Schema.define(version: 20161114030416) do
 
   create_table "buildtags", force: :cascade do |t|
     t.string   "name"
@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20161114022122) do
     t.string   "name"
     t.date     "date"
     t.text     "com"
-    t.integer  "pokerai_id"
+    t.integer  "pokerais_id"
     t.integer  "pokebuild_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
@@ -98,13 +98,13 @@ ActiveRecord::Schema.define(version: 20161114022122) do
     t.integer  "spd"
     t.text     "eco"
     t.string   "egg_id"
-    t.integer  "type_id"
+    t.string   "type_id"
     t.string   "pic"
     t.binary   "pic_data"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string   "image"
-    t.string   "cha1"
+    t.integer  "cha1"
     t.integer  "cha2"
     t.integer  "cha3"
   end
@@ -138,8 +138,9 @@ ActiveRecord::Schema.define(version: 20161114022122) do
 
   create_table "raistags", force: :cascade do |t|
     t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "pokerais_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "skillnames", force: :cascade do |t|
@@ -157,7 +158,7 @@ ActiveRecord::Schema.define(version: 20161114022122) do
   end
 
   create_table "skills", force: :cascade do |t|
-    t.integer  "pokerai_id"
+    t.integer  "pokerais_id"
     t.integer  "party_id"
     t.string   "name"
     t.integer  "power"
@@ -173,10 +174,23 @@ ActiveRecord::Schema.define(version: 20161114022122) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "userinfos", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "email"
+    t.string   "image"
+    t.string   "password"
+    t.binary   "pic_data"
+    t.string   "pic"
+    t.string   "info"
+    t.text     "profile"
+    t.boolean  "ad"
   end
 
   create_table "wepons", force: :cascade do |t|

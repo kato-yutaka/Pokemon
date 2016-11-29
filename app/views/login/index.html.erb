@@ -1,0 +1,24 @@
+﻿
+
+<div align = "center">
+
+<h1>ログインページ</h1>
+<p>メールアドレスとパスワードを入力してください</p>
+
+<p style="color : Red"><%= @error %></p>
+<%= form_tag action: :auth do %>
+ <div class="field">
+     <%= label_tag :email, 'メールアドレス' %>:<br />
+     <%= text_field_tag :email, '' %>
+ </div>
+ <div class="field">
+     <%= label_tag :password, 'パスワード ' %>:<br />
+     <%= password_field_tag :password, '' %>
+ </div>
+ <%# ログイン後にリダイレクトすべきアクションを隠しフィールドにセット %>
+ <%= hidden_field_tag :referer, flash[:referer] %>
+ <%= submit_tag 'ログイン' %>
+<% end %>
+<%= link_to 'ユーザー登録' , new_user_path %>
+
+<%= link_to 'ログインしない方はこちら' , pokedexes_path %>

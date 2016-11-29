@@ -1,4 +1,5 @@
 ﻿class ComsController < ApplicationController
+  skip_before_action :check_logined
   before_action :set_com, only: [:show, :edit, :update, :destroy]
 
   # GET /coms

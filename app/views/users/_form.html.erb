@@ -1,4 +1,4 @@
-<%= form_for(@user) do |f| %>
+﻿<%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
@@ -11,10 +11,39 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :名前 %><br>
     <%= f.text_field :name %>
   </div>
+  
+   <div class="field">
+    <%= f.label :メールアドレス %><br>
+    <%= f.text_field :email %>
+  </div>
+  
+   <div class="field">
+    <%= f.label :パスワード %><br>
+    <%= password_field :user,:password %>
+    <%= password_field :user,:password_confirmation %>
+  </div>
+  
+    <div class="field">
+    <%= f.label :情報公開 %><br>
+    <%= f.check_box :info %>
+  </div>
+ 
+  <div =class="field">
+     <%= f.label :アイコン %><br>
+     <%= f.file_field :pic_data, accept: "image/jpeg" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :自己紹介 %><br>
+    <%= f.text_area :profile %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

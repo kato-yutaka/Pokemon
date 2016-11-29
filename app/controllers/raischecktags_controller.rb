@@ -1,4 +1,5 @@
 class RaischecktagsController < ApplicationController
+  skip_before_action :check_logined
   before_action :set_raischecktag, only: [:show, :edit, :update, :destroy]
 
   # GET /raischecktags

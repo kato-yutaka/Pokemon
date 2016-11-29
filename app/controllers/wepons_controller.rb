@@ -1,4 +1,5 @@
 ﻿class WeponsController < ApplicationController
+  skip_before_action :check_logined
   before_action :set_wepon, only: [:show, :edit, :update, :destroy]
 
   # GET /wepons

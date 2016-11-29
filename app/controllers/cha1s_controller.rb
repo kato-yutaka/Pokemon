@@ -1,4 +1,5 @@
 ﻿class Cha1sController < ApplicationController
+  skip_before_action :check_logined
   before_action :set_cha1, only: [:show, :edit, :update, :destroy]
 
   # GET /cha1s

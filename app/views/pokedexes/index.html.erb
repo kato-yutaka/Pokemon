@@ -1,6 +1,7 @@
 ﻿<p id="notice"><%= notice %></p>
-
+<% if "#{session[:usrad]}" ==  "true" %>
 <%= link_to '新規作成', new_pokedex_path %>
+<% end %>
 
 <h1>ポケモン図鑑</h1>
 
@@ -57,8 +58,10 @@
         </td>
 
         <td><%= link_to '詳細', pokedex %></td>
+        <% if "#{session[:usrad]}" ==  "true" %>
         <td><%= link_to '編集', edit_pokedex_path(pokedex) %></td>
         <td><%= link_to '削除', pokedex, method: :delete, data: { confirm: '削除しますか?' } %></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>

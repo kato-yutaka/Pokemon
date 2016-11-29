@@ -1,4 +1,5 @@
 ﻿class ImagesController < ApplicationController
+ skip_before_action :check_logined
  def index
     @images = Image.limit(20)
   end
