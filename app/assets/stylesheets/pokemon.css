@@ -3,3 +3,14 @@
   top: 0px;
   right: 50px;
 }
+
+.left-box-1{
+  position: absolute;
+
+      float : left ;
+      }
+.clr-block{
+      clear : both ;
+       background : #09f ;
+      padding : 5px ;
+      }

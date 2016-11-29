@@ -9,19 +9,40 @@ unless @com
 end
 %>
 
+<%
+unless @pokedex
+ @pokedex = Pokedex.new
+end
+%>
+
+<%
+unless @raischecktag
+ @raischecktag = Raischecktag.new
+end
+%>
+
+<%
+unless @raistag
+ @raistag = Raistag.new
+end
+%>
+
+
+
+
 <h1>
   <strong>タイトル:</strong>
   <%= @pokerai.title %>
 </h1>
 
 <p>
-  <strong>投稿者名:</strong>
-  <%= @pokerai.user.name %>
+	<td><h3>投稿者名：<%= link_to @pokerai.user.name,user_path(@pokerai.user_id)%></h3>
 </p>
 
+
 <p>
-  <strong>ポケモン:</strong>
-  <%= @pokerai.pokedex.name %>
+  <%= image_tag show_image_pokedex_path(@pokerai.pokedex_id) %></br>
+  <td><h2><%= link_to @pokerai.pokedex.name,pokedex_path(@pokerai.pokedex_id) %></h2><br>
 </p>
 
 <p>
@@ -46,17 +67,17 @@ end
 
 <p>
   <strong>性格:</strong>
-  <%= @pokerai.per.name %>
+  <td><%= link_to @pokerai.per.name,per_path(@pokerai.per_id) %><br>
 </p>
 
 <p>
   <strong>特性:</strong>
-  <%= @pokerai.cha.name %>
+  <td><%= link_to @pokerai.cha.name,cha_path(@pokerai.cha_id) %><br>
 </p>
 
 <p>
   <strong>持ち物:</strong>
-  <%= @pokerai.wepon.name %>
+  <td><%= link_to @pokerai.wepon.name,wepon_path(@pokerai.wepon_id) %><br>
 </p>
 
 <p>
@@ -67,7 +88,7 @@ end
 <h2>技</h2>
 <ul>
 <% @pokerai.skillnames.each do |skillname| %>
-<li{white-space:nowrap;}>|<%= skillname.name%>|</li>
+<li{white-space:nowrap;}>|<%= link_to skillname.name,skillname_path(@pokerai.cha_id) %>|</li>
 <% end %>
 </ul>
 
@@ -75,7 +96,7 @@ end
 <h2>タグ</h2>
 <ul>
 <% @pokerai.raistags.each do |raistag| %>
-<li><%= raistag.name%></li>
+<li><%= link_to raistag.name,raistag_path%></li>
 <% end %>
 </ul>
 
@@ -100,4 +121,5 @@ end
 
 <%= link_to '編集', edit_pokerai_path(@pokerai) %> |
 <%= link_to 'ホームに戻る', pokerais_path %>
+
 </div>

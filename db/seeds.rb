@@ -28,6 +28,17 @@ CSV.foreach('db/per.csv') do |row|
   Per.create(:name => row[0], :up => row[1], :down => row[2])
 end
 
+CSV.foreach('db/cha_number.csv') do |row|
+  Cha1.create(:cha_id => row[0])
+end
+
+CSV.foreach('db/cha_number.csv') do |row|
+  Cha2.create(:cha_id => row[0])
+end
+
+CSV.foreach('db/cha_number.csv') do |row|
+  Cha3.create(:cha_id => row[0])
+end
 
 a = 1
 

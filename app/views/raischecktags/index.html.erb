@@ -1,12 +1,12 @@
-<p id="notice"><%= notice %></p>
+﻿<p id="notice"><%= notice %></p>
 
-<h1>Listing Raischecktags</h1>
+<h1>育成論のタグ付け</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Pokerai</th>
-      <th>Raistag</th>
+      <th>育成論</th>
+      <th>タグ</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,9 +16,9 @@
       <tr>
         <td><%= raischecktag.pokerai.title %></td>
         <td><%= raischecktag.raistag.name%></div></td>
-        <td><%= link_to 'Show', raischecktag %></td>
-        <td><%= link_to 'Edit', edit_raischecktag_path(raischecktag) %></td>
-        <td><%= link_to 'Destroy', raischecktag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '説明', raischecktag %></td>
+        <td><%= link_to '編集', edit_raischecktag_path(raischecktag) %></td>
+        <td><%= link_to '削除', raischecktag, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Raischecktag', new_raischecktag_path %>
+<%= link_to '新しくタグをつける', new_raischecktag_path %>

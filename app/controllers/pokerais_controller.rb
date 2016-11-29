@@ -1,5 +1,5 @@
 ﻿class PokeraisController < ApplicationController
-  before_action :set_pokerai, only: [:show, :edit, :update, :destroy]
+  before_action :set_pokerai, only: [:show, :edit, :update, :destroy, :destroy2]
 
   # GET /pokerais
   # GET /pokerais.json
@@ -17,6 +17,7 @@
   def new
     @pokerai = Pokerai.new
 		4.times { @pokerai.skills.build }
+		@pokerai.raischecktags.build
 		@pokerai.coms.build
 
   end
@@ -65,10 +66,21 @@
     end
   end
 
+  def destroy2
+    @pokerai.destroy
+    respond_to do |format|
+      format.html { redirect_to pokerais_url, notice: '削除しました' }
+      format.json { head :no_content }
+    end
+  end
+
+
 	def search
 		@pokerais = Pokerai.where(title: params["search"]["title"])
 		render :index
 	end
+
+	
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -78,6 +90,7 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokerai_params
-      params.require(:pokerai).permit(:user_id, :title, :pokedex_id, :hp, :atk, :def, :satk, :sdef, :spd, :per_id, :cha_id, :wepon_id, :ex,skills_attributes: [:id, :pokerai_id, :party_id, :name, :power, :eff, :skillname_id],coms_attributes: [:name, :date, :com, :pokerai_id, :pokebuild_id])
+      params.require(:pokerai).permit(:user_id, :title, :pokedex_id, :hp, :atk, :def, :satk, :sdef, :spd, :per_id, :cha_id, :wepon_id, :ex,skills_attributes: [:id, :pokerai_id, :party_id, :name, :power, :eff, :skillname_id],coms_attributes: [:name, :date, :com, :pokerai_id, :pokebuild_id],raischecktags_attributes: [:pokerai_id, :raistag_id])
+
     end
 end

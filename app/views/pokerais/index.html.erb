@@ -7,37 +7,37 @@ unless @user
 end
 %>
 
-<h1>育成論</h1>
+<%
+unless @pokedex
+  @pokedex = Pokedex.new
+end
+%>
+
+<h1>新着の育成論</h1>
 <%= form_tag(:action=>"search") do %>
  <%= text_field_tag "search[title]" %>
  <%= submit_tag "検索" %>
  <%= link_to "リセット", pokerais_path %>
-<% end %>
+<% end %></br>
 
-<table>
-  <thead>
-    <tr>
-      <th>投稿者名</th>
-      <th>タイトル</th>
-      <th>ポケモン</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+	<table>
     <% @pokerais.each do |pokerai| %>
-      <tr>
-				<td><%=link_to pokerai.user.name,user_path(pokerai.user_id)%></td>
-        <td><%= link_to pokerai.title , pokerai %></td>
-        <td><%= pokerai.pokedex.name %></td>
-        <td><%= link_to '説明', pokerai %></td>
-        <td><%= link_to '編集', edit_pokerai_path(pokerai) %></td>
-        <td><%= link_to '削除', pokerai, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
-      </tr>
+	      <tr>
+  		    <td><%= link_to pokerai.title , pokerai %></td>
+					<td><h2><%= image_tag show_image_pokedex_path(pokerai.pokedex_id) %></h2></td>
+					<td><h3>投稿者名：<%= link_to pokerai.user.name,user_path(pokerai.user_id)%></h3></td>
+  		    <td><h2><%= link_to pokerai.pokedex.name,pokedex_path(pokerai.pokedex_id) %></h2></td>
+	        <td>HP:<%= pokerai.hp %></td>
+	        <td>攻撃:<%= pokerai.atk %></td>
+	        <td>防御:<%= pokerai.def %></td>
+	        <td>特功:<%= pokerai.satk %></td>
+	        <td>特防:<%= pokerai.sdef %></td>
+	        <td>素早さ:<%= pokerai.spd %></td>
+   		    <td><%= link_to '編集', edit_pokerai_path(pokerai) %></td>
+    	   	<td><%= link_to '削除', pokerai, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+      	</tr>
     <% end %>
-  </tbody>
 </table>
-
 <br>
 
 <%= link_to '新規作成', new_pokerai_path %>

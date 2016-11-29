@@ -1,0 +1,4 @@
+﻿<fieldset>
+	<%= f.label :raistag_id, "タグ" %>
+	<%= f.collection_select :raistag_id,Raistag.all,:id,:name, :include_blank => true %></br>
+</fieldset>

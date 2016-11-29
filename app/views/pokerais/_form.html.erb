@@ -62,6 +62,7 @@
     <%= f.label :持ち物 %><br>
     <%= f.collection_select :wepon_id,Wepon.all,:id,:name %>
   </div>
+
   <div class="field">
     <%= f.label :skills, "技" %><br />
     <%= f.fields_for :skills do |skills_form| %>
@@ -70,6 +71,15 @@
   <% end %>
   </div>
 
+  <div class="field">
+    <%= f.label :raischecktags, "タグ付け" %><br />
+    <%= f.fields_for :raischecktags do |raischecktags_form| %>
+			<%= render "raischecktag_fields", f: raischecktags_form %>
+  <% end %>
+	<%= link_to_add_fields "タグ追加", f, :raischecktags %>
+  </div>
+
+  
   <div class="field">
     <%= f.label :説明 %><br>
     <%= f.text_area :ex %>

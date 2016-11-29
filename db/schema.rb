@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161110032026) do
+ActiveRecord::Schema.define(version: 20161114022122) do
 
   create_table "buildtags", force: :cascade do |t|
     t.string   "name"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20161110032026) do
     t.integer  "satk"
     t.integer  "sdef"
     t.integer  "spd"
+    t.binary   "pic_data"
   end
 
   create_table "raischecktags", force: :cascade do |t|

@@ -1,4 +1,4 @@
-<%= form_for(@raischecktag) do |f| %>
+﻿<%= form_for(@raischecktag) do |f| %>
   <% if @raischecktag.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@raischecktag.errors.count, "error") %> prohibited this raischecktag from being saved:</h2>
@@ -12,16 +12,15 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :pokerai_id %><br>
+    <%= f.label :育成論名 %><br>
     <%= f.collection_select :pokerai_id,Pokerai.all,:id,:title %>
-
   </div>
   <div class="field">
-    <%= f.label :raistag_id %><br>
+    <%= f.label :タグ名 %><br>
     <%= f.collection_select :raistag_id,Raistag.all,:id,:name %>
 
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :完了 %>
   </div>
 <% end %>
