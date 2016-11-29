@@ -2,8 +2,6 @@ class User < ActiveRecord::Base
  has_many :pokerais
  belongs_to :userinfo
 
- validates_confirmation_of :password
- attr_accessor             :password_confirmation
 
 def self.authenticate(email,password)
     usr = find_by(email: email)

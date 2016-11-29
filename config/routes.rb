@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'top/index'
+
   resources :userinfos
   get 'login/index'
   
@@ -47,7 +49,7 @@ Rails.application.routes.draw do
     post 'search', on: :collection
   end
 
-
+  root to: "top#index"
 
 
 

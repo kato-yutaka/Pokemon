@@ -1,0 +1,12 @@
+﻿<div align = "center">
+<h1>Pokehub ～最強になりたい君へ！！～</h1>
+
+<% if rand(10) <= 5 %>
+<%= link_to image_tag("TOP.png"), pokedexes_path  %>
+<% else %>
+<%= link_to image_tag("TOP2.png"), pokedexes_path %>
+<% end %>
+<%= link_to 'ログインする方はこちら' ,"http://localhost:3000/login/index" %>
+
+<%= link_to 'ログインしない方はこちら' , pokedexes_path %>
+</div>
