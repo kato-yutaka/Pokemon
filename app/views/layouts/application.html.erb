@@ -2,56 +2,94 @@
 <html>
 <head>
   <title>Pokemon</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap-theme.min.css">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
 </head>
 
-<body bgcolor="#90ee90"border="0"width="200">
+<body>
 
-<% if "#{session[:usrname]}" == "" %>
-<div align="left">
-<%= link_to "ログイン",controller: :login, action: :index %>
-</div>
-<% else %>
-<div align="left">
-      <%= "ログインユーザー:#{session[:usrname]}" %>  |
-      <%= link_to "利用者情報",  userinfos_path %>   |
-      <%= link_to "ログアウト",controller: :login, action: :index %>   
-</div>
-<% end %>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Pokehub</a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="pokedexes">ポケモン図鑑</a></li>
+        <li class="active"><a href="pokerais">育成論</a></li>
+        <li class="active"><a href="parties">構築論</a></li>
+        <li class="active"><a href="skills">技</a></li>
+　　　　<li class="active"><a href="wepons">道具</a></li>
+        <% if "#{session[:usrname]}" == "" %>
+           <li class="active"><a href="http://localhost:3000/login/index">ログイン</a></li>
+           <% else %>
+          <li class="active"><a href="raistags">育成論タグ</a></li>
+          <li class="active"><a href="buildtags">構築論タグ</a></li>
+          <li class="active"><a href="userinfos">ユーザー情報</a></li>
+          <li class="active"><a href="http://localhost:3000/login/index">ログアウト</a></li>
+        <% end %>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
 
 
 <div align = "center">
-<h1></h1>
+
 </div>
+
+<% if "#{session[:usrad]}" ==  "true" %>
+
 <div class = "left">
 
-<Ul>
+<ul style='list-style-type:none;'>
 <br>
- <li><%= link_to "ポケモン図鑑",pokedexes_path%></li>
- <li><%= link_to "育成論",pokerais_path%></li>
- <li><%= link_to "パーティーポケモン"  ,parties_path%></li>
- <li><%= link_to "育成論タグ",raistags_path%></li>
- <li><%= link_to "構築論タグ"    ,buildtags_path%></li>
+<br>
+</br>
  <li><%= link_to "ユーザー"  ,users_path%></li>
  <li><%= link_to "コメント"  ,coms_path%></li>
  <li><%= link_to "タグ付け",raischecktags_path%></li>
- <li><%= link_to "技"  ,skills_path%></li>
  <li><%= link_to "技名"    ,skillnames_path%></li>
  <li><%= link_to "タイプ",types_path%></li>
- <li><%= link_to "持ち物"    ,wepons_path%></li>
  <li><%= link_to "卵グループ",eggs_path%></li>
  <li><%= link_to "性格",pers_path%></li>
  <li><%= link_to "特性"    ,chas_path%></li>
- <li><%= link_to "コメント"  ,coms_path%></li>
- <li><%= link_to "タグ付け",raischecktags_path%></li>
 </br>
 
 </Ul>
 </div>
+
+<% end %>
+
 <div align = "center">
-<%= yield %>
+
+<div class="container">
+  <%= yield %>
 </div>
+
+</div>
+
+
+<footer>
+  <div class="container">
+    Rails Girls 2016
+  </div>
+</footer>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
