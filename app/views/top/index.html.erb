@@ -28,7 +28,7 @@
         <li class="active"><a href="pokerais">育成論</a></li>
         <li class="active"><a href="parties">構築論</a></li>
         <li class="active"><a href="skills">技</a></li>
-        <li class="active"><a href="wepons">道具</a></li>
+　　　　<li class="active"><a href="wepons">道具</a></li>
         <% if "#{session[:usrname]}" == "" %>
            <li class="active"><a href="http://localhost:3000/login/index">ログイン</a></li>
            <% else %>
@@ -43,62 +43,25 @@
   </div>
 </nav>
 
-
-
-
-
-<div align = "center">
-
-</div>
-
-<% if "#{session[:usrad]}" ==  "true" %>
-
-<div class = "left">
-
-<ul style='list-style-type:none;'>
-<br>
-<br>
- <li><%= link_to "ポケモン図鑑",pokedexes_path%></li>
- <li><%= link_to "育成論",pokerais_path%></li>
- <li><%= link_to "育成論タグ",raistags_path%></li>
- <li><%= link_to "育成論タグ付け",raischecktags_path%></li>
- <li><%= link_to "構築論",pokebuilds_path%></li>
- <li><%= link_to "構築論タグ",buildtags_path%></li>
- <li><%= link_to "構築論タグ付け",buildchecktags_path%></li>
- <li><%= link_to "パーティーポケモン"  ,parties_path%></li>
- <li><%= link_to "ユーザー"  ,users_path%></li>
- <li><%= link_to "コメント"  ,coms_path%></li>
- <li><%= link_to "育成論の技"  ,skills_path%></li>
- <li><%= link_to "構築論の技"  ,buildskills_path%></li>
- <li><%= link_to "技名"    ,skillnames_path%></li>
- <li><%= link_to "タイプ",types_path%></li>
- <li><%= link_to "卵グループ",eggs_path%></li>
- <li><%= link_to "性格",pers_path%></li>
- <li><%= link_to "特性"    ,chas_path%></li>
- <li><%= link_to "コメント"  ,coms_path%></li>
-</br>
-
-</Ul>
-</div>
-
-<% end %>
-
-<div align = "center">
-
-<div class="container">
-  <%= yield %>
-</div>
-
-</div>
-
-
-<footer>
-  <div class="container">
-    Rails Girls 2016
-  </div>
-</footer>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
-
-
 </body>
 </html>
+
+<div align = "center">
+<h1>Pokehub ～最強になりたい君へ！！～</h1>
+
+<% if rand(10) <= 5 %>
+<%= link_to image_tag("TOP.png"), pokedexes_path  %>
+<% else %>
+<%= link_to image_tag("TOP2.png"), pokedexes_path %>
+<% end %>
+</div>
+
+<div class="row">
+<div class="col-md-6">
+<h1>育成論</h1>
+</div>
+
+<div class="col-md-6">
+<h1>構築論</h1>
+</div>
+</div>
