@@ -1,4 +1,4 @@
-﻿<% if "#{session[:usrad]}" ==  "true" %>
+﻿
 
 <p id="notice"><%= notice %></p>
 
@@ -51,8 +51,3 @@
 <%= link_to '新規作成', new_user_path %>
 
 
-<% else %>
-
-<th>管理者じゃないとこのページは表示できないよ！</th>
-
-<% end %>

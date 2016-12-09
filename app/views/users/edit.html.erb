@@ -29,7 +29,7 @@
    <div class="field">
     <%= f.label :パスワード %><br>
     <%= password_field :user,:password %>
-    <%= password_field :user,:password_confirmation %>
+
   </div>
   
     <div class="field">
@@ -48,12 +48,12 @@
   </div>
  
 
-<% if @user.ad == true then %>
+
   <div class="field">
     <%= f.label :管理者 %><br>
     <%= f.check_box :ad %>
   </div>
-<% end %>
+
  
 
   <div class="actions">

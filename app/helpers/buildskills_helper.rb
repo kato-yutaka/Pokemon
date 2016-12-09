@@ -1,0 +1,2 @@
+module BuildskillsHelper
+end

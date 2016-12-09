@@ -83,7 +83,7 @@
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       #params.require(:user).permit(:name)
-      return_params = params.require(:user).permit(:name , :email , :password_confirmation, :info ,:profile, :ad,  :pic , :pic_data)
+      return_params = params.require(:user).permit(:name , :email , :password, :info ,:profile, :ad,  :pic , :pic_data)
       if return_params[:pic_data] != nil
          return_params[:pic] = return_params[:pic_data].original_filename
          return_params[:pic_data] = return_params[:pic_data].read

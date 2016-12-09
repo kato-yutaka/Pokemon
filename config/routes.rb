@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :buildskills
+  resources :pokebuilds
+  resources :buildchecktags
   resources :userinfos
   get 'login/index'
   

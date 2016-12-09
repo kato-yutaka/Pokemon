@@ -14,11 +14,6 @@
   <div class="field">
     <%= f.label :育成論名 %><br>
     <%= f.collection_select :pokerai_id,Pokerai.all,:id,:title %>
-
-  </div>
-  <div class="field">
-    <%= f.label :パーティポケモンID %><br>
-    <%= f.number_field :party_id %>
   </div>
   <div class="field">
     <%= f.label :技名 %><br>

@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Buildchecktags</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pokebuild</th>
+      <th>Buildtag</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @buildchecktags.each do |buildchecktag| %>
+      <tr>
+        <td><%= buildchecktag.pokebuild_id %></td>
+        <td><%= buildchecktag.buildtag_id %></td>
+        <td><%= link_to 'Show', buildchecktag %></td>
+        <td><%= link_to 'Edit', edit_buildchecktag_path(buildchecktag) %></td>
+        <td><%= link_to 'Destroy', buildchecktag, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Buildchecktag', new_buildchecktag_path %>
