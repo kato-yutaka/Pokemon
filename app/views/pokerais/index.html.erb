@@ -23,10 +23,10 @@ end
 	<table>
     <% @pokerais.each do |pokerai| %>
 	      <tr>
-  		    <td><%= link_to pokerai.title , pokerai %></td>
-					<td><h2><%= image_tag show_image_pokedex_path(pokerai.pokedex_id) %></h2></td>
-					<td><h3>投稿者名：<%= link_to pokerai.user.name,user_path(pokerai.user_id)%></h3></td>
-  		    <td><h2><%= link_to pokerai.pokedex.name,pokedex_path(pokerai.pokedex_id) %></h2></td>
+  		<td><%= link_to pokerai.title , pokerai %></td>
+		<td><h2><%= image_tag show_image_pokedex_path(pokerai.pokedex_id) %></h2></td>
+		<td><h3>投稿者名：<%= link_to pokerai.user.name,user_path(pokerai.user_id)%></h3></td>
+  		<td><h2><%= link_to pokerai.pokedex.name,pokedex_path(pokerai.pokedex_id) %></h2></td>
 	        <td>HP:<%= pokerai.hp %></td>
 	        <td>攻撃:<%= pokerai.atk %></td>
 	        <td>防御:<%= pokerai.def %></td>

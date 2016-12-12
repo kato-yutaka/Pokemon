@@ -11,7 +11,7 @@
 
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -29,6 +29,11 @@
         <li class="active"><a href="parties">構築論</a></li>
         <li class="active"><a href="skills">技</a></li>
 　　　　<li class="active"><a href="wepons">道具</a></li>
+   
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+       
         <% if "#{session[:usrname]}" == "" %>
            <li class="active"><a href="http://localhost:3000/login/index">ログイン</a></li>
            <% else %>
@@ -39,6 +44,7 @@
         <% end %>
 
       </ul>
+
     </div>
   </div>
 </nav>
@@ -67,6 +73,7 @@
  <li><%= link_to "卵グループ",eggs_path%></li>
  <li><%= link_to "性格",pers_path%></li>
  <li><%= link_to "特性"    ,chas_path%></li>
+
 </br>
 
 </Ul>
@@ -83,12 +90,13 @@
 </div>
 
 
-<footer>
+<footer style = "background-color:black; color:white">
   <div class="container">
     Rails Girls 2016
   </div>
 </footer>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
 
 
 </body>

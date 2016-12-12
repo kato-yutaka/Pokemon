@@ -8,7 +8,7 @@
 <%= page_entries_info @pokedexes %>
 
 <%= form_tag({:action=>"search"}) do %>
-  <%= autocomplete_field_tag "search[name]",'',autocomplete_pokedex_name_pokedexes_path,:class => '',:placeholder => ''  %>
+  <%= autocomplete_field_tag "search[name]",'',autocomplete_pokedex_name_pokedexes_path,:class => '',:placeholder => '名前で探す'  %>
   <%= submit_tag "検索" %>
   <%= link_to "リセット", pokedexes_path %>
 <% end %>
@@ -16,56 +16,30 @@
 <table>
   <thead>
     <tr>
-      <th width="100">名前</th>
-      <th width="100">HP</th>
-      <th width="100">攻撃力</th>
-      <th width="100">防御力</th>
-      <th width="100">特攻</th>
-      <th width="100">特防</th>
-      <th width="100">すばやさ</th>
-      <th>特性１</th>
-      <th>特性２</th>
-      <th>夢特性</th>
-      <th>生態</th>
-      <th>卵グループ</th>
-      <th>タイプ</th>
-      <th>画像</th>
-      <th>画像データ</th>
-      <th colspan="3"></th>
+
+
+      
     </tr>
   </thead>
-
-  <tbody>
-    <% @pokedexes.each do |pokedex| %>
-      <tr>
-        <td><%= pokedex.name %></td>
-        <td><%= pokedex.hp %></td>
-        <td><%= pokedex.atk %></td>
-        <td><%= pokedex.def %></td>
-        <td><%= pokedex.satk %></td>
-        <td><%= pokedex.sdef %></td>
-        <td><%= pokedex.spd %></td>
-        <td><%= pokedex.cha1 %></td>
-        <td><%= pokedex.cha2 %></td>
-        <td><%= pokedex.cha3 %></td>
-        <td><%= pokedex.eco %></td>
-        <td><%= pokedex.egg_id %></td>
-        <td><%= pokedex.type_id %></td>
-        <td><%= pokedex.pic %></td>
-
-        <td>
-　　　　   <%= image_tag show_image_pokedex_path(pokedex) %>
-        </td>
-
-        <td><%= link_to '詳細', pokedex %></td>
-        <% if "#{session[:usrad]}" ==  "true" %>
-        <td><%= link_to '編集', edit_pokedex_path(pokedex) %></td>
-        <td><%= link_to '削除', pokedex, method: :delete, data: { confirm: '削除しますか?' } %></td>
-      <% end %>
-      </tr>
-    <% end %>
-  </tbody>
 </table>
+  <tbody>
+
+<div class="row">
+    <% @pokedexes.each do |pokedex| %>
+
+     
+        <div class="col-md-4">
+        <%= image_tag show_image_pokedex_path(pokedex),{:style => "width: 250px"} %>
+        <div align = "text-bottom">
+        <%= link_to pokedex.name , pokedex %>
+        </div>
+        </div>
+
+    <% end %>
+</div>
+  </tbody>
+
+
 
 <br>
 
