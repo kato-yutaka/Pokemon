@@ -72,11 +72,11 @@
   </div>
 
   <div class="field">
-    <%= f.label :raischecktags, "タグ付け" %><br />
-    <%= f.fields_for :raischecktags do |raischecktags_form| %>
-			<%= render "raischecktag_fields", f: raischecktags_form %>
-  <% end %>
-	<%= link_to_add_fields "タグ追加", f, :raischecktags %>
+    <%= f.label :raischecktags, "タグ" %><br />
+    <%= f.fields_for :raischecktags do |builder| %>
+      <%= render "raischecktag_fields", f: builder %>
+		<% end %>
+  	<%= link_to_add_fields "タグ追加", f, :raischecktags %>
   </div>
 
   

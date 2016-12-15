@@ -32,6 +32,9 @@ Rails.application.routes.draw do
   resources :parties
   resources :raistags
   resources :chas
+  resources :pokebuilds
+  resources :buildchecktags
+  resources :buildskills
 
   resources :pokedexes do
     get :autocomplete_pokedex_name, :on => :collection

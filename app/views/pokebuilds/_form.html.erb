@@ -70,8 +70,9 @@ end
 
   <div class="field">
     <%= f.label :タグ付け %><br>
-    <%= f.number_field :buildchecktag_id %>
+    <%= link_to_add_ffields "タグ追加", f, :buildchecktags %>
   </div>
+
 
   <div class="field">
     <%= f.label :説明 %><br>

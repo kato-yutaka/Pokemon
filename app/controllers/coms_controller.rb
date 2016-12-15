@@ -30,7 +30,7 @@
 
     respond_to do |format|
       if @com.save
-        format.html { redirect_to @com.pokerai, notice: '作成しました' }
+        format.html { redirect_to ( :back ), notice: '作成しました' }
         format.json { render :show, status: :created, location: @com }
       else
         format.html { render :new }
