@@ -14,7 +14,9 @@
 
   <div class="field">
     <%= f.label :投稿者名 %><br>
-    <%= f.collection_select :user_id,User.all,:id,:name %>
+    <%= session[:usrname] %>
+    <%= f.hidden_field :user_id, :value => session[:usr] %>
+
   </div>
   <div class="field">
     <%= f.label :タイトル %><br>
