@@ -34,6 +34,7 @@
 
       <ul class="nav navbar-nav navbar-right">
        
+
         <% if "#{session[:usrname]}" == "" %>
            <li class="active"><a href="http://localhost:3000/login/index">ログイン</a></li>
            <% else %>
@@ -64,15 +65,13 @@
 <ul style='list-style-type:none;'>
 <br>
 <br>
-</br>
- <li><%= link_to "ユーザー"  ,users_path%></li>
- <li><%= link_to "コメント"  ,coms_path%></li>
- <li><%= link_to "タグ付け",raischecktags_path%></li>
- <li><%= link_to "技名"    ,skillnames_path%></li>
- <li><%= link_to "タイプ",types_path%></li>
- <li><%= link_to "卵グループ",eggs_path%></li>
- <li><%= link_to "性格",pers_path%></li>
- <li><%= link_to "特性"    ,chas_path%></li>
+
+
+
+
+
+
+
 
 </br>
 

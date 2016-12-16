@@ -1,0 +1,1 @@
+json.array! @buildchecktags, partial: 'buildchecktags/buildchecktag', as: :buildchecktag

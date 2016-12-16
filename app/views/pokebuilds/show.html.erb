@@ -1,0 +1,84 @@
+﻿<p id="notice"><%= notice %></p>
+
+<%
+unless @pokedex
+ @pokedex = Pokedex.new
+end
+%>
+
+
+<p>
+  <strong>タイトル:</strong>
+  <%= @pokebuild.title %>
+</p>
+
+<p>
+  <strong>投稿者名:</strong>
+  <%= link_to @pokebuild.user.name,user_path(@pokebuild.user_id) %>
+</p>
+
+<h2>パーティポケモン</2>
+<ul>
+<%= @pokebuild.parties.each do |party| %>
+<p>
+ <%= image_tag show_image_pokedex_path(party.pokedex_id) %></br>
+ <li><%= link_to party.pokedex.name,pokedex_path(party.pokedex_id) %></li>
+</p>
+ <p>
+  <strong>HP:</strong>
+  <%= party.hp %>
+ </p>
+ <p>
+  <strong>攻撃:</strong>
+  <%= party.atk %>
+ </p>
+ 
+ <p>
+  <strong>防御:</strong>
+  <%= party.def %>
+ </p>
+ 
+ <p>
+  <strong>特功:</strong>
+  <%= party.satk %>
+ </p>
+
+<p>
+ <strong>特防:</strong>
+ <%= party.sdef %>
+</p>
+
+<p>
+ <strong>素早さ:</strong>
+ <%= party.spd %>
+</p>
+
+<p>
+  <strong>性格:</strong>
+  <td><%= link_to party.per.name,per_path(party.per_id) %><br>
+</p>
+
+<p>
+  <strong>特性:</strong>
+  <td><%= link_to party.cha.name,cha_path(party.cha_id) %><br>
+</p>
+
+<p>
+  <strong>持ち物:</strong>
+  <td><%= link_to party.wepon.name,wepon_path(party.wepon_id) %><br>
+</p>
+<br><br><br>
+<% end %>
+</ul>
+<p>
+  <strong>構築論タグ名:</strong>
+  <%= @pokebuild.buildchecktag_id %>
+</p>
+
+<p>
+  <strong>説明:</strong>
+  <%= @pokebuild.ex %>
+</p>
+
+<%= link_to '編集', edit_pokebuild_path(@pokebuild) %> |
+<%= link_to 'ホームに戻る', pokebuilds_path %>

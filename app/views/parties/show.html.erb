@@ -1,8 +1,19 @@
-﻿<p id="notice"><%= notice %></p>
+﻿<div align = "center">
+<p id="notice"><%= notice %></p>
+
+<%
+unless @pokedex
+ @pokedex = Pokedex.new
+end
+%>
 
 <p>
-  <strong>パーティID:</strong>
+  <strong>構築論ID:</strong>
   <%= @party.pokebuild_id %>
+</p>
+
+<p>
+  <td><h2><%= link_to @party.pokedex.name,pokedex_path(@party.pokedex_id) %></h2><br>
 </p>
 
 <p>
@@ -11,19 +22,46 @@
 </p>
 
 <p>
+  <strong>HP:</strong>
+  <%= @party.hp %>
+
+  <strong>攻撃:</strong>
+  <%= @party.atk %>
+
+  <strong>防御:</strong>
+  <%= @party.def %>
+
+  <strong>特功:</strong>
+  <%= @party.satk %>
+
+  <strong>特防:</strong>
+  <%= @party.sdef %>
+
+  <strong>素早さ:</strong>
+  <%= @party.spd %>
+</p>
+
+<p>
   <strong>性格:</strong>
-  <%= @party.per_id %>
+  <td><%= link_to @party.per.name,per_path(@party.per_id) %><br>
 </p>
 
 <p>
   <strong>特性:</strong>
-  <%= @party.cha_id %>
+  <td><%= link_to @party.cha.name,cha_path(@party.cha_id) %><br>
 </p>
 
 <p>
   <strong>持ち物:</strong>
-  <%= @party.wepon_id %>
+  <td><%= link_to @party.wepon.name,wepon_path(@party.wepon_id) %><br>
 </p>
+
+<h2>技</h2>
+<ul>
+<% @party.skillnames.each do |skillname| %>
+<li{white-space:nowrap;}>|<%= link_to skillname.name,skillname_path(@party.cha_id) %>|</li>
+<% end %>
+</ul>
 
 <%= link_to '編集', edit_party_path(@party) %> |
 <%= link_to 'ホームに戻る', parties_path %>

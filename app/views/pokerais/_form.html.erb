@@ -49,7 +49,6 @@
     <%= f.number_field :spd , in: 0...256 %>
   </div>
 
-
   <div class="field">
     <%= f.label :性格 %><br>
     <%= f.collection_select :per_id,Per.all,:id,:name %>

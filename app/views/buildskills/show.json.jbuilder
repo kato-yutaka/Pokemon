@@ -1,0 +1,1 @@
+json.partial! "buildskills/buildskill", buildskill: @buildskill

@@ -1,0 +1,1 @@
+json.array! @pokebuilds, partial: 'pokebuilds/pokebuild', as: :pokebuild

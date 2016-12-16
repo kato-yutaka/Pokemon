@@ -18,9 +18,10 @@ end
  <%= text_field_tag "search[title]" %>
  <%= submit_tag "検索" %>
  <%= link_to "リセット", pokerais_path %>
+ 
 <% end %></br>
 
-	<table>
+	<table class="table table-striped">
     <% @pokerais.each do |pokerai| %>
 	      <tr>
   		<td><%= link_to pokerai.title , pokerai %></td>

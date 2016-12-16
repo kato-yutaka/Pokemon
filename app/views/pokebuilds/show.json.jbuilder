@@ -1,0 +1,1 @@
+json.partial! "pokebuilds/pokebuild", pokebuild: @pokebuild

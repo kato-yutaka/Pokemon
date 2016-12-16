@@ -16,21 +16,55 @@
     <%= f.number_field :pokebuild_id %>
   </div>
   <div class="field">
-    <%= f.label :図鑑No %><br>
-    <%= f.number_field :pokedex_id %>
+    <%= f.label :ポケモン %><br>
+    <%= f.collection_select :pokedex_id,Pokedex.all,:id,:name %>
   </div>
   <div class="field">
+    <%= f.label :HP %><br>
+    <%= f.number_field :hp %>
+  </div>
+  <div class="field">
+    <%= f.label :攻撃 %><br>
+    <%= f.number_field :atk , in: 0...256 %>
+  </div>
+  <div class="field">
+    <%= f.label :防御 %><br>
+    <%= f.number_field :def , in: 0...256 %>
+  </div>
+  <div class="field">
+    <%= f.label :特功 %><br>
+    <%= f.number_field :satk , in: 0...256 %>
+  </div>
+  <div class="field">
+    <%= f.label :特防 %><br>
+    <%= f.number_field :sdef , in: 0...256 %>
+  </div>
+  <div class="field">
+    <%= f.label :素早さ %><br>
+    <%= f.number_field :spd , in: 0...256 %>
+  </div>
+
+  <div class="field">
     <%= f.label :性格 %><br>
-    <%= f.number_field :per_id %>
+    <%= f.collection_select :per_id,Per.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :特性 %><br>
-    <%= f.number_field :cha_id %>
+    <%= f.collection_select :cha_id,Cha.all,:id,:name %>
   </div>
   <div class="field">
     <%= f.label :持ち物 %><br>
-    <%= f.number_field :wepon_id %>
+    <%= f.collection_select :wepon_id,Wepon.all,:id,:name %>
   </div>
+
+  <div class="field">
+    <%= f.label :buildskills, "技" %><br />
+    <%= f.fields_for :buildskills do |buildskills_form| %>
+      <%= buildskills_form.label :skillname_id, "技" %>
+      <%= buildskills_form.collection_select :skillname_id,Skillname.all,:id,:name %></br>
+  <% end %>
+  </div>
+
   <div class="actions">
     <%= f.submit :完了%>
   </div>

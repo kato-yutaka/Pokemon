@@ -1,0 +1,15 @@
+﻿<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>パーティポケモン:</strong>
+  <%= @buildskill.party_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @buildskill.skillname.name %>
+</p>
+
+
+<%= link_to 'Edit', edit_buildskill_path(@buildskill) %> |
+<%= link_to 'Back', buildskills_path %>

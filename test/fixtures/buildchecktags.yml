@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pokebuild_id: 1
+  buildtag_id: 1
+
+two:
+  pokebuild_id: 1
+  buildtag_id: 1

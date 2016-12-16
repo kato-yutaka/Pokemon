@@ -13,6 +13,23 @@
 
 ActiveRecord::Schema.define(version: 20161212044932) do
 
+  create_table "buildchecktags", force: :cascade do |t|
+    t.integer  "pokebuild_id"
+    t.integer  "buildtag_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  create_table "buildskills", force: :cascade do |t|
+    t.integer  "party_id"
+    t.string   "name"
+    t.integer  "power"
+    t.string   "eff"
+    t.integer  "skillname_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "buildtags", force: :cascade do |t|
     t.string   "name"
     t.integer  "pokebuild_id"
@@ -86,6 +103,15 @@ ActiveRecord::Schema.define(version: 20161212044932) do
     t.string   "down"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "pokebuilds", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "title"
+    t.integer  "buildchecktag_id"
+    t.text     "ex"
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
   end
 
   create_table "pokedexes", force: :cascade do |t|

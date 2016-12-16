@@ -1,0 +1,28 @@
+﻿<%= form_for(@buildskill) do |f| %>
+  <% if @buildskill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@buildskill.errors.count, "error") %> prohibited this buildskill from being saved:</h2>
+
+      <ul>
+      <% @buildskill.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :パーティポケモン %><br>
+    <%= f.number_field :party_id %>
+
+  </div>
+
+  <div class="field">
+    <%= f.label :技名 %><br>
+    <%= f.collection_select :skillname_id,Skillname.all,:id,:name %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "登録" %>
+  </div>
+<% end %>

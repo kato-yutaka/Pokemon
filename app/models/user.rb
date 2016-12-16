@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
  has_many :pokerais
+ has_many :pokebuilds
  belongs_to :userinfo
 
 

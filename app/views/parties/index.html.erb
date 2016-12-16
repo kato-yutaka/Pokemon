@@ -2,6 +2,19 @@
 
 <h1>パーティポケモン</h1>
 
+<%
+unless @pokedex
+  @pokedex = Pokedex.new
+end
+%>
+
+<%
+unless @pokebuild
+  @pokebuild = Pokebuild.new
+end
+%>
+
+
 <table>
   <thead>
     <tr>
@@ -35,4 +48,5 @@
 
 <% else %>
 <%= link_to '新規作成', new_party_path %>
+
 <% end %>

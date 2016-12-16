@@ -16,6 +16,7 @@
   # GET /parties/new
   def new
     @party = Party.new
+		4.times { @party.buildskills.build }
   end
 
   # GET /parties/1/edit
@@ -70,6 +71,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def party_params
-      params.require(:party).permit(:pokebuild_id, :pokedex_id, :per_id, :cha_id, :wepon_id)
+      params.require(:party).permit(:pokebuild_id, :pokedex_id, :per_id, :cha_id, :hp,:atk,:def,:satk,:sdef,:spd, :wepon_id,buildskills_attributes: [:id, :pokerai_id, :party_id, :name, :power, :eff, :skillname_id])
     end
 end
