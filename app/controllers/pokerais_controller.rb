@@ -17,9 +17,9 @@
   # GET /pokerais/new
   def new
     @pokerai = Pokerai.new
-		4.times { @pokerai.skills.build }
-		@pokerai.raischecktags.build
-		@pokerai.coms.build
+    4.times { @pokerai.skills.build }
+    @pokerai.raischecktags.build
+    @pokerai.coms.build
 
   end
 

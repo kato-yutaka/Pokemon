@@ -6,6 +6,12 @@ unless @pokedex
 end
 %>
 
+<%
+unless @com
+ @com = Com.new
+ @com.pokebuild_id = @pokebuild.id
+end
+%>
 
 <p>
   <strong>タイトル:</strong>
@@ -70,15 +76,36 @@ end
 <br><br><br>
 <% end %>
 </ul>
-<p>
-  <strong>構築論タグ名:</strong>
-  <%= @pokebuild.buildchecktag_id %>
-</p>
 
 <p>
   <strong>説明:</strong>
   <%= @pokebuild.ex %>
 </p>
+
+<p>
+  <strong>構築論タグ名:</strong>
+  <%= @pokebuild.buildchecktag_id %>
+</p>
+
+<h2>コメント</h2>
+<ul>
+<% @pokebuild.coms.each do |com| %>
+<li><%= com.com %></li>
+<% end %>
+</ul>
+
+<%= form_for(@com) do |f| %>
+	<div class="field">
+  <%= f.label :com, "新しくコメントをする" %><br />
+  	<%= f.label :com%>
+  	<%= f.text_area :com %>
+    <%= f.hidden_field :pokebuild_id %>
+	</div>
+  <div class="actions">
+    <%= f.submit :完了%>
+  </div>
+<% end %>
+
 
 <%= link_to '編集', edit_pokebuild_path(@pokebuild) %> |
 <%= link_to 'ホームに戻る', pokebuilds_path %>

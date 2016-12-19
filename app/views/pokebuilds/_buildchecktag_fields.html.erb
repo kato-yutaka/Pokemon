@@ -1,0 +1,4 @@
+﻿<fieldset>
+	<%= f.label :buildtag_id, "タグ" %>
+	<%= f.collection_select :buildtag_id,Buildtag.all,:id,:name, :include_blank => true %></br>
+</fieldset>

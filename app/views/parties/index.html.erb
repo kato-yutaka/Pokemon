@@ -18,6 +18,7 @@ end
 <table>
   <thead>
     <tr>
+      <th>構築論名</th>
       <th>構築論ID</th>
       <th>図鑑No</th>
       <th>性格</th>
@@ -30,11 +31,12 @@ end
   <tbody>
     <% @parties.each do |party| %>
       <tr>
+        <td><%= party.pokebuild.title %></td>
         <td><%= party.pokebuild_id %></td>
         <td><%= party.pokedex_id %></td>
-        <td><%= party.per_id %></td>
-        <td><%= party.cha_id %></td>
-        <td><%= party.wepon_id %></td>
+        <td><%= party.per.name %></td>
+        <td><%= party.cha.name %></td>
+        <td><%= party.wepon.name %></td>
         <td><%= link_to '説明', party %></td>
         <td><%= link_to '編集', edit_party_path(party) %></td>
         <td><%= link_to '削除', party, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>

@@ -93,6 +93,12 @@ ActiveRecord::Schema.define(version: 20161212044932) do
     t.integer  "per_id"
     t.integer  "cha_id"
     t.integer  "wepon_id"
+    t.integer  "hp"
+    t.integer  "atk"
+    t.integer  "def"
+    t.integer  "satk"
+    t.integer  "sdef"
+    t.integer  "spd"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
@@ -184,7 +190,6 @@ ActiveRecord::Schema.define(version: 20161212044932) do
 
   create_table "skills", force: :cascade do |t|
     t.integer  "pokerai_id"
-    t.integer  "party_id"
     t.string   "name"
     t.integer  "power"
     t.string   "eff"

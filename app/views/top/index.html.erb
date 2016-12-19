@@ -12,22 +12,28 @@
 <hr>
 
 <div class="row">
-<div class="col-md-6" style="align:left">
-<h2>最近投稿された育成論</h2>
-<ul>
+<div class="col-md-6">
+<h2 style = "background-color:red; color:white" >最近投稿された育成論</h2>
+
 
 
 <% @pokerais.each do |po| %>
- <li><%= link_to po.title , pokerais_path %><%=  po.updated_at %></li>
+
+ <Div Align="left"><li style="list-style:none;"><%= image_tag show_image_pokedex_path(po.pokedex_id),{:style => "width: 100px "} %> <%= link_to po.title , po %> <%=  po.updated_at.to_s(:db) %><hr></li></div>
  
-    
+  
 
 <% end %>
-</ul>
+<%= link_to "もっと見る" , pokerais_path %>
 </div>
 
 <div class="col-md-6">
-<h1>最近投稿された構築論</h1>
+<h2 style = "background-color:blue; color:white" >最近投稿された構築論</h2>
 
+<% @pokebuilds.each do |ke| %>
+
+ <Div Align="left"><li style="list-style:none;"><%= image_tag show_image_user_path(ke.user_id),{:style => "width: 100px "} %> <%= link_to ke.title , ke %> <%=  ke.updated_at.to_s(:db) %><hr></li></div>
+<% end %>
+<%= link_to "もっと見る" , pokebuilds_path %>
 </div>
 </div>

@@ -20,6 +20,7 @@
 			party = @pokebuild.parties.build
 			4.times {party.buildskills.build }
   	end
+    @pokebuild.coms.build
 	end
 
   # GET /pokebuilds/1/edit
@@ -74,6 +75,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokebuild_params
-      params.require(:pokebuild).permit(:user_id, :title, :buildchecktag_id, :ex, parties_attributes: [:pokebuild_id, :pokedex_id, :per_id, :cha_id, :hp,:atk,:def,:satk,:sdef,:spd, :wepon_id,buildskills_attributes: [:id, :pokerai_id, :party_id, :name, :power, :eff, :skillname_id]])
+      params.require(:pokebuild).permit(:user_id, :title, :buildchecktag_id, :ex, buildchecktags_attributes: [:buildtag_id, :pokebuild_id], parties_attributes: [:pokebuild_id, :pokedex_id, :per_id, :cha_id, :hp,:atk,:def,:satk,:sdef,:spd, :wepon_id,buildskills_attributes: [:id, :pokerai_id, :party_id, :name, :power, :eff, :skillname_id]],coms_attributes: [:name, :date, :com, :pokerai_id, :pokebuild_id])
     end
 end

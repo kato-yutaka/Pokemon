@@ -5,4 +5,5 @@ belongs_to :egg
 belongs_to :type
 has_many :pokerais
 has_many :parties
+has_many :top
 end

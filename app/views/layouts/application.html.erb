@@ -24,16 +24,20 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="pokedexes">ポケモン図鑑</a></li>
-        <li class="active"><a href="pokerais">育成論</a></li>
-        <li class="active"><a href="parties">構築論</a></li>
-        <li class="active"><a href="skills">技</a></li>
-　　　　<li class="active"><a href="wepons">道具</a></li>
+
+
+        <li class="active"><%= link_to "ポケモン図鑑",pokedexes_path%></li>
+        <li class="active"><%= link_to "育成論",pokerais_path%></li>
+        <li class="active"><%= link_to "構築論",pokebuilds_path%></li>
+        <li class="active"><%= link_to "技",skillnames_path%></li>
+        <li class="active"><a href="wepons">道具</a></li>
+        <li class="active"><%= link_to "道具",wepons_path%></li>
    
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
        
+
 
         <% if "#{session[:usrname]}" == "" %>
            <li class="active"><a href="http://localhost:3000/login/index">ログイン</a></li>
@@ -89,9 +93,9 @@
 </div>
 
 
-<footer style = "background-color:black; color:white">
+<footer>
   <div class="container">
-    Rails Girls 2016
+
   </div>
 </footer>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>

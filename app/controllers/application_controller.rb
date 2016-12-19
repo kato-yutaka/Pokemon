@@ -3,7 +3,24 @@
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :check_logined
+  before_filter :set_request_from
   private
+
+  def set_request_from
+    if session[:request_from]
+      @request_from = session[:request_from]
+    end
+    # 現在のURLを保存しておく
+    session[:request_from] = request.original_url
+  end
+
+  def return_back
+    if request.referer
+      redirect_to :back and return true
+    elsif @request_from
+      redirect_to @request_from and return true
+    end
+  end
 
   def check_logined
     #セッション情報:user(id値)が存在するか
