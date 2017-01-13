@@ -73,7 +73,6 @@ end
   <strong>持ち物:</strong>
   <td><%= link_to party.wepon.name,wepon_path(party.wepon_id) %><br>
 </p>
-<br><br><br>
 <% end %>
 </ul>
 
@@ -90,13 +89,16 @@ end
 <h2>コメント</h2>
 <ul>
 <% @pokebuild.coms.each do |com| %>
-<li><%= com.com %></li>
+<li>コメントした人：<%= link_to com.name,user_path(com.user_id) %><br>内容：<%= com.com %><br>日時：[<%= (com.updated_at + 32400).to_s(:db) %>]</li>
+<br><br>
 <% end %>
 </ul>
 
 <%= form_for(@com) do |f| %>
 	<div class="field">
   <%= f.label :com, "新しくコメントをする" %><br />
+    <%= f.hidden_field :name, :value => session[:usrname] %>
+    <%= f.hidden_field :user_id, :value => session[:usr] %>
   	<%= f.label :com%>
   	<%= f.text_area :com %>
     <%= f.hidden_field :pokebuild_id %>

@@ -24,10 +24,21 @@ end
 <table>
   <thead>
     <tr>
-      <th>投稿者名</th>
       <th>タイトル</th>
-      <th>タグ名</th>
-      <th>説明</th>
+      <th>投稿者名</th>
+      <th>画像</th>
+      <th>ポケモン１</th>
+      <th>画像</th>
+      <th>ポケモン２</th>
+      <th>画像</th>
+      <th>ポケモン３</th>
+      <th>画像</th>
+      <th>ポケモン４</th>
+      <th>画像</th>
+      <th>ポケモン５</th>
+      <th>画像</th>
+      <th>ポケモン６</th>
+      <th>更新日</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -36,8 +47,14 @@ end
     <% @pokebuilds.each do |pokebuild| %>
       <tr>
         <td><%= link_to pokebuild.title , pokebuild%></td>
-        <td>投稿者名:<%= link_to pokebuild.user.name,user_path(pokebuild.user_id)%></td>
-        <td><%= pokebuild.ex %></td>
+        <td><%= link_to pokebuild.user.name,user_path(pokebuild.user_id) %></td>
+        <% pokebuild.parties.each do |party| %>
+					<% if party.pokebuild_id == pokebuild.id %>
+						<td><%= image_tag show_image_pokedex_path(party.pokedex_id) %></td>
+		        <td><%= link_to party.pokedex.name,pokedex_path(party.pokedex_id) %></td>
+    			<% end %>
+    		<% end %>
+	      <td><%= (pokebuild.updated_at + 32400).to_s(:db) %></td>
         <td><%= link_to '説明', pokebuild %></td>
         <td><%= link_to '編集', edit_pokebuild_path(pokebuild) %></td>
         <td><%= link_to '削除', pokebuild, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>

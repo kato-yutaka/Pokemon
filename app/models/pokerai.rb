@@ -13,4 +13,7 @@ class Pokerai < ActiveRecord::Base
   accepts_nested_attributes_for :skills
   accepts_nested_attributes_for :coms
   accepts_nested_attributes_for :raischecktags
+
+ validates :title, presence: true
+
 end

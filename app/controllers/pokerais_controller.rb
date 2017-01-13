@@ -1,6 +1,6 @@
 ﻿class PokeraisController < ApplicationController
   skip_before_action :check_logined
-  before_action :set_pokerai, only: [:show, :edit, :update, :destroy]
+  before_action :set_pokerai, only: [:show, :edit, :update, :destroy, :sum]
 
   # GET /pokerais
   # GET /pokerais.json
@@ -74,7 +74,10 @@
 		render :index
 	end
 
-	
+	def sum
+		params["sum"] = params["hp"] +	params["atk"] + 		params["def"]+		params["satk"]+		params["sdef"]+		params["spd"]
+	end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -84,7 +87,7 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokerai_params
-      params.require(:pokerai).permit(:user_id, :title, :pokedex_id, :hp, :atk, :def, :satk, :sdef, :spd, :per_id, :cha_id, :wepon_id, :ex,skills_attributes: [:id, :pokerai_id, :party_id, :name, :power, :eff, :skillname_id],coms_attributes: [:name, :date, :com, :pokerai_id, :pokebuild_id],raischecktags_attributes: [:pokerai_id, :raistag_id])
+      params.require(:pokerai).permit(:user_id, :title, :pokedex_id, :hp, :atk, :def, :satk, :sdef, :spd, :sum, :per_id, :cha_id, :wepon_id, :ex,skills_attributes: [:id, :pokerai_id, :party_id, :name, :power, :eff, :skillname_id],coms_attributes: [:name, :date, :com, :pokerai_id, :pokebuild_id],raischecktags_attributes: [:pokerai_id, :raistag_id] )
 
     end
 end
