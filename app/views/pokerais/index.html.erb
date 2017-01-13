@@ -18,6 +18,7 @@ end
  <%= text_field_tag "search[title]" %>
  <%= submit_tag "検索" %>
  <%= link_to "リセット", pokerais_path %>
+ 
 <% end %></br>
 
 	<table>
@@ -70,7 +71,7 @@ end
 	        <td><%= (pokerai.updated_at + 32400).to_s(:db) %></td>
    		    <td><%= link_to '編集', edit_pokerai_path(pokerai) %></td>
     	   	<td><%= link_to '削除', pokerai, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
-      	</tr>
+      	 </tr>
     <% end %>
 </table>
 <br>

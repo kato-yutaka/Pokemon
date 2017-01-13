@@ -11,7 +11,7 @@
 
 <body>
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -24,12 +24,21 @@
     </div>
     <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
+
+
         <li class="active"><%= link_to "ポケモン図鑑",pokedexes_path%></li>
         <li class="active"><%= link_to "育成論",pokerais_path%></li>
         <li class="active"><%= link_to "構築論",pokebuilds_path%></li>
         <li class="active"><%= link_to "技",skillnames_path%></li>
         <li class="active"><a href="wepons">道具</a></li>
         <li class="active"><%= link_to "道具",wepons_path%></li>
+   
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+       
+
+
         <% if "#{session[:usrname]}" == "" %>
            <li class="active"><a href="http://localhost:3000/login/index">ログイン</a></li>
            <% else %>
@@ -40,6 +49,7 @@
         <% end %>
 
       </ul>
+
     </div>
   </div>
 </nav>
@@ -59,24 +69,14 @@
 <ul style='list-style-type:none;'>
 <br>
 <br>
- <li><%= link_to "ポケモン図鑑",pokedexes_path%></li>
- <li><%= link_to "育成論",pokerais_path%></li>
- <li><%= link_to "育成論タグ",raistags_path%></li>
- <li><%= link_to "育成論タグ付け",raischecktags_path%></li>
- <li><%= link_to "構築論",pokebuilds_path%></li>
- <li><%= link_to "構築論タグ",buildtags_path%></li>
- <li><%= link_to "構築論タグ付け",buildchecktags_path%></li>
- <li><%= link_to "パーティーポケモン"  ,parties_path%></li>
- <li><%= link_to "ユーザー"  ,users_path%></li>
- <li><%= link_to "コメント"  ,coms_path%></li>
- <li><%= link_to "育成論の技"  ,skills_path%></li>
- <li><%= link_to "構築論の技"  ,buildskills_path%></li>
- <li><%= link_to "技名"    ,skillnames_path%></li>
- <li><%= link_to "タイプ",types_path%></li>
- <li><%= link_to "卵グループ",eggs_path%></li>
- <li><%= link_to "性格",pers_path%></li>
- <li><%= link_to "特性"    ,chas_path%></li>
- <li><%= link_to "コメント"  ,coms_path%></li>
+
+
+
+
+
+
+
+
 </br>
 
 </Ul>
@@ -95,10 +95,11 @@
 
 <footer>
   <div class="container">
-    Rails Girls 2016
+
   </div>
 </footer>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+
 
 
 </body>
