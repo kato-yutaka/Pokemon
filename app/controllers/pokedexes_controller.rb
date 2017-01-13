@@ -12,6 +12,9 @@
   # GET /pokedexes/1
   # GET /pokedexes/1.json
   def show
+   @cha1 = Cha.find(@pokedex.cha1)
+   @cha2 = Cha.find(@pokedex.cha2)
+   @cha3 = Cha.find(@pokedex.cha3)
   end
 
   # GET /pokedexes/new

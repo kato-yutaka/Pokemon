@@ -2,7 +2,24 @@
 
 <h1>利用者情報</h1>
 
-<table>
+<div class="col-md-4">
+
+<div align ="left">
+    <font size="5">  <%= "名前:#{session[:usrname]}" %>  <br> <br>
+      <%= "メールアドレス:#{session[:usremail]}" %> <br> <br>
+      <% if #{session[:usrinfo]} = 1 %>
+      <%= "情報公開:する" %> <br> <br>
+      <% else %>
+      <%= "情報公開:しない" %> <br> <br>
+      <% end %>
+      <%= "自己紹介:#{session[:usrprofile]}" %>  
+</div>
+</div>
+
+
+<div class="col-md-4">
+
+
 <div style="padding: 10px;width:300px; margin-bottom: 10px; border: 1px dotted #333333;background-color: #ffff99;">
 <%= link_to "育成論を投稿する", buildtags_path %>
 </div> 
@@ -16,12 +33,22 @@
 <%= link_to "情報変更", edit_user_path("#{session[:usr]}") %>
 </div> 
 
-<div align ="left">
-    <font size="5">  <%= "名前:#{session[:usrname]}" %>  <br> <br>
-      <%= "メールアドレス:#{session[:usremail]}" %> <br> <br>
-      <%= "情報公開:#{session[:usrinfo]}" %> <br> <br>
-      <%= "自己紹介:#{session[:usrprofile]}" %> <br> <br>
-      <%= "アイコン:#{session[:usrpicdata]}" %> 
 </div>
 
+<div class="col-md-4">
+
+
+<h2>投稿している育成論</h2>
+
+
+<% @pokerais.each do |pokerai| %>
+          　<h2><%=link_to pokerai.title,pokerai%></h2>
+	    <%= image_tag show_image_pokedex_path(pokerai.pokedex_id) %>
+	    <%=link_to pokerai.pokedex.name,pokedex_path(pokerai.pokedex_id)%><hr>
+<% end %>
+
+
+
+
+</div>
 </table>

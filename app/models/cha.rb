@@ -1,5 +1,5 @@
 class Cha < ActiveRecord::Base
-belongs_to :pokedex
- has_many :pokerais
+has_many :pokerais
 has_many :paries
+has_many :pokedexes
 end

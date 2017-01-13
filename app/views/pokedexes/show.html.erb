@@ -38,17 +38,17 @@
 
 <p>
   <strong>特性１:</strong>
-  <%= @pokedex.cha1 %>
+  <%= @cha1.name %>
 </p>
 
 <p>
   <strong>特性２:</strong>
-  <%= @pokedex.cha2 %>
+  <%= @cha2.name %>
 </p>
 
 <p>
   <strong>夢特性:</strong>
-  <%= @pokedex.cha3 %>
+  <%= @cha3.name %>
 </p>
 
 <p>
@@ -58,18 +58,14 @@
 
 <p>
   <strong>卵グループ:</strong>
-  <%= @pokedex.egg %>
+  <%= @pokedex.egg.name %>
 </p>
 
 <p>
   <strong>タイプ:</strong>
-  <%= @pokedex.type %>
+  <%= @pokedex.type.name %>
 </p>
 
-<p>
-  <strong>画像:</strong>
-  <%= @pokedex.pic %>
-</p>
 
 <p>
   <strong>画像データ:</strong>
@@ -83,3 +79,5 @@
 <%= link_to '編集', edit_pokedex_path(@pokedex) %> |
 <% end %>
 <%= link_to '戻る', pokedexes_path %>
+
+

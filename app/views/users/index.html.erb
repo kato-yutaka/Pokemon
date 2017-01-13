@@ -16,8 +16,6 @@
       <th>パスワード</th>
       <th>情報公開</th>
       <th>自己紹介</th>
-      <th>管理者</th>
-      <th>アイコン</th>
       <th>アイコン画像</th>
       
       <th colspan="3"></th>
@@ -33,8 +31,6 @@
         <td><%= "******" %></td>
         <td><%= user.info %></td>
         <td><%= user.profile %></td>
-       <td><%= user.ad %></td>
-        <td><%= user.pic %></td>
         <td><%= image_tag show_image_user_path(user) %></td>
 
         <td><%= link_to '詳細', user %></td>

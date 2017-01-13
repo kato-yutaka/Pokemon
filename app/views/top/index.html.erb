@@ -5,7 +5,11 @@
 <% if rand(10) <= 5 %>
 <%= link_to image_tag("TOP.png",{:class => 'img-responsive'} ), pokedexes_path  %>
 <% else %>
+<% if rand(10) == 1 %>
+<%= link_to image_tag("TOP3.png",{:class => 'img-responsive'} ), pokedexes_path  %>
+<% else %>
 <%= link_to image_tag("TOP2.png",{:class => 'img-responsive'}), pokedexes_path %>
+<% end %>
 <% end %>
 </div>
 

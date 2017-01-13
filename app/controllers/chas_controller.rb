@@ -70,6 +70,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cha_params
-      params.require(:cha).permit(:kubun, :pokedex_id, :name, :ex)
+      params.require(:cha).permit(:name , :kubun, :pokedex_id,  :ex)
     end
 end
