@@ -40,6 +40,11 @@ CSV.foreach('db/cha_number.csv') do |row|
   Cha3.create(:cha_id => row[0])
 end
 
+CSV.foreach('db/t-num.csv') do |row|
+  Pokedex.create(:egg_id => row[0])
+end
+
+
 a = 1
 
 PokemonZukan.find_all(1..718).each do |pokedex|

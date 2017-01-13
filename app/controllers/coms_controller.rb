@@ -71,6 +71,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def com_params
-      params.require(:com).permit(:name, :date, :com, :pokerai_id, :pokebuild_id)
+      params.require(:com).permit(:name, :date, :com, :pokerai_id, :pokebuild_id, :user_id)
     end
 end

@@ -72,6 +72,7 @@ ActiveRecord::Schema.define(version: 20170112032019) do
     t.integer  "pokebuild_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "user_id"
   end
 
   create_table "eggs", force: :cascade do |t|
@@ -159,6 +160,7 @@ ActiveRecord::Schema.define(version: 20170112032019) do
     t.integer  "sdef"
     t.integer  "spd"
     t.binary   "pic_data"
+    t.integer  "sum"
   end
 
   create_table "raischecktags", force: :cascade do |t|

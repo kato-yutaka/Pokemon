@@ -11,7 +11,10 @@ class Pokerai < ActiveRecord::Base
         has_many :raistags,through: :raischecktags
         has_many :skills, dependent: :destroy
 	has_many :skillnames,through: :skills, dependent: :destroy
-        accepts_nested_attributes_for :skills
-        accepts_nested_attributes_for :coms
-        accepts_nested_attributes_for :raischecktags
+  accepts_nested_attributes_for :skills
+  accepts_nested_attributes_for :coms
+  accepts_nested_attributes_for :raischecktags
+
+ validates :title, presence: true
+
 end

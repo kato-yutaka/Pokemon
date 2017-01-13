@@ -6,4 +6,6 @@ class Pokebuild < ActiveRecord::Base
   has_many :buildtags,through: :buildchecktags
 	has_many :coms, dependent: :destroy
   accepts_nested_attributes_for :buildchecktags
+
+ validates :title,  presence: true
 end
