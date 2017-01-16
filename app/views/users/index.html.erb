@@ -12,8 +12,6 @@
     <tr>
 
       <th>名前</th>
-      <th>メールアドレス</th>
-      <th>パスワード</th>
       <th>情報公開</th>
       <th>自己紹介</th>
       <th>アイコン画像</th>
@@ -27,9 +25,12 @@
       <tr>
 
         <td><%= user.name %></td>
-         <td><%= user.email %></td>
-        <td><%= "******" %></td>
-        <td><%= user.info %></td>
+
+        <% if user.info == "0" %>
+        <td>する</td>
+        <% else %>
+        <td>しない</td> 
+        <% end %>
         <td><%= user.profile %></td>
         <td><%= image_tag show_image_user_path(user) %></td>
 

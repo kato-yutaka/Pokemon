@@ -8,9 +8,9 @@
     <font size="5">  <%= "名前:#{session[:usrname]}" %>  <br> <br>
       <%= "メールアドレス:#{session[:usremail]}" %> <br> <br>
       <% if #{session[:usrinfo]} = 1 %>
-      <%= "情報公開:する" %> <br> <br>
-      <% else %>
       <%= "情報公開:しない" %> <br> <br>
+      <% else %>
+      <%= "情報公開:する" %> <br> <br>
       <% end %>
       <%= "自己紹介:#{session[:usrprofile]}" %>  
 </div>

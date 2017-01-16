@@ -4,6 +4,11 @@ class User < ActiveRecord::Base
  belongs_to :userinfo
  belongs_to :top
 
+ validates :name, presence: true, uniqueness: true 
+ validates :email, presence: true, uniqueness: true
+ validates :password, presence: true
+ 
+
 
 def self.authenticate(email,password)
     usr = find_by(email: email)
