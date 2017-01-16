@@ -1,4 +1,10 @@
-﻿<div align = "center">
+﻿<% if "#{session[:usrinfo]}" ==  "false" %>
+
+<h1>このユーザーの情報は非公開です<h1>
+
+<% else %>
+
+<div align = "center">
 
 <%
 unless @pokedex
@@ -9,19 +15,11 @@ end
 
 <p id="notice"><%= notice %></p>
 
+<h2>ユーザー情報</h2>
+
 <p>
-  <strong>名前:</strong>
+  <strong>ユーザー名:</strong>
   <%= @user.name %>
-</p>
-
-<p>
- <strong>Email:</strong>
- <%= @user.email %>
-</p>
-
-<p>
- <strong>Pic:</strong>
- <%= @user.pic %>
 </p>
 
 <p>
@@ -29,35 +27,27 @@ end
   <%= image_tag show_image_user_path(@user) %>
 </p>
 
-<p>
- <strong>Password:</strong>
- <%= "******" %>
-</p>
+<% if "#{session[:usrprofile]}" ==  " " %>
 
 <p>
- <strong>Info:</strong>
- <%= @user.info %>
-</p>
-
-<p>
- <strong>Profile:</strong>
+ <strong>自己紹介:</strong>
  <%= @user.profile %>
 </p>
+<% else %>
 
-<p>
- <strong>Ad:</strong>
- <%= @user.ad %>
-</p>
-
+<% end %>
 
 <h2>投稿している育成論</h2>
-<ul>
+
+
 <% @user.pokerais.each do |pokerai| %>
+        <div class="col-md-4">
 	<td><h2><%=link_to pokerai.title,pokerai%></h2></td><br>
 	<td><%= image_tag show_image_pokedex_path(pokerai.pokedex_id) %></td>
 	<td><%=link_to pokerai.pokedex.name,pokedex_path(pokerai.pokedex_id)%></td><br><br>
+        </div>
 <% end %>
-</ul>
+<% end %>
 
- |
-<%= link_to 'Back', users_path %>
+
+
