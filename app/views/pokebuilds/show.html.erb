@@ -26,14 +26,19 @@ end
 <h2>パーティポケモン</2>
 <ul>
 <%= @pokebuild.parties.each do |party| %>
+
+<div class="col-md-4">
+
 <p>
  <%= image_tag show_image_pokedex_path(party.pokedex_id) %></br>
  <li><%= link_to party.pokedex.name,pokedex_path(party.pokedex_id) %></li>
 </p>
+
  <p>
   <strong>HP:</strong>
   <%= party.hp %>
  </p>
+
  <p>
   <strong>攻撃:</strong>
   <%= party.atk %>
@@ -73,8 +78,12 @@ end
   <strong>持ち物:</strong>
   <td><%= link_to party.wepon.name,wepon_path(party.wepon_id) %><br>
 </p>
+
+</div>
+
 <% end %>
 </ul>
+
 
 <p>
   <strong>説明:</strong>
@@ -85,6 +94,7 @@ end
   <strong>構築論タグ名:</strong>
   <%= @pokebuild.buildchecktag_id %>
 </p>
+
 
 <h2>コメント</h2>
 <ul>

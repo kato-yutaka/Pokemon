@@ -4,7 +4,8 @@
 
 <div class="col-md-4">
 
-<div align ="left">
+<h2>基本情報</h2>
+<br>
     <font size="5">  <%= "名前:#{session[:usrname]}" %>  <br> <br>
       <%= "メールアドレス:#{session[:usremail]}" %> <br> <br>
       <% if #{session[:usrinfo]} = 1 %>
@@ -13,7 +14,6 @@
       <%= "情報公開:する" %> <br> <br>
       <% end %>
       <%= "自己紹介:#{session[:usrprofile]}" %>  
-</div>
 </div>
 
 
@@ -36,15 +36,14 @@
 </div>
 
 <div class="col-md-4">
-
-
 <h2>投稿している育成論</h2>
 
 
 <% @pokerais.each do |pokerai| %>
+<div class="col-md-6">
           　<h2><%=link_to pokerai.title,pokerai%></h2>
 	    <%= image_tag show_image_pokedex_path(pokerai.pokedex_id) %>
-	    <%=link_to pokerai.pokedex.name,pokedex_path(pokerai.pokedex_id)%><hr>
+</div>
 <% end %>
 
 
