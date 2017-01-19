@@ -24,7 +24,7 @@ end
 </p>
 
 <h2>パーティポケモン</2>
-<ul>
+<ul style="list-style:none;">
 <%= @pokebuild.parties.each do |party| %>
 
 <div class="col-md-4">
@@ -43,12 +43,12 @@ end
   <strong>攻撃:</strong>
   <%= party.atk %>
  </p>
- 
+
  <p>
   <strong>防御:</strong>
   <%= party.def %>
  </p>
- 
+
  <p>
   <strong>特功:</strong>
   <%= party.satk %>
@@ -82,6 +82,7 @@ end
 </div>
 
 <% end %>
+
 </ul>
 
 

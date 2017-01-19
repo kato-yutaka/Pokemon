@@ -1,6 +1,7 @@
 ﻿<% if @user.info == "0" %>
 
 <h1>このユーザーの情報は非公開です<h1>
+<%= link_to "自分の情報が見たい場合はこちら" , userinfos_path %>
 
 <% else %>
 
@@ -41,11 +42,13 @@ end
 
 
 <% @user.pokerais.each do |pokerai| %>
-        <div class="col-md-4">
+      <div class="col-md-4">
+
 	<td><h2><%=link_to pokerai.title,pokerai%></h2></td><br>
 	<td><%= image_tag show_image_pokedex_path(pokerai.pokedex_id) %></td>
 	<td><%=link_to pokerai.pokedex.name,pokedex_path(pokerai.pokedex_id)%></td><br><br>
-        </div>
+
+      </div>
 <% end %>
 <% end %>
 

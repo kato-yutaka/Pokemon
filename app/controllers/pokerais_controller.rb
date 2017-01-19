@@ -1,5 +1,6 @@
 ﻿class PokeraisController < ApplicationController
   skip_before_action :check_logined
+  autocomplete :pokerai, :title, :full => true
   before_action :set_pokerai, only: [:show, :edit, :update, :destroy, :sum]
 
   # GET /pokerais
@@ -70,8 +71,8 @@
 
 
 	def search
-		@pokerais = Pokerai.where(title: params["search"]["title"])
-		render :index
+	@pokerais = Pokerai.where(title: params["search"]["title"])
+	render :index
 	end
 
 	def sum

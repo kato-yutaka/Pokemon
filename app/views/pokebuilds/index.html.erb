@@ -23,6 +23,13 @@ end
 
 <h1>構築論</h1>
 
+<%= form_tag(:action=>"search") do %>
+  <%= autocomplete_field_tag "search[title]",'',autocomplete_pokebuild_title_pokebuilds_path,:class => '',:placeholder => '名前で探す'  %>
+  <%= submit_tag "検索" %>
+  <%= link_to "リセット", pokebuilds_path %>
+
+<% end %>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -30,9 +37,7 @@ end
       <th>タイトル</th>
       <th>投稿者名</th>
       <th>画像</th>
-
       <th>ポケモン１</th>
-
       <th>画像</th>
       <th>ポケモン２</th>
       <th>画像</th>
