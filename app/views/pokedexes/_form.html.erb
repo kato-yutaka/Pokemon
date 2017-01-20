@@ -40,24 +40,8 @@
     <%= f.number_field :spd %>
   </div>
   <div class="field">
-    <%= f.label :特性１ %><br>
-    <%= f.collection_select :cha1,Cha.all,:id,:name %>
-  </div>
-  <div class="field">
-    <%= f.label :特性２ %><br>
-    <%= f.collection_select :cha2,Cha.all,:id,:name %>
-  </div>
-  <div class="field">
-    <%= f.label :夢特性 %><br>
-    <%= f.collection_select :cha3,Cha.all,:id,:name %>
-  </div>
-  <div class="field">
-    <%= f.label :生態 %><br>
-    <%= f.text_area :eco %>
-  </div>
-  <div class="field">
     <%= f.label :卵グループ %><br>
-    <%= f.collection_select :egg_id,Egg.all,:id,:name %>
+    <%= f.number_field :egg_id %>
   </div>
   <div class="field">
     <%= f.label :タイプ %><br>

@@ -52,11 +52,6 @@
   </div>
 
   <div class="field">
-    <%= f.label :合計 %><br>
-    <%= f.number_field :sum %>
-  </div>
-
-  <div class="field">
     <%= f.label :性格 %><br>
     <%= f.collection_select :per_id,Per.all,:id,:name %>
   </div>

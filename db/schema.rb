@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219024129) do
+ActiveRecord::Schema.define(version: 20170113021144) do
 
   create_table "buildchecktags", force: :cascade do |t|
     t.integer  "pokebuild_id"
@@ -130,7 +130,7 @@ ActiveRecord::Schema.define(version: 20161219024129) do
     t.integer  "sdef"
     t.integer  "spd"
     t.text     "eco"
-    t.string   "egg_id"
+    t.integer  "egg_id"
     t.integer  "type_id"
     t.string   "pic"
     t.binary   "pic_data"

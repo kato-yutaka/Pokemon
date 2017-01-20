@@ -5,5 +5,13 @@
   <%= @egg.name %>
 </p>
 
+<h2>このタマゴグループのポケモン</h2>
+<% @egg.pokedexes.each do |pokedex| %>
+ <div class="col-md-1"> 
+  <%= image_tag show_image_pokedex_path(pokedex),{:style => "width: 50px"} %>
+  <li><%=link_to pokedex.name,pokedex_path%></li>
+ </div> 
+<% end %>
+
 <%= link_to '編集', edit_egg_path(@egg) %> |
 <%= link_to 'ホームに戻る', eggs_path %>

@@ -15,15 +15,15 @@
   <tbody>
     <% @eggs.each do |egg| %>
       <tr>
-        <td><%= egg.name %></td>
+        <td><%= link_to egg.name, egg %></td>
         <td><%= link_to '説明', egg %></td>
         <% if "#{session[:usrad]}" ==  "true" %> 
-        <td><%= link_to '編集', edit_egg_path(egg) %></td>
-        <td><%= link_to '削除', egg, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+         <td><%= link_to '編集', edit_egg_path(egg) %></td>
+         <td><%= link_to '削除', egg, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+        <% end %>
       </tr>
-    <% end %>
-    <% end %>
-  </tbody>
+     <% end %>
+   </tbody>
 </table>
 
 <br>

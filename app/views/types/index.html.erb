@@ -13,7 +13,7 @@
   <tbody>
     <% @types.each do |type| %>
       <tr>
-        <td><%= type.name %></td>
+        <td><%= link_to type.name, type %></td>
         <td><%= link_to '詳細', type %></td>
     <% if "#{session[:usrad]}" ==  "true" %>
         <td><%= link_to '編集', edit_type_path(type) %></td>

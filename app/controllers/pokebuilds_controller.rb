@@ -1,4 +1,5 @@
 ﻿class PokebuildsController < ApplicationController
+  skip_before_action :check_logined
   before_action :set_pokebuild, only: [:show, :edit, :update, :destroy]
 
   # GET /pokebuilds
