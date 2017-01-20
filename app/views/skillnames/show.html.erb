@@ -46,5 +46,7 @@
   <%= @skillname.eff %>
 </p>
 
+<% if "#{session[:usrad]}" ==  "true" %>
 <%= link_to '編集', edit_skillname_path(@skillname) %> |
+<% end %>
 <%= link_to 'ホームに戻る', skillnames_path %>

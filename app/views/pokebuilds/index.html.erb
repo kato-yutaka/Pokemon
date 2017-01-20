@@ -67,8 +67,10 @@ end
     		<% end %>
 	      <td><%= (pokebuild.updated_at + 32400).to_s(:db) %></td>
         <td><%= link_to '説明', pokebuild %></td>
+        <% if "#{session[:usrad]}" ==  "true"%>
         <td><%= link_to '編集', edit_pokebuild_path(pokebuild) %></td>
         <td><%= link_to '削除', pokebuild, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

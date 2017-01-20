@@ -36,15 +36,24 @@
 </div>
 
 <div class="col-md-4">
-<h2>投稿している育成論</h2>
-
+<h2>投稿している育成論・構築論を編集する</h2>
 
 <% @pokerais.each do |pokerai| %>
-<div class="col-md-6">
+
+
+<% if "#{session[:usrname]}" ==  pokerai.user.name %>
           　<h2><%=link_to pokerai.title,pokerai%></h2>
 	    <%= image_tag show_image_pokedex_path(pokerai.pokedex_id) %>
-</div>
 <% end %>
+<% end %>
+
+<% @pokebuilds.each do |pokebuild| %>
+<% if "#{session[:usrname]}" ==  pokebuild.user.name %>
+          　<h2><%=link_to pokebuild.title,pokebuild%></h2>
+<% end %>
+<% end %>
+
+
 
 
 

@@ -35,8 +35,11 @@
         <td><%= image_tag show_image_user_path(user) %></td>
 
         <td><%= link_to '詳細', user %></td>
+
+<% if "#{session[:usrad]}" ==  "true" %>
         <td><%= link_to '更新', edit_user_path(user) %></td>
         <td><%= link_to '削除', user, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+<% end %>
 
       </tr>
     <% end %>

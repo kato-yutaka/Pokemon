@@ -6,6 +6,7 @@ skip_before_action :check_logined
   def index
     @userinfos = Userinfo.all
     @pokerais = Pokerai.all
+    @pokebuilds = Pokebuild.all
   end
 
   # GET /userinfos/1

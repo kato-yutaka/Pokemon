@@ -73,8 +73,10 @@ end
  		   		<% end %>
 
 	        <td><%= (pokerai.updated_at + 32400).to_s(:db) %></td>
+     <% if "#{session[:usrad]}" ==  "true"%>
    		    <td><%= link_to '編集', edit_pokerai_path(pokerai) %></td>
     	   	<td><%= link_to '削除', pokerai, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+    <% end %>
       	 </tr>
     <% end %>
 </table>

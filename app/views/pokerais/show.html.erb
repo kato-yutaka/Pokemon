@@ -117,7 +117,10 @@ end
   </div>
 <% end %>
 
+<% if "#{session[:usrad]}" ==  "true" %>
 <%= link_to '編集', edit_pokerai_path(@pokerai) %> |
+ <% end %>
+
 <%= link_to 'ホームに戻る', pokerais_path %>
 
 </div>
