@@ -1,5 +1,7 @@
 ﻿<p id="notice"><%= notice %></p>
 
+
+
 <%
 unless @user
   @user = User.new
@@ -21,9 +23,17 @@ end
 
 <h1>構築論</h1>
 
-<table>
+<%= form_tag(:action=>"search") do %>
+  <%= autocomplete_field_tag "search[title]",'',autocomplete_pokebuild_title_pokebuilds_path,:class => '',:placeholder => '名前で探す'  %>
+  <%= submit_tag "検索" %>
+  <%= link_to "リセット", pokebuilds_path %>
+
+<% end %>
+
+<table class="table table-striped">
   <thead>
     <tr>
+
       <th>タイトル</th>
       <th>投稿者名</th>
       <th>画像</th>
@@ -43,21 +53,24 @@ end
     </tr>
   </thead>
 
-  <tbody>
+
     <% @pokebuilds.each do |pokebuild| %>
       <tr>
         <td><%= link_to pokebuild.title , pokebuild%></td>
-        <td><%= link_to pokebuild.user.name,user_path(pokebuild.user_id) %></td>
+        <td><%= link_to pokebuild.user.name,user_path(pokebuild.user_id)%></td>
+        <td><%= pokebuild.ex %></td>
         <% pokebuild.parties.each do |party| %>
-					<% if party.pokebuild_id == pokebuild.id %>
-						<td><%= image_tag show_image_pokedex_path(party.pokedex_id) %></td>
+	<% if party.pokebuild_id == pokebuild.id %>
+	<td><%= image_tag show_image_pokedex_path(party.pokedex_id) %></td>
 		        <td><%= link_to party.pokedex.name,pokedex_path(party.pokedex_id) %></td>
     			<% end %>
     		<% end %>
 	      <td><%= (pokebuild.updated_at + 32400).to_s(:db) %></td>
         <td><%= link_to '説明', pokebuild %></td>
+        <% if "#{session[:usrad]}" ==  "true"%>
         <td><%= link_to '編集', edit_pokebuild_path(pokebuild) %></td>
         <td><%= link_to '削除', pokebuild, method: :delete, data: { confirm: '本当に削除しますか?' } %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   resources :userinfos
   get 'login/index'
-  
   post 'login/auth'
 
   resources :raischecktags
@@ -32,7 +31,12 @@ Rails.application.routes.draw do
   resources :parties
   resources :raistags
   resources :chas
-  resources :pokebuilds
+
+  resources :pokebuilds do
+    get :autocomplete_pokebuild_title, :on => :collection
+    post 'search', on: :collection
+  end
+
   resources :buildchecktags
   resources :buildskills
 
@@ -42,15 +46,17 @@ Rails.application.routes.draw do
     post 'search', on: :collection
   end
 
+ resources :pokerais do
+    get :autocomplete_pokerai_title, :on => :collection
+    get 'show_image', on: :member
+    post 'search', on: :collection
+  end
 
   resources :users do
     get 'show_image', on: :member
   end
 
-  resources :pokerais do
-    #get :autocomplete_pokerai_title, :on => :collection
-    post 'search', on: :collection
-  end
+
 
   root to: "top#index"
 

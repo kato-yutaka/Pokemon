@@ -1,6 +1,7 @@
 ﻿class PokebuildsController < ApplicationController
   skip_before_action :check_logined
   before_action :set_pokebuild, only: [:show, :edit, :update, :destroy]
+  autocomplete :pokebuild, :title, :full => true
 
   # GET /pokebuilds
   # GET /pokebuilds.json
@@ -67,6 +68,11 @@
       format.json { head :no_content }
     end
   end
+
+	def search
+	@pokebuilds = Pokebuild.where(title: params["search"]["title"])
+	render :index
+	end
 
   private
     # Use callbacks to share common setup or constraints between actions.

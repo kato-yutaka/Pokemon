@@ -33,20 +33,19 @@
         <li class="active"><%= link_to "道具",wepons_path%></li>
         <li class="active"><%= link_to "タイプ",types_path%></li>
         <li class="active"><%= link_to "タマゴグループ",eggs_path%></li>
-   
-      </ul>
+        <li class="active"><%= link_to "投稿者一覧", users_path %></li>
+ </ul>
 
       <ul class="nav navbar-nav navbar-right">
-       
 
 
         <% if "#{session[:usrname]}" == "" %>
-           <li class="active"><a href="http://localhost:3000/login/index">ログイン</a></li>
-           <% else %>
-          <li class="active"><a href="raistags">育成論タグ</a></li>
-          <li class="active"><a href="buildtags">構築論タグ</a></li>
-          <li class="active"><a href="userinfos">ユーザー情報</a></li>
-          <li class="active"><a href="http://localhost:3000/login/index">ログアウト</a></li>
+        <li class="active"><%= link_to "ログイン" , "http://localhost:3000/login/index" %>
+        <% else %>
+          <li class="active"><%= link_to "育成論タグ"   , raistags_path %></li>
+          <li class="active"><%= link_to "構築論タグ"   , buildtags_path %></li>
+          <li class="active"><%= link_to "ユーザー情報" , userinfos_path %></li>
+          <li class="active"><%= link_to "ログアウト"   , "http://localhost:3000/login/index" %></li>
         <% end %>
 
       </ul>

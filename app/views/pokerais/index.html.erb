@@ -14,14 +14,18 @@ end
 %>
 
 <h1>新着の育成論</h1>
+
 <%= form_tag(:action=>"search") do %>
- <%= text_field_tag "search[title]" %>
- <%= submit_tag "検索" %>
- <%= link_to "リセット", pokerais_path %>
+  <%= autocomplete_field_tag "search[title]",'',autocomplete_pokerai_title_pokerais_path,:class => '',:placeholder => '名前で探す'  %>
+  <%= submit_tag "検索" %>
+  <%= link_to "リセット", pokerais_path %>
  
 <% end %></br>
 
-	<table>
+
+
+    <table class="table table-striped">
+
     <thead>
       <tr>
         <th>タイトル</th>
@@ -49,7 +53,7 @@ end
 
     <% @pokerais.each do |pokerai| %>
 	      <tr>
-  		    <td><%= link_to pokerai.title , pokerai %></td>
+   <td><%= link_to pokerai.title , pokerai %></td>
 					<td><%= image_tag show_image_pokedex_path(pokerai.pokedex_id) %></td>
 					<td><%= link_to pokerai.user.name,user_path(pokerai.user_id)%></td>
   		    <td><%= link_to pokerai.pokedex.name,pokedex_path(pokerai.pokedex_id) %></td>
@@ -69,8 +73,10 @@ end
  		   		<% end %>
 
 	        <td><%= (pokerai.updated_at + 32400).to_s(:db) %></td>
+     <% if "#{session[:usrad]}" ==  "true"%>
    		    <td><%= link_to '編集', edit_pokerai_path(pokerai) %></td>
     	   	<td><%= link_to '削除', pokerai, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+    <% end %>
       	 </tr>
     <% end %>
 </table>

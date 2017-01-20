@@ -138,7 +138,7 @@ ActiveRecord::Schema.define(version: 20170113021144) do
     t.datetime "updated_at", null: false
     t.string   "image"
     t.string   "cha1"
-    t.integer  "cha2"
+    t.string   "cha2"
     t.integer  "cha3"
   end
 
