@@ -4,7 +4,7 @@
   <strong>卵グループ名:</strong>
   <%= @egg.name %>
 </p>
-
+<table class="table table-striped">
 <h2>このタマゴグループのポケモン</h2>
 <% @egg.pokedexes.each do |pokedex| %>
  <div class="col-md-1"> 
@@ -12,6 +12,6 @@
   <li><%=link_to pokedex.name,pokedex_path%></li>
  </div> 
 <% end %>
-
+</table>
 <%= link_to '編集', edit_egg_path(@egg) %> |
 <%= link_to 'ホームに戻る', eggs_path %>
