@@ -130,7 +130,7 @@ ActiveRecord::Schema.define(version: 20170113021144) do
     t.integer  "sdef"
     t.integer  "spd"
     t.text     "eco"
-    t.integer  "egg_id"
+    t.string   "egg_id"
     t.integer  "type_id"
     t.string   "pic"
     t.binary   "pic_data"

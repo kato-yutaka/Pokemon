@@ -13,7 +13,7 @@ require 'csv'
 
 
 
-CSV.foreach('db/skillname.csv') do |row|
+CSV.foreach('db/a.csv') do |row|
   Skillname.create(:name => row[0], :type => row[1], :category => row[2], :power => row[3], :hit => row[4], :pp => row[5], :direct => row[6], :target => row[7], :eff => row[8])
 end
 
