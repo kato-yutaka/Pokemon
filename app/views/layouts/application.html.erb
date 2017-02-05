@@ -41,6 +41,7 @@
 
         <% if "#{session[:usrname]}" == "" %>
         <li class="active"><%= link_to "ログイン" , "http://localhost:3000/login/index" %>
+        <li class="active"><%= link_to "ログイン" , login_path %>
         <% else %>
           <li class="active"><%= link_to "育成論タグ"   , raistags_path %></li>
           <li class="active"><%= link_to "構築論タグ"   , buildtags_path %></li>
