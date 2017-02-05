@@ -1,7 +1,7 @@
 ﻿<p id="notice"><%= notice %></p>
 
 <p>
-  <strong>名前:</strong>
+  <strong>タイプ名:</strong>
   <%= @type.name %>
 </p>
 
@@ -10,8 +10,8 @@
  <div class="col-md-1"> 
   <%= image_tag show_image_pokedex_path(pokedex),{:style => "width: 50px"} %>
   <li><%=link_to pokedex.name,pokedex_path%></li>
-</table>
-</div>
+ </div>
+<% end %>
 
 <%= link_to '作成', edit_type_path(@type) %> |
 <%= link_to '戻る', types_path %>

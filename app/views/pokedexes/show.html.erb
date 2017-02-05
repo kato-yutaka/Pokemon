@@ -1,9 +1,26 @@
 ﻿<p id="notice"><%= notice %></p>
 
+<div style="border-style: solid ; border-width: 1px; width: 300px;"">
+
+<p>
+  <%= image_tag show_image_pokedex_path(@pokedex) %>
+</p>
 
 <p>
   <strong>名前:</strong>
   <%= @pokedex.name %>
+</p>
+
+<p>
+  <strong>タイプ:</strong>
+	<%= link_to @pokedex.type.name,type_path(@pokedex.type_id)%></td>
+
+</p>
+
+<p>
+  <strong>卵グループ:</strong>
+  <%= @pokedex.egg.name %>
+	<%= link_to @pokedex.egg.name,egg_path(@pokedex.egg_id)%></td>
 </p>
 
 <p>
@@ -36,21 +53,8 @@
   <%= @pokedex.spd %>
 </p>
 
-<p>
-  <strong>卵グループ:</strong>
-  <%= @pokedex.egg.name %>
-</p>
 
-<p>
-  <strong>タイプ:</strong>
-  <%= @pokedex.type.name %>
-</p>
-
-
-<p>
-  <strong>画像データ:</strong>
-  <%= image_tag show_image_pokedex_path(@pokedex) %>
-</p>
+</div>
 
 <%= link_to 'このポケモンの構築論' , buildtags_path %>|
 <%= link_to 'このポケモンの育成論' , pokerais_path %>|
