@@ -20,7 +20,7 @@
   redirect_to("http://localhost:3000/pokedexes")
  else
   flash.now[:referer] = params[:referer]
-  @error = 'メールアドレス/パスワードが間違っています'
+  @error = 'メールアドレスまたはパスワードが間違っています'
   render 'index'
   end
 end
