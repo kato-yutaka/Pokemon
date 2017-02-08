@@ -42,12 +42,12 @@
 
 
         <% if "#{session[:usrname]}" == "" %>
-        <li class="active"><%= link_to "ログイン" , "https://boiling-mesa-95165.herokuapp.com/login/index" %>
+        <li class="active"><%= link_to "ログイン" , "https://localhost:3000/login/index" %>
         <% else %>
           <li class="active"><%= link_to "育成論タグ"   , raistags_path %></li>
           <li class="active"><%= link_to "構築論タグ"   , buildtags_path %></li>
           <li class="active"><%= link_to "ユーザー情報" , userinfos_path %></li>
-          <li class="active"><%= link_to "ログアウト"   , "https://boiling-mesa-95165.herokuapp.com/login/index" %></li>
+          <li class="active"><%= link_to "ログアウト"   , "https://localhost:3000/login/index" %></li>
         <% end %>
 
       </ul>
