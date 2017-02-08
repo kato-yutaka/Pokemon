@@ -19,6 +19,6 @@
  <%= hidden_field_tag :referer, flash[:referer] %>
  <%= submit_tag 'ログイン' %>
 <% end %>
-<%= link_to 'ユーザー登録' , "http://boiling-mesa-95165.herokuapp.com/users/new" %>
+<%= link_to 'ユーザー登録' , new_user_path %>
 
 <%= link_to 'ログインしない方はこちら' , pokedexes_path %>

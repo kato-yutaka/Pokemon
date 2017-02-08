@@ -30,13 +30,13 @@ end
 </h1>
 
 <p>
-	<td><h3>投稿者名：<%= link_to @pokerai.user.name,user_path(@pokerai.user_id)%></h3>
+	<td>投稿者名：<%= link_to @pokerai.user.name,user_path(@pokerai.user_id)%>
 </p>
 
 
 <p>
   <%= image_tag show_image_pokedex_path(@pokerai.pokedex_id) %></br>
-  <td><h2><%= link_to @pokerai.pokedex.name,pokedex_path(@pokerai.pokedex_id) %></h2><br>
+  <td><%= link_to @pokerai.pokedex.name,pokedex_path(@pokerai.pokedex_id) %><br>
 </p>
 
 <p>

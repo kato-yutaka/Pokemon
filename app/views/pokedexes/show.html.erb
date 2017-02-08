@@ -1,61 +1,41 @@
 ﻿<p id="notice"><%= notice %></p>
 
-<div style="border-style: solid ; border-width: 1px; width: 300px;"">
+<div style="border-style: solid ; border-width: 1px; width: 500px;"">
 
-<p>
-  <%= image_tag show_image_pokedex_path(@pokedex) %>
-</p>
+<tr align="left"valign="top">
+  <td><%= image_tag show_image_pokedex_path(@pokedex) %></td>
 
-<p>
+  <td><strong>HP:</strong>
+      <%= @pokedex.hp %>
+
+	  <strong>攻撃力:</strong>
+  	<%= @pokedex.atk %>
+
+  	<strong>防御力:</strong>
+  	<%= @pokedex.def %>
+	
+	 	<strong>特攻:</strong>
+  	<%= @pokedex.satk %>
+
+  	<strong>特防:</strong>
+  	<%= @pokedex.sdef %>
+
+	  <strong>すばやさ:</strong>
+  	<%= @pokedex.spd %></td>
+	</tr>
+
+<div align="left">
   <strong>名前:</strong>
   <%= @pokedex.name %>
-</p>
-
-<p>
+  <%="|"%>
   <strong>タイプ:</strong>
 	<%= link_to @pokedex.type.name,type_path(@pokedex.type_id)%></td>
-
-</p>
-
-<p>
+  <%="|"%>
   <strong>卵グループ:</strong>
-  <%= @pokedex.egg.name %>
 	<%= link_to @pokedex.egg.name,egg_path(@pokedex.egg_id)%></td>
-</p>
-
-<p>
-  <strong>HP:</strong>
-  <%= @pokedex.hp %>
-</p>
-
-<p>
-  <strong>攻撃力:</strong>
-  <%= @pokedex.atk %>
-</p>
-
-<p>
-  <strong>防御力:</strong>
-  <%= @pokedex.def %>
-</p>
-
-<p>
-  <strong>特攻:</strong>
-  <%= @pokedex.satk %>
-</p>
-
-<p>
-  <strong>特防:</strong>
-  <%= @pokedex.sdef %>
-</p>
-
-<p>
-  <strong>すばやさ:</strong>
-  <%= @pokedex.spd %>
-</p>
-
 
 </div>
-
+<br>
 <%= link_to 'このポケモンの構築論' , buildtags_path %>|
 <%= link_to 'このポケモンの育成論' , pokerais_path %>|
 

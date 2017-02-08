@@ -30,17 +30,19 @@
         <li class="active"><%= link_to "育成論",pokerais_path%></li>
         <li class="active"><%= link_to "構築論",pokebuilds_path%></li>
         <li class="active"><%= link_to "技",skillnames_path%></li>
+        <li class="active"><%= link_to "性格",pers_path%></li>
+        <li class="active"><%= link_to "特性",chas_path%></li>
         <li class="active"><%= link_to "道具",wepons_path%></li>
         <li class="active"><%= link_to "タイプ",types_path%></li>
-        <li class="active"><%= link_to "タマゴグループ",eggs_path%></li>
-        <li class="active"><%= link_to "投稿者一覧", users_path %></li>
+        <li class="active"><%= link_to "卵グループ",eggs_path%></li>
+        <li class="active"><%= link_to "投稿者", users_path %></li>
  </ul>
 
       <ul class="nav navbar-nav navbar-right">
 
 
         <% if "#{session[:usrname]}" == "" %>
-        <li class="active"><%= link_to "ログイン" , "http://boiling-mesa-95165.herokuapp.com/login/index" %>
+        <li class="active"><%= link_to "ログイン" , "http://localhost:3000/login/index" %>
         <% else %>
           <li class="active"><%= link_to "育成論タグ"   , raistags_path %></li>
           <li class="active"><%= link_to "構築論タグ"   , buildtags_path %></li>

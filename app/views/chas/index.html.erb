@@ -16,9 +16,8 @@
   <tbody>
     <% @chas.each do |cha| %>
       <tr>
-        <td><%= cha.name %></td>
+        <td white-space: nowrap><%= cha.name %></td>
         <td><%= cha.ex %></td>
-        <td><%= link_to '説明', cha %></td>
 <% if "#{session[:usrad]}" ==  "true" %>
         <td><%= link_to '編集', edit_cha_path(cha) %></td>
         <td><%= link_to '削除', cha, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
