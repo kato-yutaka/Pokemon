@@ -17,7 +17,7 @@
  </div>
  <%# ログイン後にリダイレクトすべきアクションを隠しフィールドにセット %>
  <%= hidden_field_tag :referer, flash[:referer] %>
- <%= submit_tag 'ログイン',redirect_to("https://boiling-brook-97099.herokuapp.com/pokedexes") %>
+ <%= submit_tag 'ログイン',redirect_to(:back) %>
 <% end %>
 <%= link_to 'ユーザー登録' , new_user_path %>
 
