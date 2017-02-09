@@ -39,6 +39,11 @@
         <%= link_to pokedex.name , pokedex %>
         </div>
         </div>
+	  <% if "#{session[:ad]}" ==  "true"%>
+   		   <td><%= link_to '編集', edit_pokedex_path(pokedex) %></td>
+    	   <td><%= link_to '削除', pokedex, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+    <% end %>
+
     <% end %>
 </div>
   </tbody>
