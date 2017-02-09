@@ -25,7 +25,7 @@ end
 
 <p>
   <strong>アイコン:</strong>
-  <%= image_tag show_image_user_path(@user) %>
+  <%= image_tag show_image_user_path(@user),{:style => "width: 50px"} %>
 </p>
 
 <% if "#{session[:usrprofile]}" ==  " " %>
