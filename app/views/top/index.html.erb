@@ -36,7 +36,7 @@
 
 <% @pokebuilds.each do |ke| %>
 
- <Div Align="left"><li style="list-style:none;"><%= image_tag show_image_user_path(ke.user_id),{:style => "width: 100px "} %> <%= link_to ke.title , ke %> <%=  ke.updated_at.to_s(:db) %><hr></li></div>
+ <Div Align="left"><li style="list-style:none;"><%= link_to ke.title , ke %> <%=  ke.updated_at.to_s(:db) %><hr></li></div>
 <% end %>
 <%= link_to "もっと見る" , pokebuilds_path %>
 </div>
