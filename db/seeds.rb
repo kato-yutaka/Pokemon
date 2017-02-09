@@ -54,7 +54,8 @@ end
 
 a = 1
 PokemonZukan.find_all(1..718).each do |pokedex|
-Pokedex.create(name: pokedex.name ,  hp: pokedex.tribeValue[0] , atk: pokedex.tribeValue[1] ,  def: pokedex.tribeValue[2] , satk: pokedex.tribeValue[3], sdef: pokedex.tribeValue[4] , spd: pokedex.tribeValue[5] , pic_data: File.open(p, "rb").read )
+p =  "db/pokedex_image/t#{format("%03d", a) }.png"
+Pokedex.create(name: pokedex.name ,  hp: pokedex.tribeValue[0] , atk: pokedex.tribeValue[1] ,  def: pokedex.tribeValue[2] , satk: pokedex.tribeValue[3], sdef: pokedex.tribeValue[4] , spd: pokedex.tribeValue[5], pic_data: File.open(p, "rb").read )
 a = a + 1
 
 

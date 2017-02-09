@@ -1,4 +1,7 @@
-﻿<p id="notice"><%= notice %></p>
+﻿
+<%= require 'uri' %>
+
+<p id="notice"><%= notice %></p>
 <% if "#{session[:usrad]}" ==  "true" %>
 <%= link_to '新規作成', new_pokedex_path %>
 <% end %>
@@ -24,15 +27,14 @@
     </tr>
   </thead>
 </table>
+
+
+
   <tbody>
-
-<div class="row">
+		<div class="row">
     <% @pokedexes.each do |pokedex| %>
-
-     
         <div class="col-md-4">
         <%=   image_tag show_image_pokedex_path(pokedex),{:style => "width: 250px"} %>
-				<%=   image_tag("TOP.png",{:style => "width: 250px"}) %>
         <div align = "text-bottom">
         <%= link_to pokedex.name , pokedex %>
         </div>
