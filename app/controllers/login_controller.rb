@@ -17,7 +17,7 @@
   session[:usrprofile] = usr.profile
   session[:usrpicdata] = usr.pic
   session[:usrad]      = usr.ad
-  redirect_to("http://localhost:3000/pokedexes")
+  redirect_to("https://frozen-inlet-44434.herokuapp.com/login/index")
  else
   flash.now[:referer] = params[:referer]
   @error = 'メールアドレスまたはパスワードが間違っています'
